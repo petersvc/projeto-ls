@@ -20,6 +20,8 @@ const showData = () => {
         unContainer.innerHTML = `<span class="main__profile-value">Login: ${res.data.login}</span>`
         reposContainer.innerHTML = `<span class="main__profile-value">Repositórios: ${res.data.public_repos}</span>`
         urlContainer.innerHTML = `<span class="main__profile-value">Url: ${res.data.html_url}</span>`
+        //nameContainer.innerHTML = `<span class="main__profile-value">Nome: ${res.data[0].name}</span>`
+
     })
 }
 
