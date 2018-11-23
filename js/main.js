@@ -30,3 +30,5 @@ document.addEventListener("keyup", (event) => {
 searchBtn.addEventListener("click", () => {
     showData()
 })
+
+//https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
