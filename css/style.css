@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700');
 
+
 /*
 Pallete
 
@@ -43,8 +44,8 @@ html {
 }
 
 .git-img {
-  width: 70vw;
-  height: 40vh;
+  width: 65vw;
+  height: 36vh;
   background-color: rgba(50,50,50,0);
   border: 0px solid rgba(222,222,222,1);
   border-radius: 100%;
@@ -74,3 +75,51 @@ html {
   border: 0px solid transparent;
   box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
 }
+@media only screen 
+  and (min-device-width: 375px) 
+  and (orientation: landscape) { 
+    .git-img {
+      width: 29vw;
+      height: 57vh;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) {
+    .git-img {
+      width: 37.5vw;
+      height: 50vh;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: portrait) {
+    .git-img {
+      width: 70vw;
+      height: 52.5vh;
+    }
+}
+
+@media screen 
+  and (min-device-width: 1200px) {
+    .git-img {
+      width: 29vw;
+      height: 57vh;
+    }
+}
+
+/*
+IPAD pro
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) {
+    .git-img {
+      width: 46vw;
+      height: 60vh;
+    }
+}
+*/
