@@ -26,8 +26,9 @@ const showData = () => {
             //let repos = res.map(repo => repo.name)
             let langs = res.map(names => names.languages_url)
             // linguagens 
-            fetchLang(langs).then(res => {
-                langCalc(res)
+            fetchLang(langs)
+                .then(res => {
+                    langCalc(res)
                 
             })
         })
