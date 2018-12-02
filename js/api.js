@@ -1,5 +1,5 @@
 const apiUrl = "https://api.github.com/users/"
-let token = "?access_token=76ad63b717efe3cb2181bcc078cae00a9b25d76a"
+let token = "?access_token=6e8ddebf34db3a89f69a51a878f8975e26412a61"
 
 // fetchers: fazendo requisiçoes a api e retornando .json dos endpoints
 
