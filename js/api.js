@@ -1,5 +1,5 @@
-let apiUrl = "https://api.github.com/users/"
-let token = "?access_token=9638efd105fd67a18c8ed0d7cbe6b15cf0004e72"
+const apiUrl = "https://api.github.com/users/"
+let token = "?access_token=76ad63b717efe3cb2181bcc078cae00a9b25d76a"
 
 // fetchers: fazendo requisiçoes a api e retornando .json dos endpoints
 
@@ -33,20 +33,19 @@ const langCalc = res => {
     if (javaFilter.length > 0) {
         let javaMap =  javaFilter.map(value => value.java)
         let javaReduce =  javaMap.reduce((total, value) => total  + value, 0)
-        let javaTotal = 'java: ' +  javaReduce
-        console.log(javaTotal)
+        //let javaTotal = 'java: ' +  javaReduce
+        //console.log(javaTotal)
     }
     else
         console.log('nada em java')
-    
     
     // css
     let cssFilter = res.filter(value => value.CSS != undefined)
     if(cssFilter.length > 0) {
         let cssMap = cssFilter.map(value => value.CSS)
         let cssReduce = cssMap.reduce((total, value) => total  + value, 0)
-        let cssTotal = 'Css: ' + cssReduce
-        console.log(cssTotal)
+        //let cssTotal = 'Css: ' + cssReduce
+        //console.log(cssTotal)
         //console.log(cssFilter, cssMap, cssReduce)
     }
     else
@@ -57,7 +56,7 @@ const langCalc = res => {
     if(htmlFilter.length > 0) {
         let htmlMap = htmlFilter.map(value => value.HTML)
         let htmlReduce = htmlMap.reduce((total, value) => total  + value, 0)
-        let htmlTotal = 'Html: ' + htmlReduce
+        //let htmlTotal = 'Html: ' + htmlReduce
         //console.log(htmlTotal)
         //console.log(htmlFilter, htmlMap, htmlReduce)
     }
@@ -69,8 +68,8 @@ const langCalc = res => {
     if(cssFilter.length > 0) {
         let jsMap = jsFilter.map(value => value.JavaScript)
         let jsReduce = jsMap.reduce((total, value) => total  + value, 0)
-        let jsTotal = 'Js: ' + jsReduce
-        console.log(jsTotal)
+        //let jsTotal = 'Js: ' + jsReduce
+        //console.log(jsTotal)
         //console.log(jsFilter, jsMap, jsReduce)        
     }
     else
@@ -80,8 +79,8 @@ const langCalc = res => {
     if(pythonFilter.length > 0) {        
         let pythonMap = pythonFilter.map(value => value.Python)
         let pythonReduce = pythonMap.reduce((total, value) => total  + value, 0)
-        let pythonTotal = 'python: ' + pythonReduce
-        console.log(pythonTotal)
+        //let pythonTotal = 'python: ' + pythonReduce
+        //console.log(pythonTotal)
         //console.log(pythonFilter, pythonMap, pythonR
     }
     else
@@ -92,8 +91,8 @@ const langCalc = res => {
     if(phpFilter.length > 0) {    
         let phpMap = phpFilter.map(value => value.PHP)
         let phpReduce = phpMap.reduce((total, value) => total  + value, 0)
-        let phpTotal = 'php: ' + phpReduce
-        console.log(phpTotal)
+        //let phpTotal = 'php: ' + phpReduce
+        //console.log(phpTotal)
         //console.log(phpFilter, phpMap, phpReduce)    
     }
     else
@@ -103,8 +102,8 @@ const langCalc = res => {
     if(cFilter.length > 0) {        
         let cMap = cFilter.map(value => value.C)
         let cReduce = cMap.reduce((total, value) => total  + value, 0)
-        let cTotal = 'c: ' + cReduce
-        console.log(cTotal)
+        //let cTotal = 'c: ' + cReduce
+        //console.log(cTotal)
         //console.log(cFilter, cMap, cReduce)
     }
     else

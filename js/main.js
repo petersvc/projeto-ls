@@ -7,7 +7,6 @@ const avatarContainer = document.querySelector(".avatar")
 const menuImg = document.querySelector(".fa-bars")
 const menuUl = document.querySelector(".nav-dev")
 
-
 // callbacks de usuário, repositórios e linguagens
 const showData = () => {
     fetchUser(searchInput.value).then(res => { // usuário
@@ -26,7 +25,8 @@ const showData = () => {
     fetchRepo(searchInput.value) // repositórios
         .then(res => {
             //let repos = res.map(repo => repo.name)
-            let langs = res.map(names => names.languages_url)
+            let langs = res.map(names => names.languages_url + token)
+            //console.log(langs)
             // linguagens 
             fetchLang(langs)
                 .then(res => {
