@@ -28,12 +28,9 @@ const showData = () => {
             // linguagens 
             fetchLang(langs)
                 .then(res => {
-                    langCalc(res)
-                
+                    langCalc(res)                
             })
-        })
-        
-        
+        })        
     }   
 
 document.addEventListener("keyup", (event) => {

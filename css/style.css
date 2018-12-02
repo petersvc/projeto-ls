@@ -11,7 +11,8 @@ YELLOw rgb(221, 176, 51)
 */
 
 html {
-  font-size: 1rem;
+  font-size: 0.8rem;
+  overflow: hidden;
 }
 /*
 @include media-breakpoint-up(sm) {
@@ -32,22 +33,34 @@ html {
   }
 }
 */
-.main, .container {
+.main, .container-fluid {
   width: 100vw;
   height: 100vh;
+}
+.header {
+  height: 8rem;
 }
 .logo span {
   font: 400 1.4rem 'Source Sans Pro' ;
 }
-.fa-code-branch {
+
+.fa-logo {
   color: rgb(235, 107, 129);
 }
 
+.nav-dev {
+  position: absolute;
+  margin-left: 1.5rem;
+  display: none;
+  transition: all 0.4s linear;
+}
+
 .git-img {
-  width: 65vw;
+  margin-top: 3rem;
+  width: 67vw;
   height: 36vh;
   background-color: rgba(50,50,50,0);
-  border: 0px solid rgba(222,222,222,1);
+  border: 5px solid rgba(255,255,255,1);
   border-radius: 100%;
   box-shadow: 4px 4px 15px 4px rgba(0,0,0,0.1);
   overflow: hidden;
@@ -77,7 +90,7 @@ html {
 }
 @media only screen 
   and (min-device-width: 375px) 
-  and (orientation: landscape) { 
+  and (orientation: landscape) {
     .git-img {
       width: 29vw;
       height: 57vh;
@@ -98,6 +111,9 @@ html {
   and (min-device-width: 768px) 
   and (max-device-width: 1024px) 
   and (orientation: portrait) {
+    html {
+      font-size: 1rem;
+    }
     .git-img {
       width: 70vw;
       height: 52.5vh;
@@ -106,6 +122,9 @@ html {
 
 @media screen 
   and (min-device-width: 1200px) {
+    html {
+      font-size: 1rem;
+    }
     .git-img {
       width: 29vw;
       height: 57vh;
