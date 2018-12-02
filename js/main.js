@@ -36,9 +36,10 @@ const showData = () => {
     }   
 
 document.addEventListener("keyup", (event) => {
-    if (event.key == 'Enter')
+    if (event.key == 'Enter'){
         showData()
-        searchInput.style.display = "none"
+        //searchInput.style.display = "none"
+    }
 })
 /*searchBtn.addEventListener("click", () => {
     showData()
