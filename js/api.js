@@ -29,23 +29,11 @@ const fetchLang = async endpoints => { // endpoints é um array com as urls das 
 }
 // Somando a quantidade de linhas/palavras escritas em cada linguagem
 const langCalc = res => {
-
-    const javaFilter = res.filter(value => value.java != undefined)
-    console.log(javaFilter)
-    if (javaFilter.length > 0) {
-        const javaMap =  javaFilter.map(value => value.java)
-        const javaReduce =  javaMap.reduce((total, value) => total  + value, 0)
-        //let javaTotal = 'java: ' +  javaReduce
-        //console.log(javaTotal)
-    }
-    else
-        console.log('nada em java')
-    
     // css
     const cssFilter = res.filter(value => value.CSS != undefined)
     if(cssFilter.length > 0) {
         const cssMap = cssFilter.map(value => value.CSS)
-        const cssReduce = cssMap.reduce((total, value) => total  + value, 0)
+        const cssReduce = cssMap.reduce((total, value) => total + value, 0)
         let cssTotal = 'Css: ' + cssReduce
         console.log(cssTotal)
         //console.log(cssFilter, cssMap, cssReduce)
@@ -57,8 +45,8 @@ const langCalc = res => {
     const htmlFilter = res.filter(value => value.HTML != undefined)
     if(htmlFilter.length > 0) {
         const htmlMap = htmlFilter.map(value => value.HTML)
-        const htmlReduce = htmlMap.reduce((total, value) => total  + value, 0)
-        //let htmlTotal = 'Html: ' + htmlReduce
+        const htmlReduce = htmlMap.reduce((total, value) => total + value, 0)
+        const htmlTotal = 'Html: ' + htmlReduce
         //console.log(htmlTotal)
         //console.log(htmlFilter, htmlMap, htmlReduce)
     }
@@ -69,8 +57,8 @@ const langCalc = res => {
     const jsFilter = res.filter(value => value.JavaScript != undefined)
     if(cssFilter.length > 0) {
         const jsMap = jsFilter.map(value => value.JavaScript)
-        const jsReduce = jsMap.reduce((total, value) => total  + value, 0)
-        //let jsTotal = 'Js: ' + jsReduce
+        const jsReduce = jsMap.reduce((total, value) => total + value, 0)
+        const jsTotal = 'Js: ' + jsReduce
         //console.log(jsTotal)
         //console.log(jsFilter, jsMap, jsReduce)        
     }
@@ -80,8 +68,8 @@ const langCalc = res => {
     const pythonFilter = res.filter(value => value.Python != undefined)
     if(pythonFilter.length > 0) {        
         const pythonMap = pythonFilter.map(value => value.Python)
-        const pythonReduce = pythonMap.reduce((total, value) => total  + value, 0)
-        //let pythonTotal = 'python: ' + pythonReduce
+        const pythonReduce = pythonMap.reduce((total, value) => total + value, 0)
+        const pythonTotal = 'python: ' + pythonReduce
         //console.log(pythonTotal)
         //console.log(pythonFilter, pythonMap, pythonR
     }
@@ -92,26 +80,36 @@ const langCalc = res => {
     const phpFilter = res.filter(value => value.PHP != undefined)
     if(phpFilter.length > 0) {    
         const phpMap = phpFilter.map(value => value.PHP)
-        const phpReduce = phpMap.reduce((total, value) => total  + value, 0)
-        //let phpTotal = 'php: ' + phpReduce
+        const phpReduce = phpMap.reduce((total, value) => total + value, 0)
+        const phpTotal = 'php: ' + phpReduce
         //console.log(phpTotal)
         //console.log(phpFilter, phpMap, phpReduce)    
     }
     else
         console.log('nada em Php')   // c
-    
+    // c
     const cFilter = res.filter(value => value.C != undefined)
     if(cFilter.length > 0) {        
         const cMap = cFilter.map(value => value.C)
-        const cReduce = cMap.reduce((total, value) => total  + value, 0)
-        //let cTotal = 'c: ' + cReduce
+        const cReduce = cMap.reduce((total, value) => total + value, 0)
+        const cTotal = 'c: ' + cReduce
         //console.log(cTotal)
         //console.log(cFilter, cMap, cReduce)
     }
     else
         console.log('nada em C')
-    
-    let langCalcResult  = ''
-    //console.log(`${cssTotal}\n${htmlTotal}\n${jsTotal}\n${pythonTotal}\n${phpTotal}\n${cTotal}`)
+    // java
+    const javaFilter = res.filter(value => value.java != undefined)
+    console.log(javaFilter)
+    if (javaFilter.length > 0) {
+        const javaMap =  javaFilter.map(value => value.java)
+        const javaReduce =  javaMap.reduce((total, value) => total + value, 0)
+        const javaTotal = 'java: ' +  javaReduce
+        //console.log(javaTotal)
+    }
+    else
+        console.log('nada em java')
+    // exibindo os resultados    
+    console.log(`${cssTotal}\n${htmlTotal}\n${jsTotal}\n${pythonTotal}\n${phpTotal}\n${cTotal}`)
     
 }
