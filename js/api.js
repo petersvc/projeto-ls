@@ -34,7 +34,7 @@ const langCalc = res => {
     if(cssFilter.length > 0) {
         const cssMap = cssFilter.map(value => value.CSS)
         const cssReduce = cssMap.reduce((total, value) => total + value, 0)
-        let cssTotal = 'Css: ' + cssReduce
+        const cssTotal = 'Css: ' + cssReduce
         console.log(cssTotal)
         //console.log(cssFilter, cssMap, cssReduce)
     }
@@ -47,7 +47,7 @@ const langCalc = res => {
         const htmlMap = htmlFilter.map(value => value.HTML)
         const htmlReduce = htmlMap.reduce((total, value) => total + value, 0)
         const htmlTotal = 'Html: ' + htmlReduce
-        //console.log(htmlTotal)
+        console.log(htmlTotal)
         //console.log(htmlFilter, htmlMap, htmlReduce)
     }
     else
@@ -59,7 +59,7 @@ const langCalc = res => {
         const jsMap = jsFilter.map(value => value.JavaScript)
         const jsReduce = jsMap.reduce((total, value) => total + value, 0)
         const jsTotal = 'Js: ' + jsReduce
-        //console.log(jsTotal)
+        console.log(jsTotal)
         //console.log(jsFilter, jsMap, jsReduce)        
     }
     else
@@ -70,7 +70,7 @@ const langCalc = res => {
         const pythonMap = pythonFilter.map(value => value.Python)
         const pythonReduce = pythonMap.reduce((total, value) => total + value, 0)
         const pythonTotal = 'python: ' + pythonReduce
-        //console.log(pythonTotal)
+        console.log(pythonTotal)
         //console.log(pythonFilter, pythonMap, pythonR
     }
     else
@@ -82,7 +82,7 @@ const langCalc = res => {
         const phpMap = phpFilter.map(value => value.PHP)
         const phpReduce = phpMap.reduce((total, value) => total + value, 0)
         const phpTotal = 'php: ' + phpReduce
-        //console.log(phpTotal)
+        console.log(phpTotal)
         //console.log(phpFilter, phpMap, phpReduce)    
     }
     else
@@ -93,7 +93,7 @@ const langCalc = res => {
         const cMap = cFilter.map(value => value.C)
         const cReduce = cMap.reduce((total, value) => total + value, 0)
         const cTotal = 'c: ' + cReduce
-        //console.log(cTotal)
+        console.log(cTotal)
         //console.log(cFilter, cMap, cReduce)
     }
     else
@@ -105,11 +105,11 @@ const langCalc = res => {
         const javaMap =  javaFilter.map(value => value.java)
         const javaReduce =  javaMap.reduce((total, value) => total + value, 0)
         const javaTotal = 'java: ' +  javaReduce
-        //console.log(javaTotal)
+        console.log(javaTotal)
     }
     else
         console.log('nada em java')
     // exibindo os resultados    
-    console.log(`${cssTotal}\n${htmlTotal}\n${jsTotal}\n${pythonTotal}\n${phpTotal}\n${cTotal}`)
+    //console.log(`${cssTotal}\n${htmlTotal}\n${jsTotal}\n${pythonTotal}\n${phpTotal}\n${cTotal}`)
     
 }
