@@ -1,21 +1,17 @@
 let apiUrl = "https://api.github.com/users/"
-let clientId = "?client_id=Iv1.36a8efb3d3ac27e4"
-let clientSecret = "&client_secret=d15717f5df744d208a63c31bf174f16e580978a4"
-let clientAuth = clientId + clientSecret
+let token = "?access_token=9638efd105fd67a18c8ed0d7cbe6b15cf0004e72"
 
 // fetchers: fazendo requisiçoes a api e retornando .json dos endpoints
 
 // pegando as informações do perfil do usuário. ex: nome, email, avatar
 const fetchUser = user => {
-    let endpoint = `${apiUrl}${user}${clientAuth}` // chamando a api
-    console.log(endpoint)
+    let endpoint = `${apiUrl}${user}${token}` // chamando a api
     let data = fetch(endpoint).then(res => res.json()) // guardando a informação em um json         
     return data                  
 }
 // informações sobre os repositórios do usuário. ex: nome, url das linguagens usadas nele
 const fetchRepo = user => {
-    let endpoint = `${apiUrl}${user}/repos${clientAuth}`
-    console.log(endpoint)
+    let endpoint = `${apiUrl}${user}/repos${token}`
     let data = fetch(endpoint).then(res => res.json()) 
     return data
 }
@@ -31,53 +27,90 @@ const fetchLang = async endpoints => { // endpoints é um array com as urls das 
 }
 // Somando a quantidade de linhas/palavras escritas em cada linguagem
 const langCalc = res => {
+
+    let javaFilter = res.filter(value => value.java != undefined)
+    console.log(javaFilter)
+    if (javaFilter.length > 0) {
+        let javaMap =  javaFilter.map(value => value.java)
+        let javaReduce =  javaMap.reduce((total, value) => total  + value, 0)
+        let javaTotal = 'java: ' +  javaReduce
+        console.log(javaTotal)
+    }
+    else
+        console.log('nada em java')
+    
+    
     // css
     let cssFilter = res.filter(value => value.CSS != undefined)
-    let cssMap = cssFilter.map(value => value.CSS)
-    let cssReduce = cssMap.reduce((total, value) => total  + value, 0)
-    let cssTotal = 'Css: ' + cssReduce
-    //console.log(cssTotal)
-    //console.log(cssFilter, cssMap, cssReduce)
-
+    if(cssFilter.length > 0) {
+        let cssMap = cssFilter.map(value => value.CSS)
+        let cssReduce = cssMap.reduce((total, value) => total  + value, 0)
+        let cssTotal = 'Css: ' + cssReduce
+        console.log(cssTotal)
+        //console.log(cssFilter, cssMap, cssReduce)
+    }
+    else
+        console.log('nada em Css')
+    
     // html
     let htmlFilter = res.filter(value => value.HTML != undefined)
-    let htmlMap = htmlFilter.map(value => value.HTML)
-    let htmlReduce = htmlMap.reduce((total, value) => total  + value, 0)
-    let htmlTotal = 'Html: ' + htmlReduce
-    //console.log(htmlTotal)
-    //console.log(htmlFilter, htmlMap, htmlReduce)
+    if(htmlFilter.length > 0) {
+        let htmlMap = htmlFilter.map(value => value.HTML)
+        let htmlReduce = htmlMap.reduce((total, value) => total  + value, 0)
+        let htmlTotal = 'Html: ' + htmlReduce
+        //console.log(htmlTotal)
+        //console.log(htmlFilter, htmlMap, htmlReduce)
+    }
+    else
+        console.log('nada em html')
 
     // js
     let jsFilter = res.filter(value => value.JavaScript != undefined)
-    let jsMap = jsFilter.map(value => value.JavaScript)
-    let jsReduce = jsMap.reduce((total, value) => total  + value, 0)
-    let jsTotal = 'Js: ' + jsReduce
-    //console.log(jsTotal)
-    //console.log(jsFilter, jsMap, jsReduce)
-
-    // python
+    if(cssFilter.length > 0) {
+        let jsMap = jsFilter.map(value => value.JavaScript)
+        let jsReduce = jsMap.reduce((total, value) => total  + value, 0)
+        let jsTotal = 'Js: ' + jsReduce
+        console.log(jsTotal)
+        //console.log(jsFilter, jsMap, jsReduce)        
+    }
+    else
+        console.log('nada em Js')// python
+    
     let pythonFilter = res.filter(value => value.Python != undefined)
-    let pythonMap = pythonFilter.map(value => value.Python)
-    let pythonReduce = pythonMap.reduce((total, value) => total  + value, 0)
-    let pythonTotal = 'python: ' + pythonReduce
-    //console.log(pythonTotal)
-    //console.log(pythonFilter, pythonMap, pythonReduce)
+    if(pythonFilter.length > 0) {        
+        let pythonMap = pythonFilter.map(value => value.Python)
+        let pythonReduce = pythonMap.reduce((total, value) => total  + value, 0)
+        let pythonTotal = 'python: ' + pythonReduce
+        console.log(pythonTotal)
+        //console.log(pythonFilter, pythonMap, pythonR
+    }
+    else
+        console.log('nada em python')
 
     // php
     let phpFilter = res.filter(value => value.PHP != undefined)
-    let phpMap = phpFilter.map(value => value.PHP)
-    let phpReduce = phpMap.reduce((total, value) => total  + value, 0)
-    let phpTotal = 'php: ' + phpReduce
-    //console.log(phpTotal)
-    //console.log(phpFilter, phpMap, phpReduce)
-
-    // c
+    if(phpFilter.length > 0) {    
+        let phpMap = phpFilter.map(value => value.PHP)
+        let phpReduce = phpMap.reduce((total, value) => total  + value, 0)
+        let phpTotal = 'php: ' + phpReduce
+        console.log(phpTotal)
+        //console.log(phpFilter, phpMap, phpReduce)    
+    }
+    else
+        console.log('nada em Php')   // c
+    
     let cFilter = res.filter(value => value.C != undefined)
-    let cMap = cFilter.map(value => value.C)
-    let cReduce = cMap.reduce((total, value) => total  + value, 0)
-    let cTotal = 'c: ' + cReduce
-    //console.log(cTotal)
-    //console.log(cFilter, cMap, cReduce)
-    console.log(`${cssTotal}\n${htmlTotal}\n${jsTotal}\n${pythonTotal}\n${phpTotal}\n${cTotal}`)
-
+    if(cFilter.length > 0) {        
+        let cMap = cFilter.map(value => value.C)
+        let cReduce = cMap.reduce((total, value) => total  + value, 0)
+        let cTotal = 'c: ' + cReduce
+        console.log(cTotal)
+        //console.log(cFilter, cMap, cReduce)
+    }
+    else
+        console.log('nada em Cs')
+    
+    let langCalcResult  = ''
+    //console.log(`${cssTotal}\n${htmlTotal}\n${jsTotal}\n${pythonTotal}\n${phpTotal}\n${cTotal}`)
+    
 }
