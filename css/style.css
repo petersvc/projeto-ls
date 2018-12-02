@@ -41,22 +41,40 @@ html {
   height: 8rem;
 }
 .logo span {
-  font: 400 1.4rem 'Source Sans Pro' ;
+  font: 400 1.4rem 'Source Sans Pro';
 }
 
 .fa-logo {
   color: rgb(235, 107, 129);
 }
 
+.fa-bars {
+  position: relative;
+  z-index: 2;
+}
+
 .nav-dev {
   position: absolute;
-  margin-left: 1.5rem;
-  display: none;
+  top: -6vh;
+  right: 0rem;
+  width: 0vw;
+  color: rgba(70,70,70,1);
+  background: rgba(255,255,255,1);
+  box-shadow: -3px 4px 10px rgba(0,0,0,0.1);
   transition: all 0.4s linear;
+  z-index: 1;
+}
+
+.nav-dev li {
+  margin-top: 2vh;
+  margin-right: 10vw;
+}
+
+.nav-dev-toggle {
+  width: 40vw;
 }
 
 .git-img {
-  margin-top: 3rem;
   width: 67vw;
   height: 36vh;
   background-color: rgba(50,50,50,0);
@@ -88,6 +106,18 @@ html {
   border: 0px solid transparent;
   box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
 }
+
+.lang-ul .list-inline-item {
+  font: 700 0.9rem 'Source Sans Pro';
+  color: rgb(80,80,80);
+}
+
+.lang-ul .badge {
+  margin-right: ;
+  background-color: rgb(72, 96, 164);
+  color: rgb(255,255,255);
+}
+
 @media only screen 
   and (min-device-width: 375px) 
   and (orientation: landscape) {

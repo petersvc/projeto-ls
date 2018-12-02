@@ -1,9 +1,11 @@
-const searchInput = document.querySelector("#name")
+const searchInput = document.querySelector(".name")
 const searchBtn = document.querySelector(".searchButton")
 const nameContainer = document.querySelector(".git-name")
 const companyContainer = document.querySelector(".git-company")
 const locationContainer = document.querySelector(".git-location")
 const avatarContainer = document.querySelector(".avatar")
+const menuImg = document.querySelector(".fa-bars")
+const menuUl = document.querySelector(".nav-dev")
 
 
 // callbacks de usuário, repositórios e linguagens
@@ -36,10 +38,17 @@ const showData = () => {
 document.addEventListener("keyup", (event) => {
     if (event.key == 'Enter')
         showData()
+        searchInput.style.display = "none"
 })
 /*searchBtn.addEventListener("click", () => {
     showData()
 })*/
+
+menuImg.addEventListener("click", () => {
+    menuUl.classList.toggle("nav-dev-toggle")
+})
+
+
 
 //https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
 //Make like a tree, leaves

@@ -1,18 +1,21 @@
-let css = 0 
-let html = 0
-let js = 0
+let apiUrl = "https://api.github.com/users/"
+let clientId = "?client_id=Iv1.36a8efb3d3ac27e4"
+let clientSecret = "&client_secret=d15717f5df744d208a63c31bf174f16e580978a4"
+let clientAuth = clientId + clientSecret
 
 // fetchers: fazendo requisiçoes a api e retornando .json dos endpoints
 
 // pegando as informações do perfil do usuário. ex: nome, email, avatar
 const fetchUser = user => {
-    let endpoint = `https://api.github.com/users/${user}` // chamando a api
+    let endpoint = `${apiUrl}${user}${clientAuth}` // chamando a api
+    console.log(endpoint)
     let data = fetch(endpoint).then(res => res.json()) // guardando a informação em um json         
     return data                  
 }
 // informações sobre os repositórios do usuário. ex: nome, url das linguagens usadas nele
 const fetchRepo = user => {
-    let endpoint = `https://api.github.com/users/${user}/repos`
+    let endpoint = `${apiUrl}${user}/repos${clientAuth}`
+    console.log(endpoint)
     let data = fetch(endpoint).then(res => res.json()) 
     return data
 }
