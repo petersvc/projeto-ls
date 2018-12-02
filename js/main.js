@@ -10,7 +10,6 @@ const menuUl = document.querySelector(".nav-dev")
 // callbacks de usuário, repositórios e linguagens
 const showData = () => {
     fetchUser(searchInput.value).then(res => { // usuário
-        let need = res.name + res.bio + res.company
         avatarContainer.src = `${res.avatar_url}`
         nameContainer.innerHTML = `${res.name}`
 
