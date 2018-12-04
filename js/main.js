@@ -4,40 +4,48 @@ const nameContainer = document.querySelector(".git-name")
 const companyContainer = document.querySelector(".git-company")
 const locationContainer = document.querySelector(".git-location")
 const avatarContainer = document.querySelector(".avatar")
+const langsContainer = document.querySelector('.lang-ul')
 const menuImg = document.querySelector(".fa-bars")
 const menuUl = document.querySelector(".nav-dev")
 
 // callbacks de usuário, repositórios e linguagens
 const showData = () => {
-    fetchUser(searchInput.value).then(res => { // usuário
-        avatarContainer.src = `${res.avatar_url}`
-        nameContainer.innerHTML = `${res.name}`
+    fetchUser(searchInput.value).then(user => { // usuário
+        avatarContainer.src = `${user.avatar_url}`
+        nameContainer.innerHTML = `${user.name}`
 
-        if (res.bio == null) 
-            companyContainer.innerHTML = res.company
+        if (user.bio == null) 
+            companyContainer.innerHTML = user.company
         else
-            companyContainer.innerHTML = res.bio
+            companyContainer.innerHTML = user.bio
 
-        locationContainer.innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${res.location}`        
+        locationContainer.innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`        
     })
     // repositórios e linguagens
-    fetchRepo(searchInput.value) // repositórios
-        .then(res => {
-            //let repos = res.map(repo => repo.name)
-            let langs = res.map(names => names.languages_url + token)
-            //console.log(langs)
-            // linguagens 
-            fetchLang(langs)
-                .then(res => {
-                    langCalc(res)                
-            })
-        })        
-    }   
+    fetchRepo(searchInput.value).then(repos => { // respositórios
+        const totalRepos = repos.length;
+        const noForkeds = repos.filter(repo => repo.fork != true)
+        const forkeds = totalRepos - noForkeds.length      
+        const langsUrls = noForkeds
+                            .filter(lang => lang.language !== null)
+                            .map(repo => repo.languages_url + token)
+        const valids = langsUrls.length
+        console.log(`Repos: ${totalRepos}\nOwns ${noForkeds.length}\nForkeds: ${forkeds}\nValids: ${valids}`)
+
+        fetchLang(langsUrls).then(langs => { // linguagens
+            langCalc(langs).then(langResult => { // calcula quantos bytes forom escrito em cada linguagem 
+                langsContainer.insertAdjacentHTML("beforeend", `${langResult}`) 
+                    
+            })                
+        })
+    })        
+}   
 
 document.addEventListener("keyup", (event) => {
     if (event.key == 'Enter'){
         showData()
-        //searchInput.style.display = "none"
+        langsContainer.innerHTML = ''
+        langResult = ''
     }
 })
 /*searchBtn.addEventListener("click", () => {

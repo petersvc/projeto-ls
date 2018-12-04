@@ -1,6 +1,6 @@
 const apiUrl = "https://api.github.com/users/"
 const token = "?access_token=28e1b122e11bf388b06cb2f1de48ef08a35ad4ed"
-
+let langResult = ``
 // fetchers: fazendo requisiçoes a api e retornando .json dos endpoints
 
 // pegando as informações do perfil do usuário. ex: nome, email, avatar
@@ -12,7 +12,7 @@ const fetchUser = user => {
 // informações sobre os repositórios do usuário. ex: nome, url das linguagens usadas nele
 const fetchRepo = user => {
     let endpoint = `${apiUrl}${user}/repos${token}`
-    let json = fetch(endpoint).then(repos => repos.json())
+    let json = fetch(endpoint).then(repos => repos.json()) 
     return json
 }
 // linguagens usadas no repositórios
@@ -27,7 +27,6 @@ const fetchLang = async langsUrls => { // endpoints é um array com as urls das 
 
 // Somando a quantidade de linhas/palavras escritas em cada linguagem
 const langCalc = async langs => {
-    let langResult = ''
     // css
     const cssFilter = langs.filter(value => value.CSS != undefined)
     let cssReduce = 0
