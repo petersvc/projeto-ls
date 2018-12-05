@@ -24,88 +24,29 @@ const fetchLang = async langsUrls => { // endpoints é um array com as urls das 
     }
     return jsons
 }
-
 // Somando a quantidade de linhas/palavras escritas em cada linguagem
-const langCalc = async langs => {
+const langCalc = async langs => {    
+    let langsNames = []
+    let langFilter = []
+    let langMap = []
+    let langReduce = 0
     let langResult = ''
-    // css
-    const cssFilter = langs.filter(value => value.CSS != undefined)
-    let cssReduce = 0
-    if (cssFilter.length > 0) {
-        const cssMap = cssFilter.map(value => value.CSS)
-        cssReduce = cssMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">Css<span class="badge ml-1">${cssReduce}</span></li>`
-        //console.log(cssFilter, cssMap, cssReduce)
-    }
-    else
-        console.log('nada em Css')        
-    // html
-    const htmlFilter = langs.filter(value => value.HTML != undefined)
-    let htmlReduce = 0
-    if(htmlFilter.length > 0) {
-        const htmlMap = htmlFilter.map(value => value.HTML)
-        htmlReduce = htmlMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">Html<span class="badge ml-1">${htmlReduce}</span></li>`
-        //console.log(htmlFilter, htmlMap, htmlReduce)
-    }
-    else
-        console.log('nada em html')
-    // js
-    const jsFilter = langs.filter(value => value.JavaScript != undefined)
-    let jsReduce = 0
-    if(cssFilter.length > 0) {
-        const jsMap = jsFilter.map(value => value.JavaScript)
-        jsReduce = jsMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">Js<span class="badge ml-1">${jsReduce}</span></li>\n`
-        //console.log(jsFilter, jsMap, jsReduce)        
-    }
-    else
-        console.log('nada em Js')
-    // python    
-    const pyFilter = langs.filter(value => value.Python != undefined)
-    let pyReduce = 0
-    if(pyFilter.length > 0) {        
-        const pyMap = pyFilter.map(value => value.Python)
-        pyReduce = pyMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">Py<span class="badge ml-1">${pyReduce}</span></li>`
-        //console.log(pythonFilter, pythonMap, pythonR
-    }
-    else
-        console.log('nada em python')
-    // php
-    const phpFilter = langs.filter(value => value.PHP != undefined)
-    let phpReduce = 0
-    if(phpFilter.length > 0) {    
-        const phpMap = phpFilter.map(value => value.PHP)
-        phpReduce = phpMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">Php<span class="badge ml-1">${phpReduce}</span></li>`
-        //console.log(phpFilter, phpMap, phpReduce)    
-    }
-    else
-        console.log('nada em Php')
-    // c
-    const cFilter = langs.filter(value => value.C != undefined)
-    let cReduce = 0
-    if(cFilter.length > 0) {        
-        const cMap = cFilter.map(value => value.C)
-        cReduce = cMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">C<span class="badge ml-1">${cReduce}</span></li>`
-        //console.log(cFilter, cMap, cReduce)
-    }
-    else
-        console.log('nada em C')
-    // java
-    const javaFilter = langs.filter(value => value.java != undefined)
-    let javaReduce = 0
-    if (javaFilter.length > 0) {
-        const javaMap =  javaFilter.map(value => value.java)
-        javaReduce =  javaMap.reduce((total, value) => total + value, 0)
-        langResult += `<li class="list-inline-item">Java<span class="badge ml-1">${javaReduce}</span></li>`
-    }
-    else
-        console.log('nada em java')
-    // exibindo os resultados    
-   // console.log(`${cssReduce}\n${htmlReduce}\n${jsReduce}\n${pyReduce}\n${phpReduce}\n${cReduce}\n${javaReduce}`)    
-    
+
+    langs.map(lang => {
+        for (langName in lang){            
+            if (langsNames.join('').includes(langName) == false)
+                langsNames.push(langName)              
+        }        
+    })
+     
+    langsNames.map(langName => {
+        langFilter = langs.filter(value => value[langName] != undefined)
+        if (langFilter.length > 0){
+            langMap =  langFilter.map(value => value[langName])
+            langReduce =  langMap.reduce((total, value) => total + value, 0)
+            langResult += `<li class="list-inline-item">${langName}<span class="badge ml-1">${langReduce}</span></li>`
+        }
+        //console.log(langName, langReduce)
+    })
     return langResult
 }

@@ -27,8 +27,8 @@ const showData = () => {
         const noForkeds = repos.filter(repo => repo.fork != true)
         const forkeds = totalRepos - noForkeds.length      
         const langsUrls = noForkeds
-                            .filter(lang => lang.language !== null)
-                            .map(repo => repo.languages_url + token)
+                        .filter(lang => lang.language !== null)
+                        .map(repo => repo.languages_url + token)
         const valids = langsUrls.length
         console.log(`Repos: ${totalRepos}\nOwns ${noForkeds.length}\nForkeds: ${forkeds}\nValids: ${valids}`)
 
@@ -55,7 +55,6 @@ document.addEventListener("keyup", (event) => {
 menuImg.addEventListener("click", () => {
     menuUl.classList.toggle("nav-dev-toggle")
 })
-
 
 
 //https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
