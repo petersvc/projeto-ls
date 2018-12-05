@@ -8,44 +8,39 @@ const langsContainer = document.querySelector('.lang-ul')
 const menuImg = document.querySelector(".fa-bars")
 const menuUl = document.querySelector(".nav-dev")
 
-// callbacks de usuário, repositórios e linguagens
 const showData = () => {
     fetchUser(searchInput.value).then(user => { // usuário
-        avatarContainer.src = `${user.avatar_url}`
-        nameContainer.innerHTML = `${user.name}`
+        avatarContainer.src = user.avatar_url // imagem do usuário
+        nameContainer.innerHTML = user.name
 
         if (user.bio == null) 
             companyContainer.innerHTML = user.company
         else
             companyContainer.innerHTML = user.bio
 
-        locationContainer.innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`        
-    })
-    // repositórios e linguagens
-    fetchRepo(searchInput.value).then(repos => { // respositórios
-        const totalRepos = repos.length;
-        const noForkeds = repos.filter(repo => repo.fork != true)
-        const forkeds = totalRepos - noForkeds.length      
-        const langsUrls = noForkeds
-                        .filter(lang => lang.language !== null)
-                        .map(repo => repo.languages_url + token)
-        const valids = langsUrls.length
-        console.log(`Repos: ${totalRepos}\nOwns ${noForkeds.length}\nForkeds: ${forkeds}\nValids: ${valids}`)
-
-        fetchLang(langsUrls).then(langs => { // linguagens
-            langCalc(langs).then(langResult => { // calcula quantos bytes forom escrito em cada linguagem 
-                langsContainer.insertAdjacentHTML("beforeend", `${langResult}`) 
-                    
-            })                
-        })
-    })        
+        locationContainer.innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`
+        
+        fetchRepo(user.repos_url).then(repos => { // respositórios
+            const noForkeds = repos.filter(repo => repo.fork != true)            
+            const forkeds = repos.length - noForkeds.length      
+            const validsRepos = noForkeds.filter(repo => repo.language !== null)
+            console.log(`Repos: ${repos.length}\nNo forkeds: ${noForkeds.length}`)
+            console.log(`Forkeds: ${forkeds}\nValids: ${validsRepos.length}`)
+            
+            fetchLang(validsRepos).then(langsJsons => { // linguagens
+                langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
+                    langsContainer.insertAdjacentHTML("beforeend", langResult) // insere as <li>s no html                       
+                })                
+            })
+        })   
+    })            
 }   
 
 document.addEventListener("keyup", (event) => {
     if (event.key == 'Enter'){
-        showData()
         langsContainer.innerHTML = ''
         langResult = ''
+        showData()
     }
 })
 /*searchBtn.addEventListener("click", () => {
