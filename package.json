@@ -1,0 +1,25 @@
+{
+  "name": "projeto-ls",
+  "version": "1.0.0",
+  "description": "Criar um site com informações recebidas através de uma API",
+  "main": "./src/js/index.js",
+  "scripts": {
+    "start": "npm run webpack",
+    "webpack": "webpack -d --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petersvc/Projeto-ls.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petersvc/Projeto-ls/issues"
+  },
+  "homepage": "https://github.com/petersvc/Projeto-ls#readme",
+  "devDependencies": {
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2"
+  }
+}
