@@ -1,25 +1,29 @@
-const searchInput = document.querySelector('.name')
-const searchBtn = document.querySelector(".searchButton")
-const nameContainer = document.querySelector(".git-name")
-const companyContainer = document.querySelector(".git-company")
-const locationContainer = document.querySelector(".git-location")
-const avatarContainer = document.querySelector(".avatar")
-const langsContainer = document.querySelector('.lang-ul')
-const menuImg = document.querySelector(".fa-bars")
-const menuUl = document.querySelector(".nav-dev")
 import { fetchUser, fetchRepo, fetchLang, langSum } from './api'
+import '../css/main.css'
+import '../css/bootstrap.min.css'
+
+const searchInput = $('.name')
+//const searchBtn = document.querySelector(".searchButton")
+const nameContainer = $('.git-name')
+const companyContainer = $('.git-company')
+const locationContainer = $('.git-location')
+const avatarContainer = $('.avatar')
+const langsContainer = $('.lang-ul')
+const menuImg = $('.fa-bars')
+const menuUl = $('.nav-dev')
+
 
 const showData = () => {
-    fetchUser(searchInput.value).then(user => { // usuário
-        avatarContainer.src = user.avatar_url // imagem do usuário
-        nameContainer.innerHTML = user.name
+    fetchUser( searchInput.val() ).then(user => { // usuário
+        avatarContainer.attr('src', user.avatar_url)  // imagem do usuário
+        nameContainer.html(user.name)
 
         if (user.bio == null) 
-            companyContainer.innerHTML = user.company
+            companyContainer.html(user.company) 
         else
-            companyContainer.innerHTML = user.bio
+            companyContainer.html(user.bio) 
 
-        locationContainer.innerHTML = `<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`
+        locationContainer.html(`<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`)
         
         fetchRepo(user.repos_url).then(repos => { // respositórios
             const noForkeds = repos.filter(repo => repo.fork != true)            
@@ -30,24 +34,23 @@ const showData = () => {
             
             fetchLang(validsRepos).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
-                    langsContainer.insertAdjacentHTML("beforeend", langResult) // insere as <li>s no html                       
+                    langsContainer.append(langResult) // insere as <li>s no html                       
                 })                
             })
         })   
     })           
 }   
 
-document.addEventListener("keyup", (event) => {
+$(document).keyup( (event) => {
     if (event.key == 'Enter'){
-        langsContainer.innerHTML = ''
+        langsContainer.html('')
         showData()
     }
 })
-/*searchBtn.addEventListener("click", () => {
-    showData()
-})*/
-menuImg.addEventListener("click", () => {
-    menuUl.classList.toggle("nav-dev-toggle")
+//searchBtn.addEventListener("click", () => { showData() })
+
+$(menuImg).click( () => {
+    $(menuUl).toggleClass('nav-dev-toggle')
 })
 
 
