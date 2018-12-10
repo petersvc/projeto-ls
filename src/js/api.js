@@ -45,8 +45,20 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
         if (langFilter.length > 0){ // checa se existe um ou mais arrays que contém a linguagem
             langMap =  langFilter.map(value => value[langName]) // percorre os filtrados e retorna a qtde de bytes escritos na linguagem
             langReduce =  langMap.reduce((total, value) => total + value, 0) // soma os bytes de todos os filtrados
-            langResult += `<li class="list-inline-item">${langName}<span class="badge ml-1">${langReduce}</span></li>`
+            if (langReduce > 999)
+                langReduce = Math.round(langReduce/1000)
+            langResult += `<li class="list-inline-item ${langName}">${langName}<span class="badge ml-1">${langReduce}k</span></li>`
         }
     })
     return langResult // retorna as <li>s
 }
+
+/*
+
+          <div class="row">
+              <div class="col-12 mx-auto">
+                <i class="fas fa-search user-search"></i>
+                <input class="user-input" autofocus type="text" value="petersvc">
+              </div>
+          </div>
+*/

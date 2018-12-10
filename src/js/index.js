@@ -2,8 +2,14 @@ import { fetchUser, fetchRepo, fetchLang, langSum } from './api'
 import '../css/main.css'
 import '../css/bootstrap.min.css'
 
-const searchInput = $('.name')
+const userInput = $('.user-input')
 //const searchBtn = document.querySelector(".searchButton")
+const homeRow = $('.home-row')
+const homeFooter = $('.home-footer')
+const midRow = $('.mid-row')
+const navBottom = $('.nav-bottom')
+const footerView = $('.footer-view')
+const footer = $('.footer')
 const nameContainer = $('.git-name')
 const companyContainer = $('.git-company')
 const locationContainer = $('.git-location')
@@ -14,16 +20,19 @@ const menuUl = $('.nav-dev')
 
 
 const showData = () => {
-    fetchUser( searchInput.val() ).then(user => { // usuário
+    fetchUser( userInput.val() ).then(user => { // usuário
         avatarContainer.attr('src', user.avatar_url)  // imagem do usuário
         nameContainer.html(user.name)
 
         if (user.bio == null) 
-            companyContainer.html(user.company) 
+            companyContainer.html('Garoto(a) de Programa') 
         else
-            companyContainer.html(user.bio) 
-
-        locationContainer.html(`<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`)
+            companyContainer.html(user.bio)
+         
+        if (user.location == null)
+            locationContainer.html(`<i class="fas fa-map-marker-alt mr-1"></i>Nárnia`)
+        else        
+            locationContainer.html(`<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`)
         
         fetchRepo(user.repos_url).then(repos => { // respositórios
             const noForkeds = repos.filter(repo => repo.fork != true)            
@@ -41,8 +50,19 @@ const showData = () => {
     })           
 }   
 
-$(document).keyup( (event) => {
+/*const midRow = $('.mid-row')
+const navBottom = $('.nav-bottom')
+const footerView = $('.footer-view')
+const footer = $('.footer')*/
+
+$(userInput).keyup( (event) => {
     if (event.key == 'Enter'){
+        $(homeRow).hide()
+        $(homeFooter).hide()
+        $(midRow).show()
+        $(navBottom).show()
+        $(footerView).show()
+        $(footer).show()
         langsContainer.html('')
         showData()
     }

@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700);
+@import url(https://fonts.googleapis.com/css?family=Exo|Source+Sans+Pro);
 /*
 Pallete
 
@@ -11,75 +11,357 @@ YELLOw rgb(221, 176, 51)
 html {
   font-size: 0.8rem;
   overflow: hidden;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Exo';
 }
-/*
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
+.bgz {
+  position: absolute;
+  height: 150vh;
+  display: none;
+  z-index: 1110;
 }
-
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
-}
-*/
 .main, .container-fluid {
   width: 100vw;
   height: 100vh;
-}
-.header {
-  height: 8rem;
-}
-.logo span {
-  font: 400 1.4rem 'Source Sans Pro';
+  background-color: rgb(33,33,47,1);
 }
 
-.fa-logo {
-  color: rgb(235, 107, 129);
-}
-
-.fa-bars {
-  position: relative;
+.bg-dash{
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  border: 0px solid white;
+  background: rgba(255,255,255,0.02);
+  animation-name: dashes;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
   z-index: 2;
 }
 
-.nav-dev {
+.d1 {
+  left: 5%;
+}
+
+.d2 {
+  left: 25%;
+  animation-delay: 1s;
+}
+
+.d3 {
+  left: 50%;
+  animation-delay: 4s;
+}
+
+.d4 {
+  left: 75%;
+  animation-delay: 2s;
+}
+
+.d5 {
+  left: 95%;
+  animation-delay: 6s;
+}
+
+@keyframes dashess {
+  from {left: 1px;}
+  to {left: 98%;}
+}
+
+.eraser1 {
   position: absolute;
-  top: -6vh;
-  right: 0rem;
-  width: 0vw;
-  color: rgba(70,70,70,1);
-  background: rgba(255,255,255,1);
-  box-shadow: -3px 4px 10px rgba(0,0,0,0.1);
-  transition: all 0.4s linear;
+  top: 14%;
+  left: 5%;
+  width: 90%;
+  height: 5%;
+  border: 0px solid red;
+  background-color: rgb(33,33,47,1);
   z-index: 1;
 }
 
-.nav-dev li {
-  margin-top: 2vh;
-  margin-right: 10vw;
+.eraser2 {
+  position: absolute;
+  bottom: 35%;
+  left: 5%;
+  width: 90%;
+  height: 5%;
+  background-color: rgb(33,33,47,1);
+  z-index: 1;
 }
 
-.nav-dev-toggle {
-  width: 40vw;
+.header {
+  height: 6.5rem;
 }
+
+.logo {
+  margin-top: 2%;
+}
+
+.logo i {
+  margin-left: 10%;
+  color: rgba(255,255,255,1);
+  font-size: 1.7rem;
+  animation: logo 10s alternate infinite;
+}
+
+@keyframes logo {
+  from {transform: rotate(0);}
+  to {transform: rotate(180deg);}
+}
+
+.logo span {
+  position: absolute;
+  font-size: 1.3rem;
+  line-height: 22px;
+  color: rgba(255,255,255,1);
+}
+
+.git-name {
+  width: 90px;
+  height: 40px;
+  margin-left: 15%;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  font-family: 'Exo';
+  color: rgba(255,255,255,1);
+  background-color: rgb(228, 0, 31);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+  z-index: 3;
+  border: none;
+}
+
+.icons {
+  position: absolute;
+  top: 15%;
+  left: 10%;
+  font-size: 3rem;
+  color: rgba(255,255,255,0.05);
+  z-index: 5;
+}
+
+.mid-circle {
+  margin-top: 4%;
+  width: 90vw;
+  height: 50vh;
+  border-radius: 100%;
+  border-right: 1px solid rgba(255,255,255, 0.2);
+  display: flex;
+  align-items: center
+}
+.hide {
+  display: none;
+}
+
+.circle-1 {
+  width: 97%;
+  height: 97%;
+  border-radius: 100%;
+}
+
+.circle-1 .link {
+  position: absolute;
+  margin-left: 55%;
+  margin-top: 15%;
+  width: 13%;
+  height: 13.5%;
+  border-radius: 100%;
+  border: 1px solid rgb(228, 0, 31);
+  text-align: center;
+  color:rgb(228, 0, 31);
+  font-size: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(1);
+  animation: next 1s alternate infinite;
+}
+
+@keyframes next {
+  from {transform: scale(1);}
+  to {transform: scale(1.2);}
+}
+
+.circle-1 h5 {
+  width: 35%;
+  text-align: right;
+  border-top: 5px solid rgba(255,255,255,0.4);
+  margin-top: 30%;
+  margin-left: 5%;
+  color: rgba(255,255,255,0.4);
+  font-family: exo;
+  font-size: 1.5rem;
+  line-height: 50px;
+}
+
+.circle-1 p {
+  width: 75%;
+  margin-top: 5%;
+  margin-left: 13%;
+  color: rgba(255,255,255,0.5);
+  font-family: exo;
+  font-size: 0.9rem;
+  text-align: justify;
+}
+
+.fa-github-alt {
+  margin-top: 0px;
+  margin-left: 41%;
+  color: rgba(255,255,255,0.05);
+  font-size: 4rem;
+  z-index: 15;
+}
+
+.required--ul {
+  margin-top: 6%;
+  margin-left: 8%;
+  width: 85%;
+  color: rgba(255,255,255,0.5);
+  font-family: exo;
+}
+
+.required--ul li {
+  margin-top: 3%;
+  font-size: 0.9rem;
+}
+
+.required--ul i {
+  color: rgba(0, 182, 38, 0.5);
+}
+
+.home-footer {
+  margin-top: 11%;
+  margin-bottom: 3%;
+  height: 5vh;
+  background-color: rgba(25,25,40,1);
+  text-align: center;
+}
+
+.home-footer ul {
+  margin-top: 2.5%;
+}
+
+.home-footer ul li {
+  color: rgba(255,255,255,0.2);
+}
+
+.big {
+  color: rgba(255,255,255,0.5);
+  font-family: exo;
+  font-size: 0.8rem;
+
+}
+
+.small {
+  margin-bottom: 2px;
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  background-color: rgba(255,255,255,0.2)
+
+}
+
+.dash {
+  margin-bottom: 3px;
+  width: 50px;
+  height: 1px;
+  border-bottom: 1px solid rgba(255,255,255,0.1)
+
+}
+
+.nav-info {
+  width: 40px;
+  height: 40px;
+  border: 0px solid rgba(50,50,50,1);
+  background: rgba(29,29,29,0);
+  border-radius: 80px;
+  color: rgba(255,255,255,0.5);
+}
+
+.nav-info i {
+  font-size: 1.4rem;
+  line-height: 40px;
+  vertical-align: middle;
+}
+
+.user-search {
+  position: absolute;
+  color: white;
+  margin-top: 70px; 
+  margin-left: 25px;
+  opacity: 0;
+}
+
+.user-input{
+  margin-top: 22%;
+  background-color: rgba(40,40,40,1);
+  color: rgba(255,255,255,1);
+  text-align: center;
+  border-radius: 70px;
+  text-indent: 0px;
+  height: 35px;
+  width: 70vw;
+  outline: none;
+  box-shadow: 2px 2px 15px 2px rgba(0,0,0,0.2);
+  border: 0px solid transparent;
+  opacity: 0;
+}
+
+.user-input:focus {
+  background-color: rgb(0, 182, 38);
+  color: rgba(255,255,255,1);
+}
+
 
 .git-img {
-  width: 67vw;
-  height: 36vh;
-  background-color: rgba(50,50,50,0);
-  border: 5px solid rgba(255,255,255,1);
+  float: right;
+  margin-right: 8%;
+  width: 15vw;
+  height: 8vh;
+  background-color: rgba(200,200,200,1);
+  border: 5px solid rgba(34,34,34, 1);
   border-radius: 100%;
-  box-shadow: 4px 4px 15px 4px rgba(0,0,0,0.1);
   overflow: hidden;
+  display: none!important;
+}
+
+.mid-row {
+  margin-top: 5%;
+  display: none;
+}
+
+.view-area {
+  width: 40vw;
+  height: 21.5vh;
+  background-color: rgba(36,36,36,1);
+  color: rgb(0, 182, 38);
+  border-radius: 100%;
+  box-shadow: 2px 2px 8px 2px rgba(0,0,0,0);
+  border: 12px solid rgba(33,33,33,1);
+  text-align: center;
+}
+.view-area i{
+  margin-top: 45%;
+}
+.tool {
+  width: 15vw;
+  height: 8vh;
+  background-color: rgba(36,36,36,1);
+  color: rgba(255,255,255,0.5);
+  border-radius: 100%;
+  box-shadow: 2px 2px 8px 2px rgba(0,0,0,0);
+  text-align: center;
+  overflow: hidden;
+}
+
+.tool i {
+  margin-top: 38%;
+}
+
+.right-tool {
+  margin-left: -8px;
 }
 
 .git-main-text {
@@ -91,28 +373,100 @@ html {
   color: rgb(95, 197, 178);
 }
 
-.git-main-text .git-name {
-  font-size: 1.3rem;
-  font-weight: 700;
+
+
+.bottom-nav {
+  margin-top: 5%;
+  width: 100vw;
+  height: 5vh;
+  background-color: rgba(35,35,35,1);
+  color: rgba(255,255,255,0.5);
+  display: none;
 }
 
-.git-main-text .git-search input{
-  border-radius: 60px;
-  text-indent: 20px;
+.bottom-nav div {
+  text-align: center;
   height: 40px;
-  outline: none;
-  border: 0px solid transparent;
-  box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.1);
+  border-right: 1px solid rgba(40,40,40,1);
 }
 
-.lang-ul .list-inline-item {
-  font: 700 0.9rem 'Source Sans Pro';
-  color: rgb(80,80,80);
+.bottom-nav div span {
+  line-height: 40px;
+  vertical-align: middle;
 }
 
-.lang-ul .badge {
-  background-color: rgb(72, 96, 164);
-  color: rgb(255,255,255);
+.footer-view {
+  background-color: rgba(35,35,35,1);
+  display: none;
+}
+
+.details {
+  margin-top: 18%;
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  border: 5px solid rgba(29,29,29,1);
+  color: rgba(255,255,255,0.4);
+  background-color: rgba(33,33,33,1);
+  text-align: center;
+}
+
+.details i{
+  margin-right: 6%;
+  line-height: 75px;
+  vertical-align: middle;
+}
+
+.footer-view h4 {
+  margin-top: 18%;
+  padding-bottom: 16%;
+  text-align: center;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.footer {
+  padding-top: 0%;
+  height: 8vh;
+  background-color: rgba(30,30,30,1);
+  text-align: center;
+  display: none;
+}
+
+.footer .selector {
+  width: 50px;
+  height: 30px;
+  border: 1px solid rgba(50,50,50,1);
+  border-radius: 80px;
+  color: rgba(255,255,255,0.5);
+}
+
+.selector i {
+  line-height: 30px;
+  vertical-align: middle;
+}
+
+.repo {
+  border: 1px solid rgb(0, 182, 38)!important;
+  color: rgb(0, 182, 38)!important;
+}
+
+.toggler {
+  width: 55px;
+  height: 30px;
+  background-color: rgba(42,42,42,1);
+  border-radius: 80px;
+  color: rgba(255,255,255,0.5);
+}
+.toggler span {
+  position: absolute;
+  margin-top: 5px;
+  margin-left: -22px;
+  width: 20px;
+  height: 20px;
+  background-color:rgb(0, 182, 38);
+  border-radius: 100px; 
 }
 
 @media only screen 
@@ -169,7 +523,25 @@ IPAD pro
     }
 }
 */
+/*
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
 
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
+*/
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

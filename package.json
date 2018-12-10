@@ -4,8 +4,8 @@
   "description": "Criar um site com informações recebidas através de uma API",
   "main": "./src/js/index.js",
   "scripts": {
-    "start": "npm run production",
-    "production": "webpack -p -w"
+    "start": "npm run prod",
+    "prod": "webpack-dashboard -- webpack -p -w"
   },
   "repository": {
     "type": "git",
@@ -20,9 +20,11 @@
   "homepage": "https://github.com/petersvc/Projeto-ls#readme",
   "devDependencies": {
     "css-loader": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.5",
     "style-loader": "^0.23.1",
     "webpack": "^4.27.1",
-    "webpack-cli": "^3.1.2"
+    "webpack-cli": "^3.1.2",
+    "webpack-dashboard": "^2.0.0"
   }
 }
