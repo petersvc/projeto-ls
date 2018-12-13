@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/petersvc/Projeto-ls#readme",
   "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.6.0",
     "css-loader": "^1.0.1",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.4.5",
