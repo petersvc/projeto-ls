@@ -63,8 +63,8 @@ $('.fa-bars').click( () => {
     $('.nav-dev').toggleClass('nav-dev-toggle')
 })
 
-for (let i = 1; i < 6; i++)
-    $('.container').append(`<span class="bg-dash d${i}"></span>`)
+//for (let i = 1; i < 6; i++)
+  //  $('.container').append(`<span class="bg-dash d${i}"></span>`)
 
 for (let i = 0; i < 13; i++){
     if (i % 4 == 0)
