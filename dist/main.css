@@ -230,55 +230,44 @@ YELLOw rgb(221, 176, 51)
   background: rgba(34,34,34,0);
 }
 
-.second__check {
+.second__bg {
   grid-area: 1 / 2 / 1 / 4;
-  place-self: center center;
-  color: rgba(170,170,170,1);
-  font-size: 1.3rem;
-  text-align: center;
+  margin-right: 8%;
+  color: rgba(21,21,21,0.8);
+  font-size: 20rem;
+  place-self: center end;
 }
 
-.second__check .github {
-  margin-bottom: 15%;
-  font-size: 6.5rem;
-  color: rgba(170,170,170,0.1);
-  transition: all 0.5s linear; 
+.search__user {
+  grid-area: 1 / 2 / 1 / 4;
+  place-self: center start;
+  margin-left: 15%;
+  background: transparent;
+  font-size: 6rem;
+  width: 90%;
+  color: rgba(22,22,22,1);
+  border: none;
+  outline: none;
 }
 
-.second__check h5 {
-  margin-bottom: 10%;
-}
-
-.second__check .fa-check-square {
-  font-size: 2rem;
-  transition: all 0.5s linear; 
-}
-
-.second__check .fa-square:hover {
-  color: rgba(27, 38, 36, 1);
-  transform: scale(1.4)
-}
-
-.yes {
-  margin-right: 10%;
-  
+.search__user:focus {
   color: rgba(27, 38, 36, 1);
 }
 
-.no {
-  
-  color: rgba(80, 9, 16, 0.7);
-}
-
-.second__search {
+.second__square {
   grid-area: 1 / 2 / 1 / 4;
-  place-self: center center;
-  color: rgba(170,170,170,1);
-  font-size: 1.3rem;
-  text-align: center;
-  display: none;
+  place-self: center start;
+  margin-left: 5%;
+  width: 90px;
+  height: 130px;
+  background: rgba(27, 38, 36, 1);
+  animation: toggle 0.7s alternate infinite;
 }
 
+@keyframes toggle {
+  from {opacity: 1}
+  to {opacity: 0}
+}
 /*
   --- FOOTER ---
 */
