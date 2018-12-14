@@ -31,11 +31,12 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
     let langMap = []
     let langReduce = 0
     let langResult = '' // armazenas <li>s com o nome e o total de bytes escritos de cada linguagem
+    let langLog = []
 
     langsJsons.map(lang => { // percorre o array de jsons das linguagens
         for (let langName in lang){ // percorre os nomes (propriedade) das linguagens deles           
             if (langsNames.join('').includes(langName) == false) // transforma o array dos nomes das linguagens... -> 
-                langsNames.push(langName)                        // ...em uma string, checa se o nome não existe nela e o insere       
+                langsNames.push([langName])                        // ...em uma string, checa se o nome não existe nela e o insere       
         }        
     })
 
@@ -45,11 +46,19 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
         if (langFilter.length > 0){ // checa se existe um ou mais arrays que contém a linguagem
             langMap =  langFilter.map(value => value[langName]) // percorre os filtrados e retorna a qtde de bytes escritos na linguagem
             langReduce =  langMap.reduce((total, value) => total + value, 0) // soma os bytes de todos os filtrados
-            if (langReduce > 999)
+            langLog.push(langName + ': ' + Math.round(langReduce/1000) + 'k')
+            if (langReduce > 999){
                 langReduce = Math.round(langReduce/1000)
-            langResult += `<li class="list-inline-item ${langName}">${langName}<span class="badge ml-1">${langReduce}k</span></li>`
+                //langResult += `<li class="list-inline-item ${langName}">${langName}<span class="badge ml-1">${langReduce}k</span></li>`
+                //langLog += Math.round(langReduce/1000) + 'k'
+            }
+            
         }
+        
     })
+    console.log(langLog)
+    console.log(langsNames)
+
     return langResult // retorna as <li>s
 }
 

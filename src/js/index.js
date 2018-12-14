@@ -26,11 +26,11 @@ const showData = () => {
             console.log(`Repos: ${repos.length}\nNo forkeds: ${noForkeds.length}`)
             console.log(`Forkeds: ${forkeds}\nValids: ${validsRepos.length}`)
             
-            /*fetchLang(validsRepos).then(langsJsons => { // linguagens
+            fetchLang(validsRepos).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
                     $('.lang-ul').append(langResult) // insere as <li>s no html                       
                 })                
-            })*/
+            })
         })   
     })           
 }   
