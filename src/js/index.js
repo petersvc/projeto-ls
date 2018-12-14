@@ -5,7 +5,7 @@ import '../css/reset.css'
 //const searchBtn = document.querySelector(".searchButton")
 
 const showData = () => {
-    fetchUser( $('.user-input').val() ).then(user => { // usuário
+    fetchUser( $('.search__user').val() ).then(user => { // usuário
         $('.avatar').attr('src', user.avatar_url)  // imagem do usuário
         $('.git-name').html(user.name)
 
@@ -26,11 +26,11 @@ const showData = () => {
             console.log(`Repos: ${repos.length}\nNo forkeds: ${noForkeds.length}`)
             console.log(`Forkeds: ${forkeds}\nValids: ${validsRepos.length}`)
             
-            fetchLang(validsRepos).then(langsJsons => { // linguagens
+            /*fetchLang(validsRepos).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
                     $('.lang-ul').append(langResult) // insere as <li>s no html                       
                 })                
-            })
+            })*/
         })   
     })           
 }   
@@ -40,7 +40,7 @@ const navBottom = $('.nav-bottom')
 const footerView = $('.footer-view')
 const footer = $('.footer')*/
 
-$('.user-input').keyup( (event) => {
+$('.search__user').keyup( (event) => {
     if (event.key == 'Enter'){
         $('.home-row').hide()
         $('.home-footer').hide()
@@ -74,6 +74,20 @@ for (let i = 0; i < 13; i++){
 
 }
 
+$('.header__logotype span').click( () => {
+    $('.first').show()
+    $('.second').hide()
+})
+
+$('.header__logotype i').click( () => {
+    $('.first').hide()
+    $('.second').show()
+})
+
+$('.yes').click( () => {
+    $('.second__check').hide()
+    $('.second__search').show()
+})
 
 /*
 
