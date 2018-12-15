@@ -65,7 +65,7 @@ $('.fa-bars').click( () => {
     $('.nav-dev').toggleClass('nav-dev-toggle')
 })
 
-//for (let i = 1; i < 6; i++)
+//for (let i = 1; i < 9; i++)
   //  $('.container').append(`<span class="bg-dash d${i}"></span>`)
 
 for (let i = 0; i < 13; i++){
@@ -76,7 +76,7 @@ for (let i = 0; i < 13; i++){
 
 }
 
-$('.header__logotype span').click( () => {
+$('.header__logotype h5').click( () => {
     $('.first').show()
     $('.second').hide()
 })
