@@ -78,7 +78,7 @@ YELLOw rgb(221, 176, 51)
   animation: spin 6s alternate infinite;
 }
 
-@keyframes spin {
+@keyframes spinn {
   from {transform: rotate(0)}
   to {transform: rotate(180deg)}
 }
@@ -191,7 +191,7 @@ YELLOw rgb(221, 176, 51)
   animation: grow 1s alternate infinite;
 }
 
-@keyframes grow {
+@keyframes groww {
   from {transform: scale(1)}
   to {transform: scale(1.2)}
 }
@@ -264,7 +264,7 @@ YELLOw rgb(221, 176, 51)
   animation: toggle 0.7s alternate infinite;
 }
 
-@keyframes toggle {
+@keyframes togglee {
   from {opacity: 1}
   to {opacity: 0}
 }
@@ -303,7 +303,7 @@ YELLOw rgb(221, 176, 51)
   animation: scroll 1.3s linear infinite;
 }
 
-@keyframes scroll {
+@keyframes scrolll {
   from {margin-top: 5px; opacity: 1}
   to {margin-top: 23px; opacity: 0}
 }

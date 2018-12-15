@@ -1,10 +1,9 @@
-import { fetchUser, fetchRepo, fetchLang, langSum } from './api'
+import { fetchUser, fetchRepo, fetchLang, langSum, langPercent } from './api'
 import '../css/main.css'
 import '../css/reset.css'
-
 //const searchBtn = document.querySelector(".searchButton")
 
-const showData = () => {
+const showData = () => {    
     fetchUser( $('.search__user').val() ).then(user => { // usuário
         $('.avatar').attr('src', user.avatar_url)  // imagem do usuário
         $('.git-name').html(user.name)
@@ -28,9 +27,12 @@ const showData = () => {
             
             fetchLang(validsRepos).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
-                    $('.lang-ul').append(langResult) // insere as <li>s no html                       
+                    //$('.lang-ul').append(langResult) // insere as <li>s no html
+                    console.log(langResult)
+                    console.log(langPercent(langResult))                                          
                 })                
             })
+            
         })   
     })           
 }   
