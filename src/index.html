@@ -14,7 +14,7 @@
   <div class="container">    
     <header class="header">
         <div class="header__logotype">    
-          <h5>DevRoad.</h5>
+          <h5>{ DevRoad }</h5>
         </div>
 
         <div class="header__menu">
@@ -23,6 +23,7 @@
     </header>
     
     <h1 class="section-name">01.</h1>
+    <h5 class="plus">++</h5>
 
     <section class="first">
       <header class="first__header">
@@ -30,7 +31,6 @@
         <h1>Descubra se você domina as tecnologias essênciais para ser um web developer</h1>
         <h3>Developer roadmap 2018</h3>
       </header>
-
       <div class="first__drag">
         <div class="drag__ball" id="bola" draggable="true" ondragstart="drag(event)">
           <i class="fas fa-angle-right"></i>
@@ -42,21 +42,45 @@
       </div>
 
       <div class="langs-slide">
-        <span class="slide__js">{<span>.</span>js}</span>
+        <h1 class="slide__js">{<span>.js</span>}</h1>
       </div>
 
-      <h5 class="first__plus">++</h5>
     </section>
 
     <section class="second">
-        <h1 class="second__bg"><i class="fas fa-search"></i></h1>
         <div class="second__square"></div>
-        <input type="text" class="search__user" autofocus value="petersvc">      
+        <input type="text" class="search__user" autofocus value="petersvc">
+        <h1 class="check__head">Você possui uma <br>conta no github?</h1>
+        <div class="circle-a check__circle"><i class="fab fa-github-alt"></i></div>
+        <div class="circle-b check__circle"></div>
+        <div class="circle-c check__circle"></div>
+        <div class="circle-d check__circle"></div>
+        <p class="check__text top">
+            Lorem ipsum dolor sit amet, consectetur
+            adipiscing elit, sed do eiusmod tempor incididunt.
+        </p>
+        <div class="middle">
+          <h1>go</h1>
+        </div>
+        <!--<ul class="check__text middle">
+            <li><i class="fas fa-user"></i> -></li>
+            <li><i class="fas fa-database"></i> -></li>
+            <li><i class="fas fa-code"></i></li>
+        </ul>-->
+        <p class="check__text bottom">
+          O DevRoad gera informação acessando os dados
+          da sua conta no github.
+        </p>
+        <button class="check__toggler">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <div class="toggler__circle"></div>
+        </button>
     </section>
 
     <footer class="footer">
       <div class="footer__scroll"><div class="scroll__dash"></div></div>
-      <h5 class="footer__lorem">Github / Facebook</h5>      
+      <h5 class="footer__lorem">Github | Facebook</h5>      
       <ul class="footer__dashes"></ul>
       <h5 class="footer__about">01 / <span>04</span></h5>      
     </footer>

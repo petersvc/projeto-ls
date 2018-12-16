@@ -1,7 +1,6 @@
 import { fetchUser, fetchRepo, fetchLang, langSum, langPercent } from './api'
 import '../css/main.css'
 import '../css/reset.css'
-//const searchBtn = document.querySelector(".searchButton")
 
 const showData = () => {    
     fetchUser( $('.search__user').val() ).then(user => { // usuário
@@ -27,7 +26,6 @@ const showData = () => {
             
             fetchLang(validsRepos).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
-                    //$('.lang-ul').append(langResult) // insere as <li>s no html
                     console.log(langResult)
                     console.log(langPercent(langResult))                                          
                 })                
@@ -36,11 +34,6 @@ const showData = () => {
         })   
     })           
 }   
-
-/*const midRow = $('.mid-row')
-const navBottom = $('.nav-bottom')
-const footerView = $('.footer-view')
-const footer = $('.footer')*/
 
 $('.search__user').keyup( (event) => {
     if (event.key == 'Enter'){
@@ -65,23 +58,12 @@ $('.fa-bars').click( () => {
     $('.nav-dev').toggleClass('nav-dev-toggle')
 })
 
-//for (let i = 1; i < 9; i++)
-  //  $('.container').append(`<span class="bg-dash d${i}"></span>`)
-
-for (let i = 0; i < 13; i++){
-    if (i % 4 == 0)
-        $('.footer__dashes').append(`<li class="dashes__long"></li>`)
-    else
-        $('.footer__dashes').append(`<li class="dashes__short"></li>`)
-
-}
-
 $('.header__logotype h5').click( () => {
     $('.first').show()
     $('.second').hide()
 })
 
-$('.header__logotype i').click( () => {
+$('.header__menu').click( () => {
     $('.first').hide()
     $('.second').show()
 })
@@ -91,32 +73,66 @@ $('.yes').click( () => {
     $('.second__search').show()
 })
 
-/*
+$('.check__toggler').click( () => {
+    let a = $('.toggler__circle').css('margin-left')
+    let b = a.length
+    let c = b - 2
+    let d = a.slice(0, c)
+    /*console.log(b, c, d)
+    console.log($('.toggler__circle').css('animation-play-state'))
+
+    if ($('.toggler__circle').css('animation-play-state') == 'paused'){
+        $('.toggler__circle').removeClass('fluid__two')
+        $('.toggler__circle').css('animation-play-state', 'running')
+        $('.fluid__two').css('animation-play-state', 'paused')
+    }
+    else {
+        $('.toggler__circle').toggleClass('fluid__two')
+        $('.fluid__two').css('animation-play-state', 'running')
+        $('.fluid__two').removeClass('toggler__circle')
+    }*/
+
+    if (d < 0) {
+        $('.toggler__circle').removeClass('fluid__two')
+        $('.toggler__circle').css('animation-play-state', 'running')
+        $('.fluid__two').css('animation-play-state', 'paused')
+        $('.check__circle').css('border-color', 'rgba(51, 62, 60, 0.2)')
+        $('.fa-check').css('color', 'rgba(51, 62, 60, 1)')
+        $('.fa-times').css('color', 'rgba(100,100,100, 1)')
+    }
+    else {
+        $('.fluid__two').removeClass('.toggler__circle')
+        $('.toggler__circle').toggleClass('fluid__two')
+        $('.fluid__two').css('animation-play-state', 'running')
+        $('.check__circle').css('border-color', 'rgba(194, 10, 17, 0.2)')
+        $('.fa-times').css('color', 'rgba(194, 10, 17, 1)')
+        $('.fa-check').css('color', 'rgba(100,100,100, 1)')        
+    }
+    //alert($('.toggler__circle').css('margin-left'))
+    //$('.toggler__circle').toggleClass('fluid__two')*/
+})
+
+/*for (let i = 1; i < 9; i++)
+    $('.container').append(`<span class="bg-dash d${i}"></span>`)
+
+/*for (let i = 0; i < 13; i++){
+    if (i % 4 == 0)
+        $('.footer__dashes').append(`<li class="dashes__long"></li>`)
+    else
+        $('.footer__dashes').append(`<li class="dashes__short"></li>`)
+}
+
 
 https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
 Make like a tree, leaves
 
-
-
-.home-footer {
-  margin-top: 33%;
-  margin-left: 0;
-  padding: 0;
-  height: 35px;
-  background-color: rgba(28,28,45,1);
-  color: rgba(255,255,255,0.2);
-  text-align: center;
+<button class="check__toggler">
+    <i class="fas fa-times"></i>
+    <i class="fas fa-check"></i>
+    <div class="toggler__circle"></div>
+</button>
+<i class="fas fa-check-double"></i>
 }
 
-.home-footer .col-4 {
-  height: 100%;
-}
-.home-footer span {
-  line-height: 38px;
-  vertical-align: middle;
-}
-.toggler-focus {
-  border-top: 2px solid rgb(236, 85, 85);
-  color: rgba(255,255,255,1);
-}
+
 */

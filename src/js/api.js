@@ -47,27 +47,20 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
             langMap =  langFilter.map(value => value[langName]) // percorre os filtrados e retorna a qtde de bytes escritos na linguagem
             langReduce =  langMap.reduce((total, value) => total + value, 0) // soma os bytes da lang filtrada
             langTotal += langReduce // acumula os bytes de todas as langs
-
-            /*if (langReduce > 999){
-                langReduce = Math.round(langReduce/1000)
-                langResult.push([langName, langReduce+'k'])
-                //langResult += `<li class="list-inline-item ${langName}">${langName}<span class="badge ml-1">${langReduce}k</span></li>`
-            }
-            else*/
-                langResult.push([langName, langReduce])            
+            langResult.push([langName, langReduce]) // insere no array [linguagem, bytes]           
         }        
     })
     langResult.push(langTotal)
     return langResult // retorna [linguagem, bytes] e o total de bytes no ultimo indice
 }
 
-const langPercent = langResult => {
-    let percent = []
+const langPercent = langResult => { // Calcula a porcentagem de cada linguagem
+    let percent = [] // guarda [linguagem, porcentagem]
     let calc = 0
     langResult.map(langArray => {
-        calc = langArray[1] * 100 / langResult[langResult.length - 1]
-        percent.push([langArray[0], Math.round(calc)])
+        calc = langArray[1] * 100 / langResult[langResult.length - 1] // [bytes] *100 / [ultimo indice]
+        percent.push([langArray[0], Math.round(calc)]) // insere [linguagem, porcentagem] e arredonda
     })
-    percent.pop()
+    percent.pop() // remove o indce que guarda os bytes totais
     return percent
 }
