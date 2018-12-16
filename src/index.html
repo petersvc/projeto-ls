@@ -6,19 +6,22 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-  <link rel="stylesheet" href="../dist/main.css">
+  <link rel="stylesheet" href="main.css">
   <title>DevRoad</title>
 </head>
 
 <body>
   <div class="container">    
     <header class="header">
-        <div class="header__logotype">    
-          <h5>{ DevRoad }</h5>
+        <div class="header__logotype"> 
+          <h5>
+            <i class="far fa-square"></i>   
+            DevRoad.
+          </h5>
         </div>
 
         <div class="header__menu">
-          <h5>Menu<i class="fas fa-bars"></i></h5>
+            <i class="fas fa-bars"></i>
         </div>    
     </header>
     
@@ -28,18 +31,9 @@
     <section class="first">
       <header class="first__header">
         <h2>Roadmap</h2>
-        <h1>Descubra se você domina as tecnologias essênciais para ser um web developer</h1>
+        <h1>Descubra se você domina as tecnologias essênciais<br> para ser um web developer</h1>
         <h3>Developer roadmap 2018</h3>
       </header>
-      <div class="first__drag">
-        <div class="drag__ball" id="bola" draggable="true" ondragstart="drag(event)">
-          <i class="fas fa-angle-right"></i>
-        </div>
-
-        <div class="drag__rail"></div>
-        <div class="drag__void" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-        <h5 class="drag__description">Arraste para começar</h5>
-      </div>
 
       <div class="langs-slide">
         <h1 class="slide__js">{<span>.js</span>}</h1>
@@ -59,14 +53,6 @@
             Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt.
         </p>
-        <div class="middle">
-          <h1>go</h1>
-        </div>
-        <!--<ul class="check__text middle">
-            <li><i class="fas fa-user"></i> -></li>
-            <li><i class="fas fa-database"></i> -></li>
-            <li><i class="fas fa-code"></i></li>
-        </ul>-->
         <p class="check__text bottom">
           O DevRoad gera informação acessando os dados
           da sua conta no github.
@@ -85,8 +71,8 @@
       <h5 class="footer__about">01 / <span>04</span></h5>      
     </footer>
   </div>
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="../dist/main.js"></script>
+  <script src="../dist/jquery-3.3.1.min.js"></script>
+  <script src="main.js"></script>
 
   <script>
       let id

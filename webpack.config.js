@@ -4,6 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
+  mode: 'production',
   entry: './src/js/index.js',  
   output: {
     path: path.resolve('dist'),

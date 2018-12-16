@@ -96,9 +96,9 @@ $('.check__toggler').click( () => {
         $('.toggler__circle').removeClass('fluid__two')
         $('.toggler__circle').css('animation-play-state', 'running')
         $('.fluid__two').css('animation-play-state', 'paused')
-        $('.check__circle').css('border-color', 'rgba(51, 62, 60, 0.2)')
-        $('.fa-check').css('color', 'rgba(51, 62, 60, 1)')
-        $('.fa-times').css('color', 'rgba(100,100,100, 1)')
+        $('.check__circle').css('border-color', 'rgba(83, 223, 144, 0.2)')
+        $('.fa-check').css('color', 'rgba(83, 223, 144, 0.2)')
+        $('.fa-times').css('color', 'rgba(13,13,13,1)')
     }
     else {
         $('.fluid__two').removeClass('.toggler__circle')
@@ -106,7 +106,7 @@ $('.check__toggler').click( () => {
         $('.fluid__two').css('animation-play-state', 'running')
         $('.check__circle').css('border-color', 'rgba(194, 10, 17, 0.2)')
         $('.fa-times').css('color', 'rgba(194, 10, 17, 1)')
-        $('.fa-check').css('color', 'rgba(100,100,100, 1)')        
+        $('.fa-check').css('color', 'rgba(13,13,13,1)')        
     }
     //alert($('.toggler__circle').css('margin-left'))
     //$('.toggler__circle').toggleClass('fluid__two')*/
