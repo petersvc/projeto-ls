@@ -1,7 +1,5 @@
 const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   mode: 'production',
@@ -27,15 +25,6 @@ module.exports = {
       new MiniCssExtractPlugin({
       filename: '[name].css'
       }),
-
-      new HtmlWebpackPlugin({
-      inject: false,
-      hash: true,
-      template: './src/index.html',
-      filename: 'index.html'
-    }),
-
-      new DashboardPlugin()
   ]
 }
 

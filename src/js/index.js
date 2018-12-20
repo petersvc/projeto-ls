@@ -37,26 +37,11 @@ const showData = () => {
 
 $('.search__user').keyup( (event) => {
     if (event.key == 'Enter'){
-        $('.home-row').hide()
-        $('.home-footer').hide()
-        $('.mid-row').show()
-        $('.nav-bottom').show()
-        $('.footer-view').show()
-        $('.footer').show()
-        $('.lang-ul').html('')
         showData()
     }
 })
 
-if ($('.first').css('display') != 'none')
-    $('.s1').toggleClass('toggler-focus')
-    $('.c1').css('background-color', 'rgba(34,34,51,1)')
-
 //searchBtn.addEventListener("click", () => { showData() })
-
-$('.fa-bars').click( () => {
-    $('.nav-dev').toggleClass('nav-dev-toggle')
-})
 
 $('.header__logotype h5').click( () => {
     $('.first').show()
@@ -73,66 +58,85 @@ $('.yes').click( () => {
     $('.second__search').show()
 })
 
-$('.check__toggler').click( () => {
-    let a = $('.toggler__circle').css('margin-left')
-    let b = a.length
-    let c = b - 2
-    let d = a.slice(0, c)
-    /*console.log(b, c, d)
-    console.log($('.toggler__circle').css('animation-play-state'))
-
-    if ($('.toggler__circle').css('animation-play-state') == 'paused'){
-        $('.toggler__circle').removeClass('fluid__two')
-        $('.toggler__circle').css('animation-play-state', 'running')
-        $('.fluid__two').css('animation-play-state', 'paused')
-    }
-    else {
-        $('.toggler__circle').toggleClass('fluid__two')
-        $('.fluid__two').css('animation-play-state', 'running')
-        $('.fluid__two').removeClass('toggler__circle')
-    }*/
-
-    if (d < 0) {
-        $('.toggler__circle').removeClass('fluid__two')
-        $('.toggler__circle').css('animation-play-state', 'running')
-        $('.fluid__two').css('animation-play-state', 'paused')
-        $('.check__circle').css('border-color', 'rgba(83, 223, 144, 0.2)')
-        $('.fa-check').css('color', 'rgba(83, 223, 144, 0.2)')
-        $('.fa-times').css('color', 'rgba(13,13,13,1)')
-    }
-    else {
-        $('.fluid__two').removeClass('.toggler__circle')
-        $('.toggler__circle').toggleClass('fluid__two')
-        $('.fluid__two').css('animation-play-state', 'running')
-        $('.check__circle').css('border-color', 'rgba(194, 10, 17, 0.2)')
-        $('.fa-times').css('color', 'rgba(194, 10, 17, 1)')
-        $('.fa-check').css('color', 'rgba(13,13,13,1)')        
-    }
-    //alert($('.toggler__circle').css('margin-left'))
-    //$('.toggler__circle').toggleClass('fluid__two')*/
-})
-
-/*for (let i = 1; i < 9; i++)
-    $('.container').append(`<span class="bg-dash d${i}"></span>`)
-
-/*for (let i = 0; i < 13; i++){
-    if (i % 4 == 0)
-        $('.footer__dashes').append(`<li class="dashes__long"></li>`)
-    else
-        $('.footer__dashes').append(`<li class="dashes__short"></li>`)
+for (let i = 0; i < 80; i++) {
+    /*if (i % 6 == 0)
+        $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"></div>`)
+    else if (i % 5 == 0)
+        $('.first__dots').append(`<div class="dots__dot dot-red" id="dot${i}"></div>`)
+    else*/
+        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"></div>`)
 }
 
+var mouse = {'x': 0, 'y': 0};
 
+let homex
+let homey
+let forcex
+let forcey
+let magnet
+let position
+let x0 
+let y0 
+let x1 
+let y1 
+let distancex
+let distancey
+let distance
+let powerx 
+let powery
+        
+
+homex = 0;
+homey = 0;
+forcex = 0;
+forcey = 0;
+magnet = 500;
+
+$(document).bind('mousemove', function(e) {
+    mouse = {'x': e.pageX, 'y': e.pageY};
+});
+
+
+$('.dots__dot').each(function(index, el){
+    $(el).data('homex', parseInt($(el).position().left));
+    $(el).data('homey', parseInt($(el).position().top));
+});
+
+$('.dots__dot').css('position','absolute');
+
+setInterval(function () {
+    $('.dots__dot').each(function(index, el){
+        el = $(el);
+        position = el.position();
+        x0 = el.offset().left;
+        y0 = el.offset().top;
+        x1 = mouse.x;
+        y1 = mouse.y;
+        distancex = x1-x0;
+        distancey = y1-y0;
+
+        distance = Math.sqrt((distancex * distancex) + (distancey * distancey));
+        
+        /*
+        magnet = 2600 - distance*20;
+        if(distance>130) {
+           magnet=0; 
+        }
+        */
+        
+        powerx = x0 - (distancex / distance) * magnet / distance;
+        powery = y0 - (distancey / distance) * magnet / distance;
+        
+        forcex = (forcex + (el.data('homex') - x0) / 2) / 2.1;
+        forcey = (forcey + (el.data('homey') - y0) / 2) / 2.1;
+                    
+
+        el.css('left', powerx + forcex);
+        el.css('top',  powery + forcey);
+    });
+}, 15);
+
+/*
 https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
 Make like a tree, leaves
-
-<button class="check__toggler">
-    <i class="fas fa-times"></i>
-    <i class="fas fa-check"></i>
-    <div class="toggler__circle"></div>
-</button>
-<i class="fas fa-check-double"></i>
-}
-
-
 */
