@@ -58,7 +58,7 @@ $('.yes').click( () => {
     $('.second__search').show()
 })
 
-for (let i = 0; i < 80; i++) {
+for (let i = 0; i < 75; i++) {
     /*if (i % 6 == 0)
         $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"></div>`)
     else if (i % 5 == 0)
