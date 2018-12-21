@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="icon" type="image/png" href="">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bundle.css">
+  <link rel="stylesheet" href="css/all.min.css">
+  
+  <title>DevRoad</title>
+</head>
+
+<body>
+  <div class="container">    
+    <h1 class="section-name" id="circ">039 Tecnologias</h1>
+    <h5 class="plus"></h5>
+
+    <section class="first">
+      <div class="first__dots">
+
+      </div>
+
+    </section>
+    <!--
+    <section class="second">
+        
+        <button class="check__toggler">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <div class="toggler__circle"></div>
+        </button>
+    </section>
+  -->
+
+    <footer class="footer">
+      <div class="footer__logotype">
+        <i class="far fa-square"></i>  
+        <h5>DevRoad</h5>
+      </div>
+
+      <i class="fas fa-bars footer__menu"></i>
+      
+      <!--
+      <div class="footer__scroll"><div class="scroll__dash"></div></div>
+      <h5 class="footer__lorem">Github | Facebook</h5>      
+      <ul class="footer__dashes"></ul>-->
+      <h5 class="footer__about">Github | Facebook</h5>
+    </footer>
+  </div>
+  <script src="../src/js/jquery-3.3.1.min.js"></script>
+  <script src="bundle.js"></script>
+
+  <script>
+      let id
+      const allowDrop = ev => ev.preventDefault()
+      const drag = ev => id = ev.target.id
+      const drop = ev => {
+          ev.preventDefault();
+          $('.drag__void').css('background', 'rgba(30,30,30,1)')
+          ev.target.append(document.getElementById(id));
+      }
+  </script>
+</body>
+
+</html>
