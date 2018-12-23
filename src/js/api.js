@@ -64,3 +64,5 @@ const langPercent = langResult => { // Calcula a porcentagem de cada linguagem
     percent.pop() // remove o indce que guarda os bytes totais
     return percent
 }
+
+//<br>Quais tecnologias o web developer<br> deve dominar em 2018?

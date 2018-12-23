@@ -58,13 +58,15 @@ $('.yes').click( () => {
     $('.second__search').show()
 })
 
-for (let i = 0; i < 75; i++) {
-    /*if (i % 6 == 0)
-        $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"></div>`)
+for (let i = 0; i < 63; i++) {
+    if (i % 6 == 0)
+        $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"><i class="far fa-square"></i></div>`)
     else if (i % 5 == 0)
-        $('.first__dots').append(`<div class="dots__dot dot-red" id="dot${i}"></div>`)
-    else*/
-        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"></div>`)
+        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-circle"></i></div>`)
+    else if (i % 4 == 0)
+        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-times"></i></div>`)
+    else
+        $('.first__dots').append(`<div class="dots__dot dot-red" id="dot${i}"><i class="fas fa-caret-up"></i></div>`)
 }
 
 var mouse = {'x': 0, 'y': 0};
@@ -117,12 +119,12 @@ setInterval(function () {
 
         distance = Math.sqrt((distancex * distancex) + (distancey * distancey));
         
-        /*
+        
         magnet = 2600 - distance*20;
         if(distance>130) {
            magnet=0; 
         }
-        */
+        
         
         powerx = x0 - (distancex / distance) * magnet / distance;
         powery = y0 - (distancey / distance) * magnet / distance;
