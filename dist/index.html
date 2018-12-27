@@ -11,41 +11,103 @@
 </head>
 
 <body>
-  <div class="container">
-    
+  <div class="container">    
   
-    <header class="header">
-          
-        <div class="header__menu">
-          <i class="fas fa-bars menu__bars"></i>
-          <span>Menu</span>
-        </div>
+    <header class="header">  
+      
+      <h5 class="header__logotype">Devstats.</h5>
+      
 
-        <h5 class="header__name">username</h5>
-        
-        <div class="header__avatar">
-          <i class="fas fa-user"></i>
-        </div>
+      <div class="header__choose">      
+          <i class="far fa-chart-bar choose__chart"></i>
+          <div class="choose__slash"></div>       
+          <i class="far fa-map choose__map"></i> 
+      </div>
+
+
+      <div class="stats__user">
+        <h3 class="user__name"></h3>
+        <img class="user__avatar" src="img/ava.jpg" alt="nada">
+      </div>
+
 
     </header>
 
-    <div class="intro">
+    <main class="content">
 
-    </div>
 
-    <h1 class="section-name" id="circ">ROAD<br>MAP<br>2018
-    <h5 class="desc">Quais as tecnologias mais recomendadas pela comunidade para a carreira<br>
-       de web developer nesse ano?</h5>
-     
-    </h1>
-    <h5 class="plus"></h5>
-
-    <section class="first">
-      <div class="first__dots">
-
+      <div class="content__search">
+        <input class="search__name" type="text" value= "lucachaves" placeholder="Digite o seu login do github" autofocus>
       </div>
 
-    </section>
+      <section class="content__stats">
+
+        <div class="stats__separator"></div>
+        
+        <div class="stats__graph">
+          <div class="graph__data" id="graph__data">
+            <div class="data__lang">
+              <h2 class="lang__name">Javascript</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+            </div>
+  
+            <div class="data__lang">
+              <h2 class="lang__name">Css</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+            </div>            
+  
+            <div class="data__lang">
+              <h2 class="lang__name">Html</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+              </div>
+  
+            <div class="data__lang">
+              <h2 class="lang__name">Python</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+            </div>
+          </div>
+
+          <div class="graph__rank">
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h3 class="percent_lang">Javascript:</h3>
+              <h3 class="percent__number">75%</h3>
+            </div>
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h3 class="percent_lang">css:</h3>
+              <h3 class="percent__number">49%</h3>
+            </div>
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h3 class="percent_lang">html:</h3>
+              <h3 class="percent__number">32%</h3>
+            </div>
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h3 class="percent_lang">python:</h3>
+              <h3 class="percent__number">68%</h3>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
     <!--
     <section class="second">
          
@@ -58,9 +120,28 @@
   -->
 
     <footer class="footer">
-        <h5 class="header__logotype">DevStats</h5>
+ 
+      <div class="header__menu">
+        <i class="fas fa-bars"></i>
+        <h3>Menu</h3>
+      </div>
+      
+      <div class="header__angle">
+        <i class="fas fa-angle-left"></i>
+        <h1 class="angle__title">Linguagens</h1>  
+        <i class="fas fa-angle-right"></i>
+      </div>
+
+      <div class="header__magnifier">
+        <i class="fas fa-search"></i>
+      </div>
+        
+      <input class="header__search" type="text" value="" autofocus>
+
     </footer>
+
   </div>
+
   <script src="js/jquery-3.3.1.min.js"></script>
   <script src="js/bundle.js"></script>
 

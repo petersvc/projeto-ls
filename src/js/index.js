@@ -1,11 +1,16 @@
-import { fetchUser, fetchRepo, fetchLang, langSum, langPercent } from './api'
+import { fetchUser, fetchRepo, fetchLang } from './api'
+import { langSum, langArray, numberSort, stringSort, shortByte, langAcronym } from './aux'
 import '../css/main.css'
 import '../css/reset.css'
 
 const showData = () => {    
-    fetchUser( $('.search__user').val() ).then(user => { // usuário
-        $('.avatar').attr('src', user.avatar_url)  // imagem do usuário
-        $('.git-name').html(user.name)
+    fetchUser( $('.search__name').val() ).then(user => { // usuário
+        $('.user__avatar').attr('src', user.avatar_url)  // imagem do usuário
+        $('.user__name').html(user.name)
+        $('.info__bio').html(user.bio)
+        $('.info__local').html(user.location)
+        $('.info__company').html(user.company)
+        $('.info__email').html(user.email)
 
         if (user.bio == null) 
             $('.git-company').html('Garoto(a) de Programa') 
@@ -25,9 +30,47 @@ const showData = () => {
             console.log(`Forkeds: ${forkeds}\nValids: ${validsRepos.length}`)
             
             fetchLang(validsRepos).then(langsJsons => { // linguagens
-                langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem 
-                    console.log(langResult)
-                    console.log(langPercent(langResult))                                          
+                langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem                    
+                    $('.data__lang').remove()
+                    $('.rank__percent').remove()
+                    
+                    const langSortNumber = langResult.slice(0).sort(numberSort)
+                    const langSortString = langResult.slice(0).sort(stringSort)
+
+                    const la = langArray(langSortNumber)
+
+                    let sb = 0
+                    let divId = ''
+                    let graphDataWidth = document.getElementById('graph__data').offsetWidth
+                    let sizeWidth = 0
+                    let sizeId = ''
+
+                    la.map(langIndex => {
+                        if (langIndex[2] > 0) {
+                            sb = shortByte(langIndex[1])
+                            divId = `lang__size-${langIndex[0]}`
+                            $('.graph__data').append(
+                                `<div class="data__lang"">
+                                    <h2 class="lang__name" title="${langIndex[0]}">${langIndex[0]}</h2>
+                                    <div class="lang__start"></div>
+                                    <div class="lang__size" id="${divId}"></div>
+                                    <h3 class="lang__byte">${sb}kb</h3>
+                                </div>`
+                            )
+                            sizeWidth = graphDataWidth * langIndex[2] / 100
+                            
+                            sizeId = document.getElementById(divId)
+                            sizeId.style.width = sizeWidth + "px"
+
+                            $('.graph__rank').append(
+                                `<div class="rank__percent">
+                                    <div class="percent__circle"></div>
+                                    <h3 class="percent_lang">${langIndex[0]}:</h3>
+                                    <h3 class="percent__number">${langIndex[2]}%</h3>
+                                </div>`
+                            )
+                        }
+                    })                               
                 })                
             })
             
@@ -35,7 +78,7 @@ const showData = () => {
     })           
 }   
 
-$('.search__user').keyup( (event) => {
+$('.search__name').keyup( (event) => {
     if (event.key == 'Enter'){
         showData()
     }
@@ -58,16 +101,23 @@ $('.yes').click( () => {
     $('.second__search').show()
 })
 
-for (let i = 0; i < 63; i++) {
-    if (i % 6 == 0)
-        $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"><i class="far fa-square"></i></div>`)
-    else if (i % 5 == 0)
-        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-circle"></i></div>`)
-    else if (i % 4 == 0)
-        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-times"></i></div>`)
-    else
-        $('.first__dots').append(`<div class="dots__dot dot-red" id="dot${i}"><i class="fas fa-caret-up"></i></div>`)
+for (let i = 0; i < 5; i++){
+    $('.stats__separator').append(`<div class="graph__separator" id="separator${i}"></div>`)
 }
+
+/*
+for (let i = 0; i < 64; i++) {
+    if (i % 6 == 0)
+        $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"><i class="fas fa-square"></i></div>`)
+    else if (i % 5 == 0)
+        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-square"></i></div>`)
+    else if (i % 4 == 0)
+        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-square"></i></div>`)
+    else
+        $('.first__dots').append(`<div class="dots__dot dot-red" id="dot${i}"><i class="fas fa-circle"></i></div>`)
+
+}
+*/
 
 var mouse = {'x': 0, 'y': 0};
 
@@ -140,5 +190,5 @@ setInterval(function () {
 
 /*
 https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
-Make like a tree, leaves
+Make like a tree and leave
 */
