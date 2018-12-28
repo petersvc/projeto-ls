@@ -313,7 +313,7 @@ YELLOw rgb(221, 176, 51)
 
 .search__name {
   font-size: 2.5rem;
-  color: rgba(25,25,25,1);
+  color: rgba(80,80,80,1);
   font-style: italic;
   text-align: center;
   background-color: transparent;
@@ -322,7 +322,7 @@ YELLOw rgb(221, 176, 51)
 }
 
 .search__name::placeholder{
-  color: rgba(25,25,25,1)
+  color: rgba(35,35,35,1);
 }
 
 .content__stats {
