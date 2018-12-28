@@ -37,7 +37,7 @@ const showData = () => {
                     const langSortNumber = langResult.slice(0).sort(numberSort)
                     const langSortString = langResult.slice(0).sort(stringSort)
 
-                    const la = langArray(langSortNumber)
+                    const la3 = langArray(langSortNumber)
 
                     let sb = 0
                     let divId = ''
@@ -45,10 +45,15 @@ const showData = () => {
                     let sizeWidth = 0
                     let sizeId = ''
 
-                    la.map(langIndex => {
+                    la3.map(langIndex => {
                         if (langIndex[2] > 0) {
                             sb = shortByte(langIndex[1])
+
+                            let acro = langAcronym(langIndex[0])
+                            
+                            console.log(acro)
                             divId = `lang__size-${langIndex[0]}`
+
                             $('.graph__data').append(
                                 `<div class="data__lang"">
                                     <h2 class="lang__name" title="${langIndex[0]}">${langIndex[0]}</h2>
@@ -57,8 +62,8 @@ const showData = () => {
                                     <h3 class="lang__byte">${sb}</h3>
                                 </div>`
                             )
-                            sizeWidth = graphDataWidth * langIndex[2] / 100
-                            
+
+                            sizeWidth = graphDataWidth * langIndex[2] / 100                            
                             sizeId = document.getElementById(divId)
                             sizeId.style.width = sizeWidth + "px"
 

@@ -1,7 +1,7 @@
 export { fetchUser, fetchRepo, fetchLang }
 
 const apiUrl = 'https://api.github.com/users/' // url da api do github
-const token = '' // necessário para fazer mais de 60 requisições/hora
+const token = '?access_token=28e1b122e11bf388b06cb2f1de48ef08a35ad4ed' // necessário para fazer mais de 60 requisições/hora
 
 // fetchers: fazem requisiçoes a api e retornam jsons
 

@@ -34,50 +34,35 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
     return langResult // retorna [linguagem, bytes] e o total de bytes no ultimo indice
 }
 
-const langArray = langResult => { // Calcula a porcentagem de cada linguagem
-    let la = [] // guarda [linguagem, porcentagem]
+const langArray = langResult => { // Cria o array completo das linguagens -> [lang, byte, percent]
+    let la = [] // guarda [linguagem, bytes, porcentagem]
     let calcPercent = 0
+
     langResult.map(langIndex => {
         calcPercent = percentCalc(langIndex[1], langResult[langResult.length - 1])
-        la.push([langIndex[0], langIndex[1], Math.round(calcPercent)]) // insere [linguagem, porcentagem] e arredonda        
+        la.push([langIndex[0], langIndex[1], Math.round(calcPercent)]) // insere [linguagem, bytes, porcentagem] 
     })
+
     la.pop() // remove o indice que guarda os bytes totais
-    let la2 = la.slice(0)
-    console.log(la)
-    console.log(la2)
-    let a = langAcronym(la2)
+
+    console.log(la) // langArray
+
     return la
+}
+
+const langAcronym = langIndex => {
+    let acronym = ''
+        if (langIndex == 'JavaScript'){ // index[0] contem o nome da linguagem
+            acronym = 'JS'
+        }
+    console.log(acronym)
+    return acronym
 }
 
 const percentCalc = (langByte, total) => {
     let calc = 0
-    calc = langByte * 100 / total // [bytes] *100 / [ultimo indice]
+    calc = langByte * 100 / total
     return calc
-}
-
-const langAcronym = laArray => {
-    let newArray = []
-    newArray = laArray.map(laIndex => {
-
-        if (laIndex[0] === 'JavaScript')
-            laIndex[0] = 'JS'
-
-        else if (laIndex[0] === 'Python')
-            laIndex[0] = 'Py'
-
-        else if (laIndex[0] === 'PostScript')
-            laIndex[0] = 'PS'
-
-        else if (laIndex[0] === 'CoffeeScript')
-            laIndex[0] = 'CS'
-
-        else if (laIndex[0] === 'Processing')
-            laIndex[0] = 'Proc.'
-        
-        else
-            laIndex[0] = laIndex[0]
-
-    })
 }
 
  const numberSort = (a, b) => {
