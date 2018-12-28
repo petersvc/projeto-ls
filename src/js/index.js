@@ -54,7 +54,7 @@ const showData = () => {
                                     <h2 class="lang__name" title="${langIndex[0]}">${langIndex[0]}</h2>
                                     <div class="lang__start"></div>
                                     <div class="lang__size" id="${divId}"></div>
-                                    <h3 class="lang__byte">${sb}kb</h3>
+                                    <h3 class="lang__byte">${sb}</h3>
                                 </div>`
                             )
                             sizeWidth = graphDataWidth * langIndex[2] / 100

@@ -97,6 +97,20 @@ const stringSort = (a, b) => {
 }
 
 const shortByte = bytes => {
-    let kbytes = Math.round(bytes / 1024)
-    return kbytes
+    let shortBytes = 0
+
+    if (bytes > 99999){
+        shortBytes = (bytes / 1048576).toFixed(2)
+        shortBytes += 'mb'
+    }
+    else if (bytes > 999){
+        shortBytes = Math.round(bytes / 1024)
+        shortBytes += 'kb'
+    }
+    else {
+        shortBytes = Math.round(bytes)
+        shortBytes += 'B'
+    }
+
+    return shortBytes
 }

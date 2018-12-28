@@ -207,8 +207,6 @@ YELLOw rgb(221, 176, 51)
   z-index: 2;
 }
 
-
-
 .header__angle {
   grid-area: 1 / 2 / 1 / 3;
   display: flex;
@@ -658,6 +656,10 @@ html{
 
 .header__menu h3 {
   display: none;
+}
+
+.data__lang {
+  margin-left: 0;
 }
 
 .graph__data {
