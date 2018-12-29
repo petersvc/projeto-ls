@@ -1,10 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Titillium+Web:200i,400,700);
+@import url(https://fonts.googleapis.com/css?family=Abel);
 .container {
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template: 2fr 13fr 1fr / 1fr 1fr 1fr;
-  background-color: rgb(22,22,22);
+  background-color: rgb(18,18,18);
 }
 
 /* 
@@ -17,7 +17,7 @@
   left: 25%;
   width: 50%;
   opacity: 0.015;
-  animation: rotation 120s linear infinite;
+  animation: rotationn 120s linear infinite;
   z-index: 0;
 }
 
@@ -50,6 +50,8 @@
   align-items: center;
   margin-left: 3%;
   color: rgb(255,255,255);
+  background: rgba(12,12,12,1);
+  height: 10px;
   font-size: 1.1rem ;
   letter-spacing: 0.9rem;
   text-transform: uppercase;
@@ -228,7 +230,7 @@
 .graph__separator {
   width: 1px;
   height: 85%;
-  background-color: rgba(255,255,255,0.0);
+  background-color: rgba(255,255,255,0.018);
   box-shadow: 2px 0px 2px 0px rgba(0,0,0,0);
 }
 
@@ -257,21 +259,9 @@
   display: flex;
   flex-direction:row;
   align-items: center;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: rgba(255,255,255,1);
   z-index: 2!important;
-}
-
-
-.lang__start {
-  margin-left: 0px;
-  width: 13px;
-  height: 13px;
-  display: none;
-  border-radius: 100%;
-  background: linear-gradient(to right, rgb(91, 0, 116), rgb(116, 24, 55));
-  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
-  z-index: 1;
 }
 
 .lang__name {
@@ -284,7 +274,7 @@
   margin-right: 20px;
   width: 30vw;
   height: 6px;
-  background: linear-gradient(to right, rgb(91, 0, 116), rgb(116, 24, 55));
+  background: linear-gradient(to right,  rgb(30,0,56), rgb(91, 0, 116),  rgb(30,0,56));
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
   z-index: 0;
 }
@@ -320,7 +310,7 @@
   width: 13px;
   height: 13px;
   border-radius: 100%;
-  background: linear-gradient(to right, rgb(91, 0, 116), rgb(116, 24, 55));
+  background: linear-gradient(to right, rgb(91, 0, 116), rgb(30,0,56));
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
 }
 
@@ -386,18 +376,18 @@ html, body{
 p {font: normal 12px/1.5 titillium web!important;}
 
 h3, h4, h5, input { 
-  font-family: titillium web!important;
+  font-family: abel!important;
   text-transform: capitalize!important;
 }
 
 h1 {
-  font-weight: 200!important;
-  font-family: titillium web!important;
+  font-weight: lighter!important;
+  font-family: abel!important;
   text-transform: uppercase!important;
 }
 
 h2 {
-  font-family: titillium web!important;
+  font-family: abel!important;
   text-transform: uppercase!important;
 }
 
