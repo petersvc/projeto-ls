@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="dist/css/bundle.css">
+  <link rel="stylesheet" href="dist/css/all.min.css">
+  
+  <title>DevStats</title>
+</head>
+
+<body>
+  <div class="container">    
+    <img class="pat" src="img/pat5.svg" alt="">
+    <header class="header">  
+      
+      <div class="header__logotype">
+        <h1 class="logotype__left"><span>dev</span>stats</h1>
+      </div>      
+
+      <div class="header__choose">      
+          <i class="far fa-chart-bar choose__chart"></i>
+          <div class="choose__slash"></div>       
+          <i class="far fa-map choose__map"></i> 
+      </div>
+
+
+      <div class="stats__user">
+        <h3 class="user__name"></h3>
+        <img class="user__avatar" src="img/ava.jpg" alt="nada">
+      </div>
+
+
+    </header>
+
+    <main class="content">
+
+      <div class="content__dots"></div>
+
+      <div class="content__search">
+        <input class="search__name" type="text" value= "petersvc" placeholder="Digite o seu login do github" autofocus>
+      </div>
+
+      <section class="content__stats">
+
+        <div class="stats__separator"></div>
+        
+        <div class="stats__graph">
+          <div class="graph__data" id="graph__data">
+            <div class="data__lang">
+              <h2 class="lang__name">js</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+            </div>
+  
+            <div class="data__lang">
+              <h2 class="lang__name">Css</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+            </div>            
+  
+            <div class="data__lang">
+              <h2 class="lang__name">Html</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+              </div>
+  
+            <div class="data__lang">
+              <h2 class="lang__name">py</h2>
+              <div class="lang__start"></div>
+              <div class="lang__size"></div>
+              <h3 class="lang__byte">286kb</h3>
+            </div>
+          </div>
+
+          <div class="graph__rank">
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h2 class="percent_lang">js:</h2>
+              <h2 class="percent__number">25%</h2>
+            </div>
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h2 class="percent_lang">css:</h2>
+              <h2 class="percent__number">25%</h2>
+            </div>
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h2 class="percent_lang">html:</h2>
+              <h2 class="percent__number">25%</h2>
+            </div>
+
+            <div class="rank__percent">
+              <div class="percent__circle"></div>
+              <h2 class="percent_lang">py:</h2>
+              <h2 class="percent__number">25%</h2>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+    <!--
+    <section class="second">
+         
+        <button class="check__toggler">
+            <i class="fas fa-times"></i>
+            <i class="fas fa-check"></i>
+            <div class="toggler__circle"></div>
+        </button>
+    </section>
+  -->
+
+    <footer class="footer">
+ 
+      <div class="header__menu">
+        <i class="fas fa-braille"></i>
+        <h1>Menu</h1>
+      </div>
+      
+      <div class="header__angle">
+        <i class="fas fa-angle-left"></i>
+        <h1 class="angle__title">Linguagens</h1>  
+        <i class="fas fa-angle-right"></i>
+      </div>
+
+      <div class="header__magnifier">
+        <i class="fas fa-search"></i>
+      </div>
+      
+    </footer>
+
+  </div>
+
+  <script src="dist/js/jquery-3.3.1.min.js"></script>
+  <script src="dist/js/bundle.js"></script>
+
+  <script>
+      let id
+      const allowDrop = ev => ev.preventDefault()
+      const drag = ev => id = ev.target.id
+      const drop = ev => {
+          ev.preventDefault();
+          $('.drag__void').css('background', 'rgba(30,30,30,1)')
+          ev.target.append(document.getElementById(id));
+      }
+  </script>
+</body>
+
+</html>
