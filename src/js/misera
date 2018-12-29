@@ -1,31 +1,15 @@
 
-const langAcronym = lab => {
-    let acronym = Object.create()
-    acronym.push(lab)
-    console.log(acronym)
-    /*let b = new Array()
-    for (let i = 0; i < lab.length; i++){
-        b.push(acronym[i])
-        //console.log(acronym[i][0])
-    }
-    b[0][0] = 2
-    /*
-    newArray.map(index => {
-        if (index[0] === 'JavaScript'){
-            index.shift()
-            index.unshift('JS')
-        }
-        else if (laIndex[0] === 'Python')
-            laIndex[0] = 'Py'
+        /*$('.info__bio').html(user.bio)
+        $('.info__local').html(user.location)
+        $('.info__company').html(user.company)
+        $('.info__email').html(user.email)
 
-        else if (laIndex[0] === 'PostScript')
-            laIndex[0] = 'PS'
-
-        else if (laIndex[0] === 'CoffeeScript')
-            laIndex[0] = 'CS'
-
-        else if (laIndex[0] === 'Processing')
-            laIndex[0] = 'Proc.'
-        
+        if (user.bio == null) 
+            $('.git-company').html('Garoto(a) de Programa') 
         else
-            laIndex[0] = laIndex[0]
+            $('.git-company').html(user.bio)
+         
+        if (user.location == null)
+            $('.git-location').html(`<i class="fas fa-map-marker-alt mr-1"></i>Nárnia`)
+        else        
+            $('.git-location').html(`<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`)*/

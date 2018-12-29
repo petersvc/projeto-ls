@@ -7,20 +7,6 @@ const showData = () => {
     fetchUser( $('.search__name').val() ).then(user => { // usuário
         $('.user__avatar').attr('src', user.avatar_url)  // imagem do usuário
         $('.user__name').html(user.name)
-        $('.info__bio').html(user.bio)
-        $('.info__local').html(user.location)
-        $('.info__company').html(user.company)
-        $('.info__email').html(user.email)
-
-        if (user.bio == null) 
-            $('.git-company').html('Garoto(a) de Programa') 
-        else
-            $('.git-company').html(user.bio)
-         
-        if (user.location == null)
-            $('.git-location').html(`<i class="fas fa-map-marker-alt mr-1"></i>Nárnia`)
-        else        
-            $('.git-location').html(`<i class="fas fa-map-marker-alt mr-1"></i>${user.location}`)
         
         fetchRepo(user.repos_url).then(repos => { // respositórios
             const noForkeds = repos.filter(repo => repo.fork != true)            
@@ -35,7 +21,7 @@ const showData = () => {
                     $('.rank__percent').remove()
                     
                     const langSortNumber = langResult.slice(0).sort(numberSort)
-                    const langSortString = langResult.slice(0).sort(stringSort)
+                    //const langSortString = langResult.slice(0).sort(stringSort)
 
                     const la3 = langArray(langSortNumber)
 
@@ -50,13 +36,12 @@ const showData = () => {
                             sb = shortByte(langIndex[1])
 
                             let acro = langAcronym(langIndex[0])
-                            
-                            console.log(acro)
+
                             divId = `lang__size-${langIndex[0]}`
 
                             $('.graph__data').append(
                                 `<div class="data__lang"">
-                                    <h2 class="lang__name" title="${langIndex[0]}">${langIndex[0]}</h2>
+                                    <h2 class="lang__name" title="${langIndex[0]}">${acro}</h2>
                                     <div class="lang__start"></div>
                                     <div class="lang__size" id="${divId}"></div>
                                     <h3 class="lang__byte">${sb}</h3>
@@ -70,7 +55,7 @@ const showData = () => {
                             $('.graph__rank').append(
                                 `<div class="rank__percent">
                                     <div class="percent__circle"></div>
-                                    <h3 class="percent_lang">${langIndex[0]}:</h3>
+                                    <h2 class="percent_lang" title="${langIndex[0]}">${acro}:</h2>
                                     <h3 class="percent__number">${langIndex[2]}%</h3>
                                 </div>`
                             )
@@ -113,13 +98,13 @@ for (let i = 0; i < 5; i++){
 /*
 for (let i = 0; i < 64; i++) {
     if (i % 6 == 0)
-        $('.first__dots').append(`<div class="dots__dot dot-green" id="dot${i}"><i class="fas fa-square"></i></div>`)
+        $('.content__dots').append(`<div class="dots__dot dot-green" id="dot${i}"><i class="fas fa-square"></i></div>`)
     else if (i % 5 == 0)
-        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-square"></i></div>`)
+        $('.content__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-square"></i></div>`)
     else if (i % 4 == 0)
-        $('.first__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-square"></i></div>`)
+        $('.content__dots').append(`<div class="dots__dot" id="dot${i}"><i class="fas fa-square"></i></div>`)
     else
-        $('.first__dots').append(`<div class="dots__dot dot-red" id="dot${i}"><i class="fas fa-circle"></i></div>`)
+        $('.content__dots').append(`<div class="dots__dot dot-red" id="dot${i}"><i class="fas fa-circle"></i></div>`)
 
 }
 */

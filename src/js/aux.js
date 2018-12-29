@@ -45,24 +45,33 @@ const langArray = langResult => { // Cria o array completo das linguagens -> [la
 
     la.pop() // remove o indice que guarda os bytes totais
 
-    console.log(la) // langArray
-
     return la
-}
-
-const langAcronym = langIndex => {
-    let acronym = ''
-        if (langIndex == 'JavaScript'){ // index[0] contem o nome da linguagem
-            acronym = 'JS'
-        }
-    console.log(acronym)
-    return acronym
 }
 
 const percentCalc = (langByte, total) => {
     let calc = 0
     calc = langByte * 100 / total
     return calc
+}
+
+const langAcronym = langIndex => {
+    const acronyms = {
+        JavaScript: 'js',
+        PostScript: 'ps',
+        CoffeeScript: 'cs',
+        TypeScript: 'ts',
+        Python: 'py',
+        Fortran: 'fap',
+        Processing: 'proc',
+        'Jupyter Notebook': 'jn',
+    }
+
+    let acronym = langIndex
+
+    if (acronyms[acronym])
+        acronym = acronyms[acronym]
+
+    return acronym
 }
 
  const numberSort = (a, b) => {
@@ -84,7 +93,7 @@ const stringSort = (a, b) => {
 const shortByte = bytes => {
     let shortBytes = 0
 
-    if (bytes > 99999){
+    if (bytes > 999999){
         shortBytes = (bytes / 1048576).toFixed(2)
         shortBytes += 'mb'
     }
