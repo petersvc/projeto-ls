@@ -16,7 +16,7 @@
   left: 25%;
   width: 50%;
   opacity: 0.015;
-  animation: rotationn 120s linear infinite;
+  animation: rotation 180s linear infinite;
   z-index: 0;
 }
 
