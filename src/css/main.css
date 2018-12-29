@@ -82,7 +82,7 @@ YELLOw rgb(221, 176, 51)
   left: 25%;
   width: 50%;
   opacity: 0.015;
-  animation: rotationn 120s linear infinite;
+  animation: rotation 120s linear infinite;
   z-index: 0;
 }
 
