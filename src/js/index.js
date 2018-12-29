@@ -6,7 +6,11 @@ import '../css/reset.css'
 const showData = () => {    
     fetchUser( $('.search__name').val() ).then(user => { // usuário
         $('.user__avatar').attr('src', user.avatar_url)  // imagem do usuário
-        $('.user__name').html(user.name)
+
+        if (user.name != null)
+            $('.user__name').html(user.name)
+        else
+            $('.user__name').html(user.login)
         
         fetchRepo(user.repos_url).then(repos => { // respositórios
             const noForkeds = repos.filter(repo => repo.fork != true)            
