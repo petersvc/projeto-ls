@@ -16,7 +16,7 @@
   left: 25%;
   width: 50%;
   opacity: 0.015;
-  animation: rotation 180s linear infinite;
+  animation: rotationn 180s linear infinite;
   z-index: 0;
 }
 
@@ -427,6 +427,41 @@ html{
 }
 
 }
+
+@media screen and (min-width: 500px){
+  html{
+    font-size: 11px!important;
+  }
+  
+  .pat {
+    bottom: 18%;
+    left: 5.5%;
+    width: 90%;
+  }
+  
+  .header__menu h1 {
+    display: none;
+  }
+  
+  .data__lang {
+    margin-left: 0;
+  }
+  
+  .graph__data {
+    height: 50%;
+    margin-top: 0;
+  }
+  
+  .graph__rank {
+    width: 90%;
+  }
+  
+  .rank__percent {
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+  
+  }
 
 @media screen and (min-width: 1000px){
 html{
