@@ -3,6 +3,7 @@ import { langSum, langArray, numberSort, stringSort, shortByte, langAcronym } fr
 import { tk } from '../../token'
 import '../css/main.css'
 import '../css/reset.css'
+import '../css/media_queries.css'
 
 const showData = () => {
     let token = '' // necessário para fazer mais de 60 requisições/hora 
@@ -83,6 +84,21 @@ for (let i = 0; i < 5; i++){
     $('.stats__separator').append(`<div class="graph__separator" id="separator${i}"></div>`)
 }
 
+$(".content__intro").bind("wheel", () => {
+    $('.content__intro').hide(0)
+    $('.header').css('display', 'grid')
+    $('.content__search').css('display', 'flex')
+    $('.content__stats').css('display', 'grid')
+    $('.footer').css('display', 'grid')
+});
+/*
+$(document).ready(function(){
+
+    let nextPage = () => {
+       
+    }
+})*/
+ 
 
 /*
 https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s

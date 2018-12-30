@@ -65,7 +65,9 @@ const langAcronym = langIndex => {
         Processing: 'proc',
         'Jupyter Notebook': 'jn',
         Gherkin : 'ghkn',
-        Kotlin: 'ktln'
+        Kotlin: 'ktln',
+        Elixir: 'elxr',
+        Clojure: 'cljr'
     }
 
     let acronym = langIndex
