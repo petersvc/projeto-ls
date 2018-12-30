@@ -50,7 +50,7 @@
   align-items: center;
   margin-left: 3%;
   color: rgb(255,255,255);
-  background: rgba(12,12,12,1);
+  background: rgba(12,12,12,0);
   height: 10px;
   font-size: 1.1rem ;
   letter-spacing: 0.9rem;
@@ -58,7 +58,7 @@
 }
 
 .header__logotype span {
-  color: rgb(92, 1, 114);
+  color: rgb(249, 41, 66);
 }
 
 .header__menu {
@@ -117,36 +117,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: rgba(255,255,255,0.3);
+  margin-left: 0px;
+  color: rgba(255,255,255,0.4);
 }
 
-.header__choose i:hover {
-  color: rgba(255,255,255,1);
+.header__choose h1 {
+  font-size: 0.95rem;
+  letter-spacing: 0.3rem;
+  transition: all 0.3s linear;
+  z-index: 1;
+}
+
+.header__choose h1:hover {
+  color: rgb(249, 41, 66);
 }
 
 .choose__chart {
-  font-size: 1.8rem;
-  color: rgb(91, 0, 116);
+  margin-top: 2px;
+  color: rgba(255,255,255,1);
+  border-bottom: 1px solid rgba(249, 41, 66,0);
 }
 
-.header__choose i {
-  font-size: 1.7rem;
-  transition: all 0.3s linear;
-  z-index: 1;/*
-  text-align: center;
-  width: 40px;
-  height: 35px;
-  line-height: 35px;
-  vertical-align: middle;
-  box-shadow: 2px 2px 2px 0px rgba(0,0,0,0);
-  background: rgba(10,10,10,0);*/
-}
 
 .choose__slash {
   margin-left: 15px;
   margin-right: 15px;
   width: 1px;
-  height: 30%;
+  height: 25%;
   background-color: rgba(255,255,255,0.2);
   z-index: 2;
 }
@@ -275,7 +272,7 @@
   margin-right: 20px;
   width: 30vw;
   height: 6px;
-  background: linear-gradient(to right,  rgb(30,0,56), rgb(91, 0, 116),  rgb(30,0,56));
+  background: linear-gradient(to right,  rgb(249, 41, 66), rgb(150,0,11) );
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
   z-index: 0;
 }
@@ -308,10 +305,10 @@
 
 .percent__circle {
   margin-right: 8px;
-  width: 13px;
-  height: 13px;
+  width: 10px;
+  height: 10px;
   border-radius: 100%;
-  background: linear-gradient(to right, rgb(91, 0, 116), rgb(30,0,56));
+  background: linear-gradient(to right, rgb(200,200,200), rgb(200,200,200) );
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
 }
 
@@ -426,7 +423,7 @@ html{
 }
 
 }
-
+/*
 @media screen and (min-width: 500px){
   html{
     font-size: 11px!important;
@@ -461,7 +458,7 @@ html{
   }
   
   }
-
+*/
 @media screen and (min-width: 1000px){
 html{
   font-size: 13px!important;
