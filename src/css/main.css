@@ -15,8 +15,8 @@
   bottom: -14%;
   left: 25%;
   width: 50%;
-  opacity: 0.00;
-  animation: rotationn 180s linear infinite;
+  opacity: 0.015;
+  animation: rotation 180s linear infinite;
   z-index: 0;
 }
 
@@ -320,7 +320,7 @@
   flex-direction:row;
   align-items: center;
   font-size: 0.9rem;
-  letter-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
   color: rgba(255,255,255,1);
   z-index: 2!important;
 }
@@ -333,7 +333,7 @@
 .lang__size {
   margin-left: 20px;
   margin-right: 20px;
-  width: 30vw;
+  width: 50vw;
   height: 6px;
   background: linear-gradient(to right,  rgb(249, 41, 66), rgb(150,0,11) );
   border-radius: 10px;
@@ -351,7 +351,7 @@
   align-self: center;
   justify-content: center;
   font-size: 0.9rem;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
   color: rgba(255,255,255,1);
   width: 70%;
   z-index: 2!important;
@@ -373,8 +373,8 @@
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  border: px solid rgb(249, 41, 66);
-  background: linear-gradient(to right,  rgb(249, 41, 66), rgb(150,0,11) );
+  border: 1px solid rgb(249, 41, 66);
+  /*background: linear-gradient(to right,  rgb(249, 41, 66), rgb(150,0,11) );*/
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
 }
 

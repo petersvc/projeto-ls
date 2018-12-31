@@ -50,7 +50,7 @@ const showData = () => {
                                     <h2 class="lang__name" title="${langIndex[0]}">${acro}</h2>
                                     <div class="lang__start"></div>
                                     <div class="lang__size" id="${divId}"></div>
-                                    <h3 class="lang__byte">${sb}</h3>
+                                    <h3 class="lang__byte">${langIndex[2]}%</h3>
                                 </div>`
                             )
 
@@ -62,7 +62,7 @@ const showData = () => {
                                 `<div class="rank__percent">
                                     <div class="percent__circle"></div>
                                     <h2 class="percent_lang" title="${langIndex[0]}">${acro}:</h2>
-                                    <h3 class="percent__number">${langIndex[2]}%</h3>
+                                    <h3 class="percent__number">${sb}</h3>
                                 </div>`
                             )
                         }
