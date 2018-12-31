@@ -36,6 +36,7 @@ const showData = () => {
                     let graphDataWidth = document.getElementById('graph__data').offsetWidth
                     let sizeWidth = 0
                     let sizeId = ''
+                    let rankCount = 1
 
                     la.map(langIndex => {
                         if (langIndex[2] > 0) {
@@ -50,7 +51,7 @@ const showData = () => {
                                     <h2 class="lang__name" title="${langIndex[0]}">${acro}</h2>
                                     <div class="lang__start"></div>
                                     <div class="lang__size" id="${divId}"></div>
-                                    <h3 class="lang__byte">${langIndex[2]}%</h3>
+                                    <h2 class="lang__byte">${langIndex[2]}%</h2>
                                 </div>`
                             )
 
@@ -60,11 +61,12 @@ const showData = () => {
 
                             $('.graph__rank').append(
                                 `<div class="rank__percent">
-                                    <div class="percent__circle"></div>
+                                    <h2 class="percent__circle">${rankCount}.</h2>
                                     <h2 class="percent_lang" title="${langIndex[0]}">${acro}:</h2>
-                                    <h3 class="percent__number">${sb}</h3>
+                                    <h2 class="percent__number">${sb}</h2>
                                 </div>`
                             )
+                            rankCount++
                         }
                     })                               
                 })                
@@ -84,13 +86,17 @@ for (let i = 0; i < 5; i++){
     $('.stats__separator').append(`<div class="graph__separator" id="separator${i}"></div>`)
 }
 
-$(".content__intro").bind("wheel", () => {
-    $('.content__intro').hide(0)
-    $('.header').css('display', 'grid')
-    $('.content__search').css('display', 'flex')
-    $('.content__stats').css('display', 'grid')
-    $('.footer').css('display', 'grid')
-});
+if ($('.content__intro').css('display') != 'none'){
+    $(document).bind('wheel', () => {
+        $('.content__intro').hide(0)
+        $('.header').css('display', 'grid')
+        $('.content__search').css('display', 'flex')
+        $('.content__stats').css('display', 'grid')
+        $('.footer').css('display', 'grid')
+    });
+}
+
+
 /*
 $(document).ready(function(){
 

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Tulpen+One');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Tulpen+One|Titillium+Web:200,300,400,700');
 
 
 html, body{
@@ -8,20 +8,20 @@ html, body{
 p {font: normal 12px/1.5 titillium web}
 
 h3, h4, h5 {
-  font-weight: bolder;
-  font-family: open sans condensed;
+  font-weight: lighter;
+  font-family: titillium web;
   text-transform: capitalize;
 }
 
 h1, input {
-  font-weight: lighter;
-  font-family: open sans condensed;
+  font-weight: normal;
+  font-family: titillium web;
   text-transform: uppercase;
 }
 
 h2 {
-  font-weight: bolder;
-  font-family: open sans condensed;
+  font-weight: normal;
+  font-family: titillium web;
   text-transform: uppercase;
 }
 

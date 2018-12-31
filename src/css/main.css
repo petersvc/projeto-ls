@@ -118,8 +118,8 @@
 }
 
 .header__choose h1 {
-  font-size: 0.95rem;
-  letter-spacing: 0.3rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
   transition: all 0.3s linear;
   z-index: 1;
 }
@@ -187,17 +187,17 @@
 
 .search__name {
   width: 80%;
-  font-size: 2rem;
-  font-weight: lighter;
+  font-size: 1.8rem;
+  letter-spacing: 0.6rem;
+  font-weight: normal;
   font-style: italic;
   text-transform: uppercase;
   color: rgba(80,80,80,1);
   text-align: center;
-  letter-spacing: 1rem;
-  background-color: transparent;
-  z-index: 2;
+  background: none;
   border: none;
   outline: none;
+  z-index: 2;
 }
 
 .search__name::placeholder{
@@ -218,10 +218,10 @@
 }
 
 .intro__logotype h1 {
-  margin-left: 2.5%;
+  margin-left: 3.5%;
   color: rgb(255,255,255);
-  font: lighter 2.5rem tulpen one;
-  letter-spacing: 2.5rem;
+  font: lighter 2.8rem tulpen one;
+  letter-spacing: 2.6rem;
   text-transform: uppercase;
 }
 
@@ -234,10 +234,12 @@
 .intro__desc {
   grid-area: 2 / 1 / 3 / 1;
   place-self: end center;
-  color: rgb(255,255,255);
-  font: bolder 1rem/2.4 open sans condensed;
-  letter-spacing: 0.4rem;
-  text-transform: uppercase;
+  margin-top: 0%;
+  color: rgba(255,255,255,1);
+  font: 200 1.2rem/2.6 titillium web;
+  letter-spacing: 0rem;
+  text-transform: ;
+  overflow: hidden;
   text-align: center;
 }
 
@@ -252,7 +254,7 @@
   color: rgba(226, 36, 52, 1);
   font: bolder 0.9rem/1.4 open sans condensed;
   letter-spacing: 0.1rem;
-  animation: updown 1500ms alternate infinite;
+  animation: updownn 1500ms alternate infinite;
   animation-timing-function: ease;
 }
 
@@ -320,7 +322,6 @@
   flex-direction:row;
   align-items: center;
   font-size: 0.9rem;
-  letter-spacing: 0.2rem;
   color: rgba(255,255,255,1);
   z-index: 2!important;
 }
@@ -334,7 +335,7 @@
   margin-left: 20px;
   margin-right: 20px;
   width: 50vw;
-  height: 3px;
+  height: 4px;
   background: linear-gradient(to right, rgb(248, 41, 65), rgb(151, 1, 12) );
   border-radius: 10px;
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
@@ -351,7 +352,6 @@
   align-self: center;
   justify-content: center;
   font-size: 0.9rem;
-  letter-spacing: 0.1rem;
   color: rgba(255,255,255,1);
   width: 70%;
   z-index: 2!important;
@@ -369,13 +369,14 @@
 }
 
 .percent__circle {
-  margin-right: 8px;
+  margin-right: 14px;
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  border: 1px solid rgb(249, 41, 66);
+  border: 0px solid rgb(249, 41, 66);
   /*background: linear-gradient(to right,  rgb(249, 41, 66), rgb(150,0,11) );*/
   box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  font-weight: bolder;
 }
 
 .percent__number {
