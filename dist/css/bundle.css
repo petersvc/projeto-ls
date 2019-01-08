@@ -1,10 +1,10 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Tulpen+One|Titillium+Web:200,300,400,700);
+@import url(https://fonts.googleapis.com/css?family=Rajdhani:300,400,700|Titillium+Web:400|Exo);
 .container {
   width: 100vw;
   height: 100vh;
   display: grid;
   grid-template: 2fr 13fr 1fr / 1fr 1fr 1fr;
-  background: linear-gradient(to right, rgb(12,12,12), rgb(20,20,20));
+  background: linear-gradient(to right, rgb(10, 12, 15), rgb(20, 22, 25),rgb(10, 12, 15));
 }
 
 /* 
@@ -16,7 +16,7 @@
   bottom: -14%;
   left: 25%;
   width: 50%;
-  opacity: 0.015;
+  opacity: 0;
   animation: rotationn 180s linear infinite;
   z-index: 0;
 }
@@ -53,16 +53,16 @@
 }
 
 .header__logotype h1 {
-  color: rgb(255,255,255);
+  color: rgb(239, 73, 35);
   background: rgba(12,12,12,0);
-  font: lighter 1.5rem tulpen one;
-  letter-spacing: 0.7rem;
+  font: bolder 1.5rem rajdhani;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
 .header__logotype span {
-  margin-right: 10%;
-  color: rgb(249, 41, 66);
+  margin-right: 0%;
+  color: rgb(255,255,255);
 }
 
 .header__menu {
@@ -76,7 +76,8 @@
 .header__menu i {
   margin-right: 8%;
   color: rgba(255,255,255,1);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  transform: scaleX(1.2);
   
 }
 
@@ -120,18 +121,18 @@
 
 .header__choose h1 {
   font-size: 0.9rem;
-  letter-spacing: 0.2rem;
   transition: all 0.3s linear;
   z-index: 1;
 }
 
 .header__choose h1:hover {
-  color: rgb(249, 41, 66);
+  color: rgb(239, 73, 35);
 }
 
 .choose__chart {
   margin-top: 2px;
-  color: rgba(255,255,255,1);
+  color: rgb(239, 73, 35);
+  font-weight: bolder;
   border-bottom: 1px solid rgba(249, 41, 66,0);
 }
 
@@ -180,7 +181,7 @@
   display: flex;
   align-items: space-evenly;
   justify-content: center;
-  height: 8%;
+  height: 6%;
   background: rgba(30,30,30,0);
   display: none;
   z-index: 2;
@@ -215,59 +216,93 @@
 
 .intro__logotype {
   grid-area: 2 / 1 / 3 / 1;
+  opacity: ;
 }
 
 .intro__logotype h1 {
   margin-left: 3.5%;
-  color: rgb(255,255,255);
-  font: lighter 2.8rem tulpen one;
-  letter-spacing: 2.6rem;
+  color: rgb(239, 73, 35);
+  font: bolder 7rem rajdhani;
+  letter-spacing: 2.2rem;
   text-transform: uppercase;
+  line-height: 100%;
 }
 
 .intro__logotype span {
-  margin-right: 10%;
-  color: rgb(249, 41, 66);
+  margin-right: 0%;
+  color: rgb(239, 73, 35);
 }
 
 
 .intro__desc {
-  grid-area: 2 / 1 / 3 / 1;
-  place-self: end center;
-  margin-top: 0%;
-  color: rgba(255,255,255,1);
-  font: 200 1.2rem/2.6 titillium web;
-  letter-spacing: 0rem;
-  text-transform: ;
+  grid-area: 3 / 1 / 3 / 1;
+  place-self: start center;
+  margin-top: 1%;
+  margin-right: 0%;
+  color: rgb(255,255,255);
+  font-size: 1.1rem;
+  letter-spacing:;
+  text-transform: uppercase;
   overflow: hidden;
   text-align: center;
 }
 
+.intro__skip {
+  grid-area: 3 / 1 / 4 / 1;
+  margin: 5% 0% 0% 0%;
+  place-self: start center;
+  color: rgba(255,255,255, 0.6);
+  font-size: 1.2rem;
+  width: 210px;
+  height: 30px;
+  border: 1px solid rgba(60, 83, 106, 0.5);
+  background: rgba(16, 121, 108, 0.2);
+  line-height: 30px;
+  vertical-align: middle;
+  text-align: center;
+  overflow: hidden;
+  transform: rotate(0deg);
+}
+
 .intro__scrolltip {
   grid-area: 3 / 1 / 4 / 1;
-  place-self: center center;
+  place-self: end center;
   display: flex;
   flex-flow: column wrap;
   justify-content: space-around;
   align-items: center;
-  margin-top: 8%;
-  color: rgba(226, 36, 52, 1);
-  font: bolder 0.9rem/1.4 open sans condensed;
-  letter-spacing: 0.1rem;
-  animation: updownn 1500ms alternate infinite;
-  animation-timing-function: ease;
+  margin-bottom: 2%;
 }
 
-.scrolltip__dash {
-  margin-top: 15%;
-  width: 1px;
-  height: 40px;
-  background-color: rgba(255,255,255,1);
+.intro__scrolltip h1 {
+  color: rgba(255,255,255,1);
+  font-size: 0.8rem;
+  display: none;
 }
+
+.scrolltip__mouse {
+  display: flex;
+  justify-content: center;
+  width: 25px;
+  height: 40px;
+  border: 2px solid rgba(255,255,255,1);
+  border-radius: 50px;
+}
+
+.mouse__wheel{
+  margin-top: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 100%;
+  background-color: rgba(200,200,200,1);
+  animation: updownn 2000ms infinite;
+  animation-timing-function: ease;
+} 
+
 
 @keyframes updown {
-  0% {margin-top: 8%; opacity: 1;}
-  100% {margin-top: 10%; opacity: 0;}
+  0% {margin-top: 5px; opacity: 1;}
+  100% {margin-top: 25px; opacity: 0;}
 }
 
 .content__stats {
@@ -276,7 +311,7 @@
   width: 100%;
   height: 100%;
   background: rgba(9,9,90,0);
-  display: none;  
+   
 }
 
 .stats__separator {
@@ -296,6 +331,92 @@
   box-shadow: 2px 0px 2px 0px rgba(0,0,0,0);
 }
 
+.resume {
+  grid-area: 1 / 1 / 1 / 4;
+  background:;
+  display: grid;
+  grid-template: 1fr / 1fr 1fr;
+}
+
+.resume__img {
+  grid-area: 1 / 1 / 1 / 3;
+  place-self: center center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border-radius: 100%;
+  width: 40vw;
+  height: 40vw;
+  border-right: 1px solid rgba(16, 121, 108, 0.2);
+}
+
+.inner-circle {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  border-radius: 100%;
+  border-left: 1px solid rgba(16, 121, 108, 0.2);
+}
+
+.user__avatar {
+  width: 90%;
+  border-radius: 100%;
+  filter: grayscale(1);
+  opacity: 0.14;
+}
+
+.resume__user {
+  grid-area: 1 / 1 / 1 / 2;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.user__row {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  opacity: 0.4;
+  margin-left: 20%;
+}
+
+.data-title {
+  color: rgb(239, 73, 35);
+  font-size: 1.2rem;
+}
+
+.data-string {
+  color: rgb(255,255,255);
+  font-size: 1.4rem;
+  border: 1px solid rgba(60, 83, 106, 0.5);
+  background: rgba(16, 121, 108, 0.2);
+  margin-left: 20px;
+  height: 25px;
+  width: 200px;
+  line-height: 25px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.data-number {
+  color: rgb(255,255,255);
+  font-size: 1.3rem;
+  border: 1px solid rgba(60, 83, 106, 0.5);
+  background: rgba(16, 121, 108, 0.2);
+  margin-left: 20px;
+  height: 35px;
+  width: 50px;
+  line-height: 35px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.between {
+  margin-left: 40px;
+}
 
 .stats__graph {
   grid-area: 1 / 1 / 1 / 4;
@@ -304,6 +425,7 @@
   align-items: center;
   flex-direction: column;  
   background: rgba(46,46,46,0);
+  display: none; 
 }
 
 .graph__data {
@@ -322,7 +444,7 @@
   flex-direction:row;
   align-items: center;
   font-size: 0.9rem;
-  color: rgba(255,255,255,1);
+  color: rgb(255,255,255);
   z-index: 2!important;
 }
 
@@ -335,10 +457,10 @@
   margin-left: 20px;
   margin-right: 20px;
   width: 50vw;
-  height: 4px;
-  background: linear-gradient(to right, rgb(248, 41, 65), rgb(151, 1, 12) );
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.2);
+  height: 8px;
+  background: rgb(230, 30, 30);
+  border-radius: 0px;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0,0.8);
   z-index: 0;
 }
 
@@ -355,6 +477,7 @@
   color: rgba(255,255,255,1);
   width: 70%;
   z-index: 2!important;
+  display: none; 
 }
 
 
@@ -383,39 +506,22 @@
   margin-left: 6px;
 }
 
-.stats__user {
-  grid-area: 1 / 3 / 1 / 4;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin-right: 8%;
-}
-
-.user__avatar {
-  border-radius: 100%;
-  width: 31px;
-  height: 31px;
-  border: 1px solid rgb(91, 0, 116);
-}
-
-.user__name {
-  margin-top: 0%;
-  margin-right: 10px;
-  color: rgba(255,255,255,1);
-  font-size: 1.1rem;
-  text-align: right;
-}
-
-.content__dots {
+.pattern{
   grid-area: 1 / 1 / 4 / 4;
-  width: 35%;
   margin-top: 0%;
-  margin-left: 17%;
-  place-self: center center;
-  display: flex;
+  margin-left: 0%;
+  place-self: start start;
   position: absolute;
+  display: flex;
   flex-wrap: wrap;
   z-index: 0;
+}
+
+.pattern__block {
+  width: 5vw;
+  height: 5vw;
+  border: 0px solid rgba(255,255,255,0.04);
+  color: rgba(255,255,255,0.25)
 }
 
 /*
@@ -495,13 +601,13 @@ h3, h4, h5 {
 
 h1, input {
   font-weight: normal;
-  font-family: titillium web;
+  font-family: rajdhani;
   text-transform: uppercase;
 }
 
 h2 {
-  font-weight: normal;
-  font-family: titillium web;
+  font-weight: bolder;
+  font-family: rajdhani;
   text-transform: uppercase;
 }
 

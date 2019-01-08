@@ -82,8 +82,12 @@ $('.search__name').keyup( (event) => {
     }
 })
 
-for (let i = 0; i < 5; i++){
+for (let i = 0; i < 0; i++){
     $('.stats__separator').append(`<div class="graph__separator" id="separator${i}"></div>`)
+}
+
+for (let i = 0; i < 200; i++){
+    $('.pattern').append(`<div class="pattern__block" id="block${i}">.</div>`)
 }
 
 if ($('.content__intro').css('display') != 'none'){
@@ -91,7 +95,7 @@ if ($('.content__intro').css('display') != 'none'){
         $('.content__intro').hide(0)
         $('.header').css('display', 'grid')
         $('.content__search').css('display', 'flex')
-        $('.content__stats').css('display', 'grid')
+        $('.content__statss').css('display', 'grid')
         $('.footer').css('display', 'grid')
     });
 }
