@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,700|Titillium+Web:400|Exo');
+@import url('https://fonts.googleapis.com/css?family=Exo+2');
 
 html, body{
   overflow: hidden;
@@ -8,13 +8,13 @@ p {font: normal 12px/1.5 titillium web}
 
 h3, h4, h5 {
   font-weight: lighter;
-  font-family: titillium web;
+  font-family: exanregular;
   text-transform: capitalize;
 }
 
 h1, input {
   font-weight: normal;
-  font-family: rajdhani;
+  font-family: 'exanregular';
   text-transform: uppercase;
 }
 
@@ -35,9 +35,9 @@ html{
   width: 90%;
 }
 
-.header__menu h1 {
+/*.header__menu h1 {
   display: none;
-}
+}*/
 
 .data__lang {
   margin-left: 0;

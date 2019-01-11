@@ -6,19 +6,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="dist/css/bundle.css">
   <link rel="stylesheet" href="dist/css/all.min.css">
-  <link rel="stylesheet" type="text/css" href="http://csshake.surge.sh/csshake-slow.min.css">
+  <link rel="stylesheet" href="dist/fonts/stylesheet.css">
   
   <title>DevStats</title>
 </head>
 
 <body>
   <div class="container">    
-    <img class="pat" src="dist/img/pat5.svg" alt="">
+    <img class="pat" src="dist/img/pat6.svg" alt="">
     <div class="pattern"></div>
+
+    <div class="corner top-left">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+    </div>
+
+    <div class="corner2 top-right">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+    </div>
+
+    <div class="corner bottom-left">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+    </div>
+
+    <div class="corner2 bottom-right">
+      <div class="horizontal"></div>
+      <div class="vertical"></div>
+    </div>
+
     <header class="header">  
       
       <div class="header__logotype">
-        <h1 class="logotype__left">dev<br>stats.</h1>
+        <h1 class="logotype__left">[devstats]</h1>
       </div>      
 
       <div class="header__choose">      
@@ -30,7 +51,7 @@
 
       <div class="header__menu">
         
-        <i class="fas fa-bars"></i>
+        <h1 class="menu__h">[ menu ]</h1>
       </div>
       <!--
       <div class="stats__user">
@@ -38,36 +59,39 @@
         <img class="user__avatar" src="dist/img/ava.jpg" alt="nada">
       </div>-->
 
-
     </header>
 
     <main class="content">
-
-     
 
       <div class="content__search">
         <input class="search__name" type="text" value= "johnoliver23" placeholder="Digite o seu login do github" autofocus>
       </div>
 
       <section class="content__intro">
-        
+
         <div class="intro__logotype">
-          <h1 class="shake">dev<br>stats.</h1>
+          <h1 class="shake">[devstats]</h1>
         </div>
-        
+
+        <div class="area__line">
+          <div class="line__left-top"></div>
+          <h1 class="line__link">[+]</h1>
+        </div>
+
         <h1 class="intro__desc">
-            Explore suas estatísticas e confira o developer roadmap 2018.
+            <span>DRM 2018</span> &#8212 Confira o developer roadmap 2018 e descubra quais são
+            as principais tendências em tecnologias para o desenvolvedor.
         </h1>
 
         <div class="intro__scrolltip">
-          <h1>role para continuar</h1>
+          
           <div class="scrolltip__mouse">
-            <div class="mouse__wheel">
-            </div>
+            <div class="mouse__wheel"></div>
           </div>
+          <h1>role para continuar</h1>
         </div>
 
-        <h2 class="intro__skip">drm 2019</h2>
+        <h2 class="intro__skip"></h2>
 
       </section>
       
@@ -78,28 +102,48 @@
         <!-- RESUMO-->
 
         <div class="resume">
-          <div class="resume__user">
-            <div class="user__row">
-              <h2 class="data-title">nome</h2>
-              <h1 class="data-string user__name">PETER COSTA</h1>
-            </div>
-            <div class="user__row">
-              <h2 class="data-title">repositórios</h2>
-              <h1 class="data-number">34</h1>
-            </div>
-            <div class="user__row">
-              <h2 class="data-title between">linguagens</h2>
-              <h1 class="data-number">8</h1>
+          <div class="resume__basic">
+            <img class="basic__fingerprint" src="dist/img/fingerprint.svg" alt="nada">
+            <div class="basic__info">
+              <h1 class="info__title">nome:</h1><br>
+              <h1 class="info__value">peter costa</h1>
+              <div class="info__subjects">
+                <div class="subject subject__name"></div>
+                <div class="subject subject__email"></div>
+                <div class="subject subject__github"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="resume__img">e
-            <div class="inner-circle">
-              <img class="user__avatar" src="dist/img/ava.jpg" alt="nada">
+
+          <div class="pat-user">
+            <img class="pat2" src="dist/img/pat8.svg" alt="">
+          </div>          
+        </div>
+
+        <nav class="git-nav">
+          <div class="nav-area git-nav__resume">
+                    
+            <div class="nav-corner n-top-left">
+            </div>  
+            <div class="nav-corner n-top-rightt">
+            </div>  
+            <div class="nav-corner n-bottom-left">
+            </div>  
+            <div class="nav-corner n-bottom-right">
             </div>
+
           </div>
-          
-        </div>-
+
+          <div class="nav-area git-nav__repos">
+
+          </div>
+          <div class="nav-area git-nav__langs">
+
+          </div>
+          <div class="nav-area git-nav__roadmap">
+
+          </div>
+        </nav>
         
         <!--Linguagens-->
 
