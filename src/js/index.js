@@ -90,6 +90,12 @@ for (let i = 0; i < 350; i++){
     $('.pattern').append(`<div class="pattern__block" id="block${i}">.</div>`)
 }
 
+$('.nav-area').append(`<div class="nav-corner n-top-left"></div>  
+<div class="nav-corner n-top-right"></div>  
+<div class="nav-corner n-bottom-left"></div>  
+<div class="nav-corner n-bottom-right"></div>
+<h1 class="item-number">[00x]</h1>`)
+
 if ($('.content__intro').css('display') != 'none'){
     $(document).bind('wheel', () => {
         $('.content__intro').hide(0)
