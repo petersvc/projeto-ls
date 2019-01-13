@@ -22,6 +22,8 @@ const showData = () => {
             const noForkeds = repos.filter(repo => repo.fork != true)            
             const forkeds = repos.length - noForkeds.length      
             const validsRepos = noForkeds.filter(repo => repo.language !== null)
+
+            $('.git-nav__repos .item-number').html(`[${repos.length}]`)
             
             fetchLang(validsRepos, token).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem                    
@@ -94,7 +96,7 @@ $('.nav-area').append(`<div class="nav-corner n-top-left"></div>
 <div class="nav-corner n-top-right"></div>  
 <div class="nav-corner n-bottom-left"></div>  
 <div class="nav-corner n-bottom-right"></div>
-<h1 class="item-number">[00x]</h1>`)
+<img src="dist/img/diagonal.svg" class="bg">`)
 
 if ($('.content__intro').css('display') != 'none'){
     $(document).bind('wheel', () => {

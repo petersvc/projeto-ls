@@ -6,6 +6,23 @@
   background: linear-gradient(to right, rgb(10,10,10), rgb(13,13,13),rgb(5,5,5));
 }
 
+.leftbar {
+  position: absolute;
+  top: 3%;
+  left: 1%;
+  height: 94%;
+  opacity: 0.2;
+}
+
+.rightbar {
+  position: absolute;
+  top: 3%;
+  right: 1%;
+  height: 94%;
+  opacity: 0.2;
+  transform: rotate(180deg);
+}
+
 .top-left{
   grid-area: 1 / 1 / 1 / 1;
   place-self: start start;
@@ -64,18 +81,23 @@
 }
 
 
+.corner,.corner2 {
+  display: none;
+}
+
 /* 
   --- HEADER ---- 
 */
 
 .pat {
   position: absolute;
-  bottom: 1.2%;
-  left: 18.2%;
-  width: 60%;
-  opacity: 0.04;
-  animation: rotation 200s linear infinite;
+  bottom: 18.2%;
+  left: 28%;
+  width: 45%;
+  opacity: 0.03;
+  animation: rotationn 200s linear infinite;
   transform-origin: 52.8% 47.1%;
+  display: ;
   z-index: 0;
 }
 
@@ -113,13 +135,9 @@
 .header__logotype h1 {
   color: rgb(144,31,34);
   background: rgba(12,12,12,0);
-  margin-top: 50%;
-  line-height: 150%;
-  border-bottom: 5px solid rgba(119, 19, 13, 0);
-  width: 20px;
-  height: 25px;
+  margin: 20% 0 0 25%;
   font: normal 1.5rem 'aileronsregular';
-  letter-spacing: 0.3rem;
+  letter-spacing: 1rem;
   text-transform: uppercase;
 }
 
@@ -134,8 +152,8 @@
 
 .header__menu h1 {
   font-size: 1rem;
-  background-color: rgba(90,90,90,1);
-  color: rgb(0,0,0);
+  background-color: rgba(90,90,90,0);
+  color: rgba(0,0,0,0);
   font-weight: bolder;
 }
 
@@ -234,7 +252,7 @@
   justify-content: center;
   height: 6%;
   background: rgba(30,30,30,0);
-  display: none;
+  display:none;
   z-index: 2;
 }
 
@@ -351,7 +369,7 @@
 .intro__scrolltip h1 {
   color: rgb(150,150,150);
   font-size: 0.8rem;
-  letter-spacing: 0.1rem;
+  letter-spacing:;
 }
 
 .scrolltip__mouse {
@@ -420,7 +438,7 @@
   height: 40vw;
   border: 0px solid red;
   border-radius: 100%;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 .pat2 {
@@ -431,9 +449,10 @@
 .resume__basic {
   grid-area: 1 / 1 / 1 / 2;
   place-self: center start;
+  margin-top: 4%; 
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 21vw; 
   border: 1px solid rgba(16, 121, 108, 0);
 }
@@ -441,7 +460,6 @@
 /* nome, email, company, local, github*/
 
 .basic__fingerprint {
-  justify-self: flex-start;
   margin: 1% 6% 0 10%;
   width: 100px;
   opacity: 0.2;
@@ -449,7 +467,7 @@
 }
 
 .basic__info {
-  margin: 5% 20% 0 0;
+  margin: 5% 0% 0 0;
   color: rgba(90,90,90,1);
   font-size: 1rem;  
 }
@@ -486,6 +504,7 @@
 .git-nav {
   grid-area: 1 / 2 / 1 / 3;
   place-self: center start;
+  margin-top: 5%;
   display: flex;
   flex-flow: row wrap;
   align-content: space-evenly;
@@ -497,63 +516,82 @@
 
 .nav-area {
   display: grid;
+  display: ;
   grid-template: 1fr 1fr / 1fr 1fr;
   width: 13vw;
-  height: 8vw;
-  background:rgba(13,13,13,1);
+  height: 10vw;
+  border-radius: 100%;
+  background:rgba(14,14,14,0);
+  border: 1px dashed rgba(30,30,30,0);
+  margin: 20px 0 20px 0;
+}
+
+.bg {
+  grid-area: 1 / 1 / 3 / 3;
+  margin: 4% 0 0 0%;
+  width: 100%;
+  height: 92%;
+  opacity: 0.08;
+  z-index: 0;
 }
 
 .n-top-left {
   grid-area: 1 / 1 / 1 / 1;
   place-self: start start;
-  width: 2vw;
-  height: 2vw;
-  border-left: 1px solid rgba(20,20,20,1);
-  border-top: 1px solid rgba(20,20,20,1);
+  width: 1vw;
+  height: 1vw;
+  border-left: 2px solid rgba(30,30,30,1);
+  border-top: 2px solid rgba(30,30,30,1);
+  z-index: 1;
 }
 
 .n-top-right {
   grid-area: 1 / 2 / 1 / 2;
   place-self: start end;
-  width: 2vw;
-  height: 2vw;
-  border-right: 1px solid rgba(20,20,20,1);
-  border-top: 1px solid rgba(20,20,20,1);
+  width: 1vw;
+  height: 1vw;
+  border-right: 2px solid rgba(30,30,30,1);
+  border-top: 2px solid rgba(30,30,30,1);
+  z-index: 1;
 }
 
 .n-bottom-left {
   grid-area: 2 / 1 / 2 / 1;
   place-self: end start;
-  width: 2vw;
-  height: 2vw;
-  border-left: 1px solid rgba(20,20,20,1);
-  border-bottom: 1px solid rgba(20,20,20,1);
+  width: 1vw;
+  height: 1vw;
+  border-left: 2px solid rgba(30,30,30,1);
+  border-bottom: 2px solid rgba(30,30,30,1);
+  z-index: 1;
 }
 
 .n-bottom-right {
   grid-area: 2 / 2 / 2 / 2;
   place-self: end end;
-  width: 2vw;
-  height: 2vw;
-  border-right: 1px solid rgba(20,20,20,1);
-  border-bottom: 1px solid rgba(20,20,20,1);
+  width: 1vw;
+  height: 1vw;
+  border-right: 2px solid rgba(30,30,30,1);
+  border-bottom: 2px solid rgba(30,30,30,1);
+  z-index: 1;
 }
 
 .nav-area__title {
-  grid-area: 1 / 1 / 3 / 3;
-  place-self: center center;
-  color: rgba(90,90,90,1);
-  background: ;
-  font-size: 1rem;
+  grid-area: 2 / 1 / 3 / 3;
+  place-self: end start;
+  margin: 0 0 12px 18px;
+  color: rgba(200,200,200,1);
+  background: rgba(90,90,90,0);
+  font-size: 0.8rem;
+  z-index: 1;
 }
 
 .item-number {
-  grid-area: 2 / 1 / 2 / 1;
-  place-self: end start;
-  margin: 0 0 10px 10px;
+  grid-area: 1 / 1 / 3 / 3;
+  place-self: center center;
   color: rgba(0,0,0,1);
   background: rgba(90,90,90,1);
-  font-size: 1rem;
+  font-size: 1.2rem;
+  z-index: 1;
 }
 
 .stats__graph {
