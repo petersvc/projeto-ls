@@ -92,19 +92,20 @@ for (let i = 0; i < 350; i++){
     $('.pattern').append(`<div class="pattern__block" id="block${i}">.</div>`)
 }
 
-$('.nav-area').append(`<div class="nav-corner n-top-left"></div>  
-<div class="nav-corner n-top-right"></div>  
-<div class="nav-corner n-bottom-left"></div>  
-<div class="nav-corner n-bottom-right"></div>
+$('.item__area').append(`<div class="nav__corner n-top-left"></div>  
+<div class="nav__corner n-top-right"></div>  
+<div class="nav__corner n-bottom-left"></div>  
+<div class="nav__corner n-bottom-right"></div>
 <img src="dist/img/diagonal.svg" class="bg">`)
 
 if ($('.content__intro').css('display') != 'none'){
     $(document).bind('wheel', () => {
-        $('.content__intro').hide(0)
+        $('.content__home').hide(0)
         $('.header').css('display', 'grid')
-        //$('.content__search').css('display', 'flex')
-        $('.content__stats').css('display', 'grid')
-        //$('.footer').css('display', 'grid')
+        $('.content__repositories').css('display', 'flex')
+        //$('.content__stats').css('display', 'grid')
+        $('.footer').css('display', 'grid')
+        $('.nav').css('display', 'grid')
         $('.corner,.pat').hide()
     });
 }

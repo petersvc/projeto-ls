@@ -44,10 +44,10 @@
         <h1 class="logotype__left">[devstats]</h1>
       </div>      
 
-      <div class="header__choose">      
-        <h1 class="choose__chart">stats</h1>
-        <div class="choose__slash"></div>       
-        <h1 class="choose__map">roadmap</h1> 
+      <div class="user__search">
+        <button class="search__btn">
+          <i class="fas fa-search"></i>
+        </button>
       </div>
 
 
@@ -55,23 +55,48 @@
         
         <h1 class="menu__h">[ menu ]</h1>
       </div>
-      <!--
-      <div class="stats__user">
-        <h3 class="user__name"></h3>
-        <img class="user__avatar" src="dist/img/ava.jpg" alt="nada">
-      </div>-->
-
+    
     </header>
+
+    <nav class="nav">
+      <div class="nav__user">
+        <!--<div class="user__basic">
+          <h1 class="basic__name">// Peter Costa</h1>
+          <h1 class="basic__email">// petersvc@outlook.com</h1>
+          <h1 class="basic__github">// github</h1>
+        </div>-->       
+      </div>
+      
+      <div class="nav__item">
+        <h1 class="menuu-h">//menu</h1>
+
+        <div class="item__area nav__resume">
+          <!--<h1 class="item-number">[00x]</h1>-->
+          <h1 class="area__title">sobre</h1>
+        </div>
+  
+        <div class="item__area nav__repos">
+          <h1 class="area__number">[00x]</h1>
+          <h1 class="area__title">linguagens</h1>
+        </div>
+  
+        <div class="item__area nav__langs">
+          <h1 class="area__number">[00x]</h1>
+          <h1 class="area__title">repositórios</h1>
+        </div>
+  
+        <div class="item__area nav__roadmap">
+          <h1 class="area__number">[00x]</h1>
+          <h1 class="area__title">roadmap</h1> 
+        </div>
+      </div>      
+    </nav>
 
     <main class="content">
 
-      <div class="content__search">
-        <input class="search__name" type="text" value= "johnoliver23" placeholder="Digite o seu login do github" autofocus>
-      </div>
+      <section class="content__home">
 
-      <section class="content__intro">
-
-        <div class="intro__logotype">
+        <div class="home__logotype">
           <h1 class="shake">devstats</h1>
         </div>
 
@@ -80,67 +105,43 @@
           <h1 class="line__link">[<span>+</span>]</h1>
         </div>
 
-        <h1 class="intro__desc">
+        <h1 class="home__desc">
             <span>[DRM 2018]</span> &#8212 Confira o developer roadmap 2018 e descubra quais são
             as principais tendências em tecnologias para o desenvolvedor.
         </h1>
 
-        <div class="intro__scrolltip">
-          
+        <div class="home__scrolltip">          
           <div class="scrolltip__mouse">
             <div class="mouse__wheel"></div>
           </div>
+
           <h1>role para continuar</h1>
         </div>
 
-        <h2 class="intro__skip"></h2>
-
       </section>
-      
-      <section class="content__stats">
 
-        <div class="stats__separator"></div>
-        
-        <!-- RESUMO-->
+      <section class="content__repositories">
 
-        <div class="resume">
-          <div class="resume__basic">
-            <img class="basic__fingerprint" src="dist/img/fingerprint.svg" alt="nada">
-            <div class="basic__info">
-              <h1 class="info__title">[nome]</h1><br>
-              <h1 class="info__value">peter costa</h1>
-              <div class="info__subjects">
-                <div class="subject subject__name"></div>
-                <div class="subject subject__email"></div>
-                <div class="subject subject__github"></div>
-              </div>
-            </div>
-          </div>
+        <div class="repositories__path1"></div>
+        <div class="repositories__path2"></div>
 
-          <div class="pat-user">
-            <img class="pat2" src="dist/img/pat8.svg" alt="">
-          </div>          
+        <div class="repositories__area repositories__own">
+          <img src="dist/img/pat8.svg" alt="">
+          <h1>próprios</h1>
         </div>
 
-        <nav class="git-nav">
-          <div class="nav-area git-nav__resume">
-            <!--<h1 class="item-number">[00x]</h1>-->
-            <h1 class="nav-area__title">resumo</h1>
-          </div>
+        <div class="repositories__area repositories__forked">
+          <img src="dist/img/pat8.svg" alt="">
+          <h1>forks</h1>
+        </div>
 
-          <div class="nav-area git-nav__repos">
-            <h1 class="item-number">[00x]</h1>
-            <h1 class="nav-area__title">repositórios</h1>
-          </div>
-          <div class="nav-area git-nav__langs">
-            <h1 class="item-number">[00x]</h1>
-            <h1 class="nav-area__title">linguagens</h1>
-          </div>
-          <div class="nav-area git-nav__roadmap">
-            <h1 class="item-number">[00x]</h1>
-            <h1 class="nav-area__title">roadmap</h1>
-          </div>
-        </nav>
+        <div class="repositories__area repositories__total">
+          <img src="dist/img/pat8.svg" alt="">
+          <h1>total</h1>
+        </div>
+      </section>
+
+      <section class="content__stats">        
         
         <!--Linguagens-->
 
@@ -225,16 +226,6 @@
   <script src="dist/js/jquery-ui.min.js"></script>
   <script src="dist/js/bundle.js"></script>
 
-  <script>
-      let id
-      const allowDrop = ev => ev.preventDefault()
-      const drag = ev => id = ev.target.id
-      const drop = ev => {
-          ev.preventDefault();
-          $('.drag__void').css('background', 'rgba(30,30,30,1)')
-          ev.target.append(document.getElementById(id));
-      }
-  </script>
 </body>
 
 </html>
