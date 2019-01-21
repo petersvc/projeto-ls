@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Exo+2');
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
 
 html, body{
   overflow: hidden;
@@ -8,20 +8,23 @@ p {font: normal 12px/1.5 titillium web}
 
 h3, h4, h5 {
   font-weight: lighter;
-  font-family: exanregular;
+  font-family: 'Rajdhani';
   text-transform: capitalize;
+  letter-spacing: 0.1rem;
 }
 
 h1, input {
   font-weight: normal;
-  font-family: 'exanregular';
+  font-family: 'Rajdhani';
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 h2 {
-  font-weight: bolder;
-  font-family: exanregular;
+  font-weight: 600;
+  font-family: 'Rajdhani';
   text-transform: uppercase;
+  letter-spacing: 0.1rem;
 }
 
 @media screen and (max-width: 500px){

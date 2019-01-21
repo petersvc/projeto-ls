@@ -1,4 +1,4 @@
-export { fetchUser, fetchRepo, fetchLang }
+export { fetchUser, fetchRepo, fetchLang, drm }
 
 const apiUrl = 'https://api.github.com/users/' // url da api do github
 
@@ -23,6 +23,14 @@ const fetchLang = async (validsRepos, token) => { // ... extrai as informações
     }
     return jsons
 }
+
+const drmJasonUrl = 'https://api.myjson.com/bins/13uq48'
+const drm = async () => {
+    const drmTech = await fetch(drmJasonUrl).then(drm => drm.json())
+                    .then(drm => drm.tecnologies)
+    return drmTech
+}
+
 
 
 //<br>Quais tecnologias o web developer<br> deve dominar em 2018?

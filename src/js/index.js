@@ -1,9 +1,23 @@
-import { fetchUser, fetchRepo, fetchLang } from './api'
-import { langSum, langArray, numberSort, stringSort, shortByte, langAcronym } from './aux'
+import { fetchUser, fetchRepo, fetchLang, drm } from './api'
+import { langSum, langArray, numberSort, letterSort, shortByte, langAcronym } from './aux'
 import { tk } from '../../token'
 import '../css/main.css'
 import '../css/reset.css'
 import '../css/media_queries.css'
+
+drm().then(drm => {
+    //console.log(drm[0]['basic css'][1].name)
+    let a = drm.map(r => {
+        for (let p in r){
+            r[p].map(r2 => {
+                console.log(p + ': ' + r2.name + '\n')
+            })
+        }
+    })
+    
+  
+})
+
 
 const showData = () => {
     let token = '' // necessário para fazer mais de 60 requisições/hora 
@@ -11,12 +25,12 @@ const showData = () => {
         token = tk()
    
     fetchUser($('.search__name').val(), token).then(user => { // usuário
-        $('.user__avatar').attr('src', user.avatar_url)  // imagem do usuário
+        $('.row__avatar').attr('src', user.avatar_url)  // imagem do usuário
 
         if (user.name != null)
-            $('.user__name').html(user.name)
+            $('.row__value').html(user.name)
         else
-            $('.user__name').html(user.login)
+            $('.row__value').html(user.login)
         
         fetchRepo(user.repos_url, token).then(repos => { // respositórios
             const noForkeds = repos.filter(repo => repo.fork != true)            
@@ -27,16 +41,18 @@ const showData = () => {
             
             fetchLang(validsRepos, token).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem                    
-                    $('.data__lang').remove()
-                    $('.rank__percent').remove()
+                    $('.graph__item').remove()
+                    //$('.rank__percent').remove()
                     
-                    const langSortNumber = langResult.slice(0).sort(numberSort)
-                    const la = langArray(langSortNumber)
+                    const langSortLetter = langResult.slice(0).sort(letterSort)
+                    const la = langArray(langSortLetter)
 
                     let sb = 0
                     let divId = ''
-                    let graphDataWidth = document.getElementById('graph__data').offsetWidth
-                    let sizeWidth = 0
+                    //let graphDataWidth = document.getElementById('graph__data').offsetWidth
+                    let graphDataWidth = document.getElementById('lang__graph').offsetWidth
+                    let langPosition = 0
+                    let marginAdjust = 0
                     let sizeId = ''
                     let rankCount = 1
 
@@ -47,27 +63,34 @@ const showData = () => {
                             let acro = langAcronym(langIndex[0])
 
                             divId = `lang__size-${langIndex[0]}`
+                            
+                           
 
-                            $('.graph__data').append(
-                                `<div class="data__lang"">
-                                    <h2 class="lang__name" title="${langIndex[0]}">${acro}</h2>
-                                    <div class="lang__start"></div>
-                                    <div class="lang__size" id="${divId}"></div>
-                                    <h2 class="lang__byte">${langIndex[2]}%</h2>
+                            $('.lang__graph').append(
+                                `<div class="graph__item">
+                                <div class="item__circle"  id="${divId}"></div>
+                                    <h2 class="item__name" title="${langIndex[0]}">${acro}</h2>
                                 </div>`
                             )
-
-                            sizeWidth = graphDataWidth * langIndex[2] / 100                            
+                            
+                            
+                            langPosition = (graphDataWidth * langIndex[2] / 90)                            
                             sizeId = document.getElementById(divId)
-                            sizeId.style.width = sizeWidth + "px"
+                            marginAdjust = graphDataWidth - langPosition
 
+                            /*if (marginAdjust < (graphDataWidth * 10) / 100)
+                                sizeId.style.marginLeft = (langPosition - marginAdjust) + "px"
+                            else*/
+                                sizeId.style.marginLeft = langPosition + "px"
+                                
+                            /*
                             $('.graph__rank').append(
                                 `<div class="rank__percent">
                                     <h2 class="percent__circle">${rankCount}.</h2>
                                     <h2 class="percent_lang" title="${langIndex[0]}">${acro}:</h2>
                                     <h2 class="percent__number">${sb}</h2>
                                 </div>`
-                            )
+                            )*/
                             rankCount++
                         }
                     })                               
@@ -92,21 +115,15 @@ for (let i = 0; i < 350; i++){
     $('.pattern').append(`<div class="pattern__block" id="block${i}">.</div>`)
 }
 
-$('.item__area').append(`<div class="nav__corner n-top-left"></div>  
-<div class="nav__corner n-top-right"></div>  
-<div class="nav__corner n-bottom-left"></div>  
-<div class="nav__corner n-bottom-right"></div>
-<img src="dist/img/diagonal.svg" class="bg">`)
-
 if ($('.content__intro').css('display') != 'none'){
     $(document).bind('wheel', () => {
         $('.content__home').hide(0)
         $('.header').css('display', 'grid')
-        $('.content__repositories').css('display', 'flex')
-        //$('.content__stats').css('display', 'grid')
-        $('.footer').css('display', 'grid')
-        $('.nav').css('display', 'grid')
-        $('.corner,.pat').hide()
+        //$('.content__repositories').css('display', 'flex')
+        $('.content__lang,.content__roadmap').css('display', 'grid')
+        //$('.footer').css('display', 'grid')
+        //$('.nav').css('display', 'flex')
+        $('.corner,.pat,.home__scrolltip').hide()
     });
 }
 

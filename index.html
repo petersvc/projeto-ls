@@ -13,91 +13,90 @@
 
 <body>
   <div class="container">    
-    <img class="pat" src="dist/img/rect.svg" alt="">
+    <img class="pat" src="dist/img/cartesian4.svg" alt="">
     <img class="leftbar" src="dist/img/leftbar.svg" alt="">
     <img class="rightbar" src="dist/img/leftbar.svg" alt="">
     <div class="pattern"></div>
 
-    <div class="corner top-left">
-      <div class="horizontal"></div>
-      <div class="vertical"></div>
-    </div>
-
-    <div class="corner2 top-right">
-      <div class="horizontal"></div>
-      <div class="vertical"></div>
-    </div>
-
-    <div class="corner bottom-left">
-      <div class="horizontal"></div>
-      <div class="vertical"></div>
-    </div>
-
-    <div class="corner2 bottom-right">
-      <div class="horizontal"></div>
-      <div class="vertical"></div>
-    </div>
-
     <header class="header">  
-      
-      <div class="header__logotype">
-        <h1 class="logotype__left">[devstats]</h1>
-      </div>      
-
       <div class="user__search">
         <button class="search__btn">
           <i class="fas fa-search"></i>
         </button>
       </div>
 
-
       <div class="header__menu">
-        
-        <h1 class="menu__h">[ menu ]</h1>
+        <i class="fas fa-bars menu__img"></i>
+        <h2 class="menu__text">menu</h1>
       </div>
-    
+      
+      <div class="header__logotype">        
+        <h1 class="logotype__text">drm</h1>
+        <h1 class="logotype__year">2019</h1>        
+      </div>      
+ 
+
+      <input class="search__name" autofocus value="petersvc" type="text">
+
+      <div class="header__user">
+        <div class="user__row">
+          <h2 class="row__value">peter costa</h2>
+          <img class="row__avatar" src="dist/img/ava.jpg" alt="git-img">
+        </div>
+      
+        <div class="user__row2">
+          <div class="row2__plus">+</div>
+        </div>    
+      </div>
+
+      <!--
+
+          SECOND ROW
+
+      -->
+
+      <h2 class="footer__plus">linguagens</h3>
+
+      
+
+      <h2 class="footer__plus2">roadmap</h3>
+     
+
     </header>
 
-    <nav class="nav">
-        <section class="nav__user">
-          <div class="user__value">
-            <h1 class="value__title">//nome:</h1>
-            <h1 class="value__data">//peter costa</h1>
-          </div>
-          
-          <div class="user__subject">
-            <h1 class="extend"></h1>[+]
-            <h1 class="name sub-hide">nome</h1>
-            <h1 class="email sub-hide">email</h1>
-            <h1 class="github sub-hide">github</h1>
-          </div>
-        </section>
-      
-      <section class="nav__item">
-        <h1 class="menuu-h">//menu</h1>
-
-        <div class="item__area nav__resume">
-          <h1 class="area__title">sobre</h1>
-        </div>
-  
-        <div class="item__area nav__repos">
-          <h1 class="area__number">[00x]</h1>
-          <h1 class="area__title">linguagens</h1>
-        </div>
-  
-        <div class="item__area nav__langs">
-          <h1 class="area__number">[00x]</h1>
-          <h1 class="area__title">repositórios</h1>
-        </div>
-  
-        <div class="item__area nav__roadmap">
-          <h1 class="area__number">[00x]</h1>
-          <h1 class="area__title">roadmap</h1> 
-        </div>
-      </section>      
-    </nav>
-
     <main class="content">
+
+      <nav class="nav">            
+        
+          <div class="nav__item nav__resume">
+            <h1 class="item__title">sobre</h1>
+            <div class="item__sm-circle"></div>
+            <div class="item__dash"></div>
+            <div class="item__lg-circle active-circle"></div>
+          </div>
+    
+          <div class="nav__item nav__repos">
+            <h1 class="item__title opac">linguagens</h1>
+            <div class="item__sm-circle opac"></div>
+            <div class="item__dash opac"></div>
+            <div class="item__lg-circle"></div>
+          </div>
+    
+          <div class="nav__item nav__langs">
+            <h1 class="item__title opac">repositórios</h1>
+            <div class="item__sm-circle opac"></div>
+            <div class="item__dash opac"></div>
+            <div class="item__lg-circle"></div>
+          </div>
+    
+          <div class="nav__item nav__roadmap">
+            <h1 class="item__title opac">roadmap</h1>
+            <div class="item__sm-circle opac"></div>
+            <div class="item__dash opac"></div> 
+            <div class="item__lg-circle"></div>
+          </div>
+            
+      </nav>
 
       <section class="content__home">
 
@@ -105,124 +104,78 @@
           <h1 class="shake">devstats</h1>
         </div>
 
-        <div class="area__line">
+        <div class="home__mid">
+          <div class="mid__drm">
+            <h1 class="drm__text">drm</h1>
+            <h1 class="drm__year">2019</h1>
+          </div>
+
+          <div class="mid__desc">
+            <h2>
+                Confira o developer roadmap 2019 e descubra <br>quais são
+                as principais tendências em tecnologias.
+            </h2>
+          </div>
+        </div>
+
+        <div class="area__line desc">
           <div class="line__left-top"></div>
           <h1 class="line__link">[<span>+</span>]</h1>
         </div>
 
-        <h1 class="home__desc">
+        <h1 class="home__desc desc">
             <span>[DRM 2018]</span> &#8212 Confira o developer roadmap 2018 e descubra quais são
             as principais tendências em tecnologias para o desenvolvedor.
         </h1>
 
-        <div class="home__scrolltip">          
-          <div class="scrolltip__mouse">
-            <div class="mouse__wheel"></div>
-          </div>
-
-          <h1>role para continuar</h1>
-        </div>
+        
 
       </section>
 
-      <section class="content__repositories">
-
-        <div class="repositories__path1"></div>
-        <div class="repositories__path2"></div>
-
-        <div class="repositories__area repositories__own">
-          <img src="dist/img/pat8.svg" alt="">
-          <h1>próprios</h1>
-        </div>
-
-        <div class="repositories__area repositories__forked">
-          <img src="dist/img/pat8.svg" alt="">
-          <h1>forks</h1>
-        </div>
-
-        <div class="repositories__area repositories__total">
-          <img src="dist/img/pat8.svg" alt="">
-          <h1>total</h1>
-        </div>
-      </section>
-
-      <section class="content__stats">        
+      <section class="content__lang">        
         
         <!--Linguagens-->
-
-        <div class="stats__graph">
-          <div class="graph__data" id="graph__data">
-            <div class="data__lang">
-              <h2 class="lang__name">js</h2>
-              <div class="lang__start"></div>
-              <div class="lang__size"></div>
-              <h2 class="lang__byte">25%</h2>
-            </div>
-  
-            <div class="data__lang">
-              <h2 class="lang__name">Css</h2>
-              <div class="lang__start"></div>
-              <div class="lang__size"></div>
-              <h2 class="lang__byte">25%</h2>
-            </div>            
-  
-            <div class="data__lang">
-              <h2 class="lang__name">Html</h2>
-              <div class="lang__start"></div>
-              <div class="lang__size"></div>
-              <h2 class="lang__byte">25%</h2>
-              </div>
-  
-            <div class="data__lang">
-              <h2 class="lang__name">py</h2>
-              <div class="lang__start"></div>
-              <div class="lang__size"></div>
-              <h2 class="lang__byte">25%</h2>
-            </div>
-          </div>
-
-          <div class="graph__rank">
-
-            <div class="rank__percent">
-              <div class="percent__circle"></div>
-              <h2 class="percent_lang">js:</h2>
-              <h2 class="percent__number">283kb</h2>
-            </div>
-
-            <div class="rank__percent">
-              <div class="percent__circle"></div>
-              <h2 class="percent_lang">css:</h2>
-              <h2 class="percent__number">283kb</h2>
-            </div>
-
-            <div class="rank__percent">
-              <div class="percent__circle"></div>
-              <h2 class="percent_lang">html:</h2>
-              <h2 class="percent__number">283kb</h2>
-            </div>
-
-            <div class="rank__percent">
-              <div class="percent__circle"></div>
-              <h2 class="percent_lang">py:</h2>
-              <h2 class="percent__number">283kb</h2>
-            </div>
-
-          </div>
-
+        <div class="lang__area">
+          <img class="lang__graph-bg" src="dist/img/cartesian.svg" alt="">
         </div>
+        
+        <div class="lang__graph" id="lang__graph"></div>
 
       </section>
 
+      <section class="content__roadmap">
+        <div class="roadmap__area">
+           <img class="roadmap__graph-bg" src="dist/img/cartesian4.svg" alt="">
+        </div>
+
+        <form class="roadmap__form" action="dist/js/bundle.js" method="POST">
+          <fieldset class="form__fieldset" id="basic-html">
+            <label for="basic-html1" class="fieldset__label">              
+              semantic html
+            </label>
+            <input type="radio" id="basic-html1" name="basic-html1" class="label__radio">            
+          </fieldset>
+          <div class="fieldset__legends">
+            <div class="legends__row">
+              <div class="row__circle"></div>
+              <h1 class="row__title">basic html</h1>
+            </div>
+          </div>
+        </form>
+      </section>      
+      
     </main>
 
     <footer class="footer">
-      
-      <div class="header__angle">
-        <i class="fas fa-angle-left"></i>
-        <h1 class="angle__title">Linguagens</h1>  
-        <i class="fas fa-angle-right"></i>
+      <div class="home__scrolltip">          
+        <div class="scrolltip__area">
+          <div class="scrolltip__mouse">
+            <div class="mouse__wheel"></div>            
+          </div>
+          <i class="fas fa-angle-double-down mouse__arrow"></i>
+        </div>
+        <h1 class="scroll__text">role para continuar</h1>
       </div>
-      
     </footer>
 
   </div>

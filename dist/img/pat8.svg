@@ -8,15 +8,15 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    data-name="Your Icon"
-   viewBox="0 0 77.163487 75.834991"
+   viewBox="0 0 75.564473 74.236557"
    x="0px"
    y="0px"
    version="1.1"
    id="svg556"
    sodipodi:docname="pat8.svg"
    inkscape:version="0.92.2 2405546, 2018-03-11"
-   width="77.16349"
-   height="75.834991">
+   width="75.564476"
+   height="74.236557">
   <metadata
      id="metadata562">
     <rdf:RDF>
@@ -45,8 +45,8 @@
      id="namedview558"
      showgrid="false"
      inkscape:zoom="7.8560995"
-     inkscape:cx="25.005449"
-     inkscape:cy="43.288504"
+     inkscape:cx="25.606126"
+     inkscape:cy="41.089099"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
@@ -54,27 +54,27 @@
   <title
      id="title368">hub</title>
   <ellipse
-     style="fill:none;fill-opacity:1;stroke:#2f2f2f;stroke-width:1.95000005;stroke-miterlimit:4;stroke-dasharray:3.9000001,1.95000005,0.97500002,1.95000005;stroke-dashoffset:0;stroke-opacity:1"
+     style="fill:none;fill-opacity:1;stroke:#2f2f2f;stroke-width:1.95000005;stroke-miterlimit:4;stroke-dasharray:3.9000001, 1.95000005, 0.97500002, 1.95000005;stroke-dashoffset:0;stroke-opacity:1"
      id="path2196"
-     cx="44.87727"
-     cy="30.204607"
+     cx="43.944832"
+     cy="29.565449"
      rx="36.825096"
      ry="36.113518"
      transform="rotate(10.560015)" />
   <path
      style="fill:none;stroke:#585856;stroke-width:0.81966496;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 38.900619,61.134789 c 0,8.655695 0,8.655695 0,8.655695"
+     d="m 38.101111,60.335573 c 0,8.655695 0,8.655695 0,8.655695"
      id="path23"
      inkscape:connector-curvature="0" />
   <path
      style="fill:none;stroke:#585856;stroke-width:0.75700003;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     d="m 38.729276,5.2546409 c 0,7.3828001 0,7.3828001 0,7.3828001"
+     d="m 37.929768,4.4554247 c 0,7.3828003 0,7.3828003 0,7.3828003"
      id="path23-3"
      inkscape:connector-curvature="0" />
   <circle
      style="fill:none;stroke:#585856;stroke-width:0.60479188;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0.32100001;stroke-opacity:1"
      id="path4615"
-     cx="38.920155"
-     cy="37.267944"
+     cx="38.120647"
+     cy="36.468727"
      r="28.779915" />
 </svg>

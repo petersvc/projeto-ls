@@ -1,4 +1,4 @@
-export { langSum, langArray, numberSort, stringSort, shortByte, langAcronym }
+export { langSum, langArray, numberSort, letterSort, shortByte, langAcronym }
 
 
 const langSum = async langsJsons => { // funçao que soma a quantidade de linhas/palavras escritas em cada linguagem
@@ -86,7 +86,7 @@ const langAcronym = langIndex => {
     return 0;
 }
 
-const stringSort = (a, b) => {
+const letterSort = (a, b) => {
     if (a[0] < b[0])
         return -1;
     if (a[0] > b[0])
