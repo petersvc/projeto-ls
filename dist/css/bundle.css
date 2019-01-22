@@ -514,7 +514,7 @@
 
 .lang__graph-bg {
   width: 100%;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .lang__graph {
@@ -587,7 +587,7 @@
 
 .roadmap__graph-bg {
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.3;
 }
 
 .roadmap__form {
@@ -609,19 +609,24 @@
 .form__fieldset {
   grid-area: 1 / 1 / 2 / 2;
   place-self: center center;
-  display: flex;
+  /*display: flex;*/
+  display: none;
   flex-flow: column nowrap;
   background: rgba(12,12,12,0);
+}
+
+.fieldset__basic-html {
+  display: flex;
 }
 
 /* The container */
 .fieldset__label {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin: 28px 0 28px 0;
   cursor: pointer;
-  font-size: 1rem;
+  font-size: 0.9rem;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -638,7 +643,7 @@
 }
 
 .label__title {
-  margin: 0 -15px 0 30px;
+  margin: 0 -10px 0 20px;
   width: ;
   background: ;
 }
@@ -647,6 +652,11 @@
 .checkmark {
   height: 20px;
   width: 20px;
+  border-radius: 0px;
+  transition: all 0.4s linear;
+}
+
+.recommended {
   background: rgb(200, 134, 0);
 }
 
@@ -669,6 +679,7 @@
   content: "";
   position: absolute;
   display: none;
+  transition: all 0.4s linear;
 }
 
 /* Show the checkmark when checked */
@@ -678,23 +689,34 @@
 
 /* Style the checkmark/indicator */
 .fieldset__label .checkmark:after {
-  margin: 3px 0 0 6px;
+  margin: 3px 0 0 7px;
   width: 5px;
   height: 10px;
   border: solid black;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  transform: rotate(45deg) scale(0.8);
 }
 
 
 .fieldset__legends {
   grid-area: 1 / 2 / 2 / 4;
-  display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   background: rgba(12,12,12,0);
+}
+
+.fieldset__legends1 {
+  display: flex;
+}
+
+.fieldset__legends2 {
+  display: none;
+}
+
+.fieldset__legends3 {
+  display: none;
 }
 
 .legends__row {
@@ -731,8 +753,8 @@
   height: 10px;
 }
 
-.basic {
-  text-align: left
+.legends__basic-html .row__circle {
+  background: rgb(255,255,255);
 }
 .row__title span {
   font-size: 0.8rem;
@@ -902,6 +924,17 @@
   display: none;
 }
 
+.hide {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

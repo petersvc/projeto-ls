@@ -1,4 +1,15 @@
-export { langSum, langArray, numberSort, letterSort, shortByte, langAcronym }
+export { langSum, langArray, numberSort, letterSort, shortByte, langAcronym, drm, legendFix }
+
+const drm = async () => {
+    const drmJasonUrl = 'https://api.myjson.com/bins/1c7p2k'
+    const drmTech = await fetch(drmJasonUrl).then(drm => drm.json())
+    return drmTech
+}
+
+const legendFix = (legend) => {
+    let replacer = legend.replace('-', ' ')
+    return replacer
+} 
 
 
 const langSum = async langsJsons => { // funçao que soma a quantidade de linhas/palavras escritas em cada linguagem

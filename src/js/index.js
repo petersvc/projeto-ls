@@ -1,23 +1,78 @@
-import { fetchUser, fetchRepo, fetchLang, drm } from './api'
-import { langSum, langArray, numberSort, letterSort, shortByte, langAcronym } from './aux'
+import { fetchUser, fetchRepo, fetchLang} from './api'
+import { langSum, langArray, numberSort, letterSort} from './aux'
+import { shortByte, langAcronym, drm, legendFix } from './aux'
 import { tk } from '../../token'
 import '../css/main.css'
 import '../css/reset.css'
 import '../css/media_queries.css'
 
 drm().then(drm => {
-    //console.log(drm[0]['basic css'][1].name)
-    let a = drm.map(r => {
-        for (let p in r){
-            r[p].map(r2 => {
-                console.log(p + ': ' + r2.name + '\n')
-            })
-        }
-    })
+    //console.log(drm['basic-html'])
+    let count = 0
+    let fieldsetClass = ''
+    let checkMarkClass = ''
+    let legend = ''
+    let propName = ''
     
-  
-})
+    for (let group in drm){
+        //console.log(group)
+        legend = legendFix(group)
 
+        console.log(legend + ':')
+
+        if (count < 5) {
+            $('.fieldset__legends1').append(`
+                <div class="legends__row legends__${group}">
+                    <div class="row__circle"></div>
+                    <h2 class="row__title">${legend}<br><span>${drm[group].length} technologies</span></h2>
+                    <h2 class="row__category">${drm[group][0].category}</h2>
+                </div>`)
+        }
+
+        else if(count < 10) {
+            $('.fieldset__legends2').append(`
+                <div class="legends__row legends__${group}">
+                    <div class="row__circle"></div>
+                    <h2 class="row__title">${legend}<br><span>${drm[group].length} technologies</span></h2>
+                    <h2 class="row__category">${drm[group][0].category}</h2>
+                </div>`)
+        }
+
+        else {
+            $('.fieldset__legends3').append(`
+                <div class="legends__row legends__${group}">
+                    <div class="row__circle"></div>
+                    <h2 class="row__title">${legend}<br><span>${drm[group].length} technologies</span></h2>
+                    <h2 class="row__category">${drm[group][0].category}</h2>
+                </div>`)
+        }
+
+        fieldsetClass = `.fieldset__${group}`    
+    
+        $('.roadmap__form').prepend(`
+            <fieldset class="form__fieldset fieldset__${group}"></fieldset>`)
+        
+        drm[group].map(prop => {
+            propName = legendFix(prop.name)
+            checkMarkClass = `.cm__${prop.name}`
+
+            $(fieldsetClass).append(`
+            <label class="fieldset__label label__${prop.name}">
+                <input class="cb__${prop.name}" type="checkbox" name="${prop.status}">
+                <span class="checkmark cm__${prop.name}"></span>
+                <h2 class="label__title">${propName}</h2>
+            </label>`)
+
+            if (prop.status == 'recommended')
+                $(checkMarkClass).addClass('recommended')
+            else
+                $(checkMarkClass).addClass('available')
+
+        })
+
+        count ++
+    }
+})
 
 const showData = () => {
     let token = '' // necessário para fazer mais de 60 requisições/hora 
