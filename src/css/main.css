@@ -69,7 +69,7 @@
   flex-flow: row nowrap;
   justify-content: center;
   align-items: center;
-  transform: scale(0.6);
+  transform: scale(0.7);
 }
 
 .logotype__text {
@@ -81,7 +81,7 @@
 .logotype__year {
   background: rgba(200, 134, 0, 1);
   color: rgba(5,5,5, 1);
-  font: bolder 0.8rem 'aileronsregular';
+  font: bolder 0.7rem 'aileronsregular';
   letter-spacing: 0.1rem;
   transform: rotate(-90deg);
   width: 32px;
@@ -593,7 +593,7 @@
   grid-area: 1 / 1 / 2 / 2;
   place-self: start start;
   display: grid;
-  grid-template: 1fr / 4fr 1fr 4fr;
+  grid-template: 1fr / 7fr 1fr 7fr;
   align-items: center;
   justify-content: center;
   margin: 1.4% 0 0 2.7%;
@@ -601,7 +601,7 @@
   height: 96%;
   background: rgba(26,6,6,0);
   color: white;
-  display: none;
+  display: ;
   z-index: 2;
 }
 
@@ -610,33 +610,141 @@
   place-self: center center;
   display: flex;
   flex-flow: column nowrap;
-  background: rgba(12,12,12,1);
+  background: rgba(12,12,12,0);
 }
 
+/* The container */
+.fieldset__label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 28px 0 28px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.fieldset__label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.label__title {
+  margin: 0 -15px 0 30px;
+  width: ;
+  background: ;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background: rgb(200, 134, 0);
+}
+
+.available {
+  background: rgb(70, 56, 15);
+}
+
+/* On mouse-over, add a grey background color */
+.fieldset__label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.fieldset__label input:checked ~ .checkmark {
+  /*background-color: rgb(5,5,5);*/
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.fieldset__label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.fieldset__label .checkmark:after {
+  margin: 3px 0 0 6px;
+  width: 5px;
+  height: 10px;
+  border: solid black;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
 .fieldset__legends {
-  grid-area: 1 / 2 / 2 / 3;
+  grid-area: 1 / 2 / 2 / 4;
   display: flex;
   flex-flow: column nowrap;
-  background: rgba(12,12,12,1);
+  justify-content: center;
+  background: rgba(12,12,12,0);
 }
 
 .legends__row {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
+  margin: 20px 0 20px 13px;
 }
 
 .row__circle {
-  width: 25px;
-  height: 25px;
+  width: 7px;
+  height: 7px;
   border-radius: 100%;
-  border: 2px solid rgb(100,100,100);
+  border: 2px solid rgba(100,100,100,0);
+  background: rgb(60,60,60)
 }
 
 .row__title {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: rgb(200,200,200);
   margin-left: 40px;
+  width: 70%;
+  height: 25px;
+  line-height: 25px;
+  vertical-align: middle;
+  text-align: left;
+  background: rgba(0,0,0,0);
+}
+
+.circle1 {
+  margin-left: -2px;
+  background: white;
+  width: 10px;
+  height: 10px;
+}
+
+.basic {
+  text-align: left
+}
+.row__title span {
+  font-size: 0.8rem;
+  color: rgb(100,100,100);
+}
+
+.row__category {
+  font-size: 0.7rem;
+  color: rgb(200,200,200);
+  text-align: right;
+  line-height: 180%;
+  width: 8%;  
+  border-bottom:1px solid rgb(200, 134, 0);
 }
 
 /*

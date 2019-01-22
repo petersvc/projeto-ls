@@ -31,8 +31,8 @@
       </div>
       
       <div class="header__logotype">        
-        <h1 class="logotype__text">drm</h1>
-        <h1 class="logotype__year">2019</h1>        
+        <h1 class="logotype__text">dev</h1>
+        <h1 class="logotype__year">stats</h1>        
       </div>      
  
 
@@ -106,8 +106,8 @@
 
         <div class="home__mid">
           <div class="mid__drm">
-            <h1 class="drm__text">drm</h1>
-            <h1 class="drm__year">2019</h1>
+            <h1 class="drm__text">dev</h1>
+            <h1 class="drm__year">stats</h1>
           </div>
 
           <div class="mid__desc">
@@ -127,8 +127,6 @@
             <span>[DRM 2018]</span> &#8212 Confira o developer roadmap 2018 e descubra quais são
             as principais tendências em tecnologias para o desenvolvedor.
         </h1>
-
-        
 
       </section>
 
@@ -150,15 +148,56 @@
 
         <form class="roadmap__form" action="dist/js/bundle.js" method="POST">
           <fieldset class="form__fieldset" id="basic-html">
-            <label for="basic-html1" class="fieldset__label">              
-              semantic html
+            <label class="fieldset__label">
+              <input type="checkbox" checked="checked">
+              <span class="checkmark"></span>
+              <h2 class="label__title">semantic html</h2>
             </label>
-            <input type="radio" id="basic-html1" name="basic-html1" class="label__radio">            
+
+            <label class="fieldset__label">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              <h2 class="label__title">basic seo</h2>
+            </label>
+
+            <label class="fieldset__label">
+              <input type="checkbox">
+              <span class="checkmark"></span>
+              <h2 class="label__title">accessibility</h2>
+            </label>
+
+            <label class="fieldset__label">
+              <input type="checkbox">
+              <span class="checkmark available"></span>
+              <h2 class="label__title">Four</h2>
+            </label>            
           </fieldset>
+
           <div class="fieldset__legends">
             <div class="legends__row">
+              <div class="row__circle circle1"></div>
+              <h2 class="row__title basic">basic html<br><span>3 technologies</span></h2>
+              <h2 class="row__category">html</h2>
+            </div>
+            <div class="legends__row">
               <div class="row__circle"></div>
-              <h1 class="row__title">basic html</h1>
+              <h2 class="row__title">basic css<br><span>3 technologies</span></h2>
+              <h2 class="row__category">css</h2>
+            </div>
+            <div class="legends__row">
+              <div class="row__circle"></div>
+              <h2 class="row__title">basic js<br><span>3 technologies</span></h2>
+              <h2 class="row__category">js</h2>
+            </div>
+            <div class="legends__row">
+              <div class="row__circle"></div>
+              <h2 class="row__title">linter and formatter<br><span>3 technologies</span></h2>
+              <h2 class="row__category">js</h2>
+            </div>
+            <div class="legends__row">
+              <div class="row__circle"></div>
+              <h2 class="row__title">basic html<br><span>3 technologies</span></h2>
+              <h2 class="row__category">html</h2>
             </div>
           </div>
         </form>
