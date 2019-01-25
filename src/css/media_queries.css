@@ -1,31 +1,31 @@
-@import url('https://fonts.googleapis.com/css?family=Rajdhani:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700');
 
 html, body{
   overflow: hidden;
 }
 
-p {font: normal 12px/1.5 titillium web}
-
-h3, h4, h5 {
-  font-weight: lighter;
-  font-family: 'Rajdhani';
-  text-transform: capitalize;
-  letter-spacing: 0.1rem;
-}
+p {font: normal 12px/1.5 'source sans pro'}
 
 h1, input {
-  font-weight: normal;
-  font-family: 'Rajdhani';
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  font-weight: 600;
+  font-family: 'source sans pro';
 }
 
-h2 {
-  font-weight: 600;
-  font-family: 'Rajdhani';
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
+h2, span {
+  font-weight: 500;
+  font-family: 'source sans pro';
 }
+
+h3 {
+  font-weight: 400;
+  font-family: 'source sans pro';
+}
+
+h4, h5 {
+  font-weight: 300;
+  font-family: 'source sans pro';
+}
+
 
 @media screen and (max-width: 500px){
 html{

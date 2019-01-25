@@ -12,134 +12,120 @@
 </head>
 
 <body>
-  <div class="container">    
-    <img class="pat" src="dist/img/cartesian4.svg" alt="">
-    <img class="leftbar" src="dist/img/leftbar.svg" alt="">
-    <img class="rightbar" src="dist/img/leftbar.svg" alt="">
+  <div class="container">
     <div class="pattern"></div>
 
-    <header class="header">  
-      <div class="user__search">
-        <button class="search__btn">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-
+    <header class="header">
       <div class="header__menu">
-        <i class="fas fa-bars menu__img"></i>
-        <h2 class="menu__text">menu</h1>
+        <h1 class="language">Language</h1>
+        <h1 class="roadmap">Roadmap</h1>
+        <h1 class="team">Team</h1>
+        <h1 class="about">About</h1>
       </div>
       
       <div class="header__logotype">        
         <h1 class="logotype__text">dev</h1>
         <h1 class="logotype__year">stats</h1>        
-      </div>      
- 
-
-      <input class="search__name" autofocus value="petersvc" type="text">
-
-      <div class="header__user">
-        <div class="user__row">
-          <h2 class="row__value">peter costa</h2>
-          <img class="row__avatar" src="dist/img/ava.jpg" alt="git-img">
-        </div>
-      
-        <div class="user__row2">
-          <div class="row2__plus">+</div>
-        </div>    
       </div>
 
-      <!--
+      <div class="header__search">
+        <input class="search__name" autofocus value="lucachaves" type="text">
 
-          SECOND ROW
-
-      -->
-
-      <h2 class="footer__plus">linguagens</h3>
-
+        <div class="user__search">
+          <button class="search__btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </div>
       
 
-      <h2 class="footer__plus2">roadmap</h3>
-     
+      <div class="header__user">
+          <div class="user__img">
+            <i class="fas fa-user img__alt"></i> 
+          </div>
+          
+          <h2 class="row__value">username</h2>
+          
+          <i class="fas fa-angle-down user__expand"></i>         
+      </div>
+
+          
 
     </header>
 
-    <main class="content">
+    <main class="content">      
 
-      <nav class="nav">            
-        
-          <div class="nav__item nav__resume">
-            <h1 class="item__title">sobre</h1>
-            <div class="item__sm-circle"></div>
-            <div class="item__dash"></div>
-            <div class="item__lg-circle active-circle"></div>
-          </div>
-    
-          <div class="nav__item nav__repos">
-            <h1 class="item__title opac">linguagens</h1>
-            <div class="item__sm-circle opac"></div>
-            <div class="item__dash opac"></div>
-            <div class="item__lg-circle"></div>
-          </div>
-    
-          <div class="nav__item nav__langs">
-            <h1 class="item__title opac">repositórios</h1>
-            <div class="item__sm-circle opac"></div>
-            <div class="item__dash opac"></div>
-            <div class="item__lg-circle"></div>
-          </div>
-    
-          <div class="nav__item nav__roadmap">
-            <h1 class="item__title opac">roadmap</h1>
-            <div class="item__sm-circle opac"></div>
-            <div class="item__dash opac"></div> 
-            <div class="item__lg-circle"></div>
-          </div>
-            
-      </nav>
-
-      <section class="content__home">
-
-        <div class="home__logotype">
-          <h1 class="shake">devstats</h1>
-        </div>
-
-        <div class="home__mid">
-          <div class="mid__drm">
-            <h1 class="drm__text">dev</h1>
-            <h1 class="drm__year">stats</h1>
-          </div>
-
-          <div class="mid__desc">
-            <h2>
-                Confira o developer roadmap 2019 e descubra <br>quais são
-                as principais tendências em tecnologias.
-            </h2>
-          </div>
-        </div>
-
-        <div class="area__line desc">
-          <div class="line__left-top"></div>
-          <h1 class="line__link">[<span>+</span>]</h1>
-        </div>
-
-        <h1 class="home__desc desc">
-            <span>[DRM 2018]</span> &#8212 Confira o developer roadmap 2018 e descubra quais são
-            as principais tendências em tecnologias para o desenvolvedor.
-        </h1>
-
-      </section>
-
-      <section class="content__lang">        
-        
+      <div class="content__mid row">
         <!--Linguagens-->
-        <div class="lang__area">
-          <img class="lang__graph-bg" src="dist/img/cartesian.svg" alt="">
-        </div>
-        
-        <div class="lang__graph" id="lang__graph"></div>
+        <section class="mid__lang">     
+          <div class="lang__header section__header">
+            <h3 class="header__title">
+              Languages <span>Charts</span>
+            </h3>
 
-      </section>
+            <div class="header__nav">
+              <i class="fas fa-chart-bar list__view view__mode"></i>
+            </div>            
+          </div>
+
+          <div class="lang__area">
+            <div class="area__separator">
+              <span class="separator__dash d-hide"></span>
+              <span class="separator__number">0</span>
+            </div>
+
+            <div class="area__separator">
+                <span class="separator__dash"></span>
+                <span class="separator__number">25</span>
+            </div>
+
+            <div class="area__separator">
+                <span class="separator__dash"></span>
+                <span class="separator__number">50</span>
+            </div>
+
+            <div class="area__separator">
+              <span class="separator__dash"></span>
+              <span class="separator__number">75</span>
+            </div> 
+
+            <div class="area__separator">
+              <span class="separator__dash d-hide"></span>
+              <span class="separator__number">100</span>
+            </div>
+          </div>  
+               
+          <img class="loader" src="dist/img/loader.svg" alt="loading">
+
+          <div class="lang__graph" id="lang__graph">
+          </div>          
+        </section>
+        
+        <section class="lang__rank">
+          <div class="rank__header section__header">
+            <h3 class="header__title">
+              Languages <span>Rank</span>
+            </h3>
+            
+            <div class="header__nav">
+                <i class="fas fa-trophy list__view view__mode"></i>
+            </div>            
+          </div>
+
+          <img class="loader" src="dist/img/loader.svg" alt="loading">
+
+          <div class="rank__area">            
+            <div class="area__header">
+              <h1 class="list__title lang__ranks">Rankº</h1>
+              <h1 class="list__title lang__name lt">Language</h1>
+              <h1 class="list__title lang__bytes lt2">Bytes</h1>
+              <h1 class="list__title lang__percent">Percent</h1>
+            </div>    
+
+          </div>
+        </section>
+      </div>
+      
 
       <section class="content__roadmap">
         <div class="roadmap__area">

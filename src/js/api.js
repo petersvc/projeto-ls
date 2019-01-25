@@ -21,6 +21,7 @@ const fetchLang = async (validsRepos, token) => { // ... extrai as informações
         let json = await fetch(url + token).then(langs => langs.json()) // requista os dados, extrai em um .json e o guarda  
         jsons.push(json) // insere o .json no array de jsons
     }
+    $('.loader').hide(0)
     return jsons
 }
 
