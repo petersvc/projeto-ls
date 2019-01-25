@@ -1,0 +1,82 @@
+<fieldset class="form__fieldset" id="basic-html">
+    <label class="fieldset__label">
+        <input type="checkbox" checked="checked" name="recommended" id="basic">
+        <span class="checkmark"></span>
+        <h2 class="label__title">semantic html</h2>
+    </label>
+
+    <label class="fieldset__label">
+        <input type="checkbox" name="recommended" id="basic">
+        <span class="checkmark"></span>
+        <h2 class="label__title">basic seo</h2>
+    </label>
+
+    <label class="fieldset__label">
+        <input type="checkbox" name="recommended" id="basic">
+        <span class="checkmark"></span>
+        <h2 class="label__title">accessibility</h2>
+    </label>
+
+    <label class="fieldset__label">
+        <input type="checkbox" name="available" id="basic">
+        <span class="checkmark available"></span>
+        <h2 class="label__title">Four</h2>
+    </label>            
+</fieldset>
+
+<div class="fieldset__legends">
+    <div class="legends__row">
+        <div class="row__circle circle1"></div>
+        <h2 class="row__title basic">legend<br><span>${r[p].length} technologies</span></h2>
+        <h2 class="row__category">${r[p][0].category}</h2>
+    </div>
+    <div class="legends__row">
+        <div class="row__circle"></div>
+        <h2 class="row__title">basic css<br><span>3 technologies</span></h2>
+        <h2 class="row__category">css</h2>
+    </div>
+    <div class="legends__row">
+        <div class="row__circle"></div>
+        <h2 class="row__title">basic js<br><span>3 technologies</span></h2>
+        <h2 class="row__category">js</h2>
+    </div>
+    <div class="legends__row">
+        <div class="row__circle"></div>
+        <h2 class="row__title">linter and formatter<br><span>3 technologies</span></h2>
+        <h2 class="row__category">js</h2>
+    </div>
+    <div class="legends__row">
+        <div class="row__circle"></div>
+        <h2 class="row__title">basic html<br><span>3 technologies</span></h2>
+        <h2 class="row__category">html</h2>
+    </div>
+</div>
+
+if (langPosition < graphDataWidth){
+    $('.lang__graph').append(
+        `<div class="graph__item">
+            <div class="item__circle"  id="${divId}"></div>
+            <h2 class="item__name" title="${langIndex[0]}">${acro}</h2>
+        </div>`
+    )
+}      
+else{
+    $('.lang__graph').append(
+        `<div class="graph__item">
+            <h2 class="item__name" title="${langIndex[0]}">${acro}</h2>
+            <div class="item__circle"  id="${divId}"></div>
+        </div>`
+        )
+}
+
+<div class="area2__number area2">
+    <h2 class="number__text area2__text">08</h2><br>
+    <h2 class="number__title area2__title">Languages</h2>
+</div>
+
+<div class="area2__dash"></div>
+
+<div class="area2__bytes area2">
+    <h2 class="bytes__text area2__text">835kb</h2><br>
+    <h2 class="bytes__title area2__title">Bytes</h2>
+</div>

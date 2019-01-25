@@ -87,7 +87,9 @@ const showData = () => {
     let token = '' // necessário para fazer mais de 60 requisições/hora 
     if (typeof tk == 'function')
         token = tk()
-   
+
+    $('.loader').show(0)
+
     fetchUser($('.search__name').val(), token).then(user => { // usuário
         $('.user__img').html(`
             <img class="row__avatar" src="${user.avatar_url}" alt="git-img">`
@@ -105,7 +107,7 @@ const showData = () => {
 
             $('.git-nav__repos .item-number').html(`[${repos.length}]`)
 
-            $('.loader').show(0)
+            
             fetchLang(validsRepos, token).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem                    
                     
@@ -113,15 +115,18 @@ const showData = () => {
                     const langSortNumber = langResult.slice(0).sort(numberSort)
                     const la = langArray(langSortLetter)
                     const la2 = langArray(langSortNumber)
-
+                    
                     let sb = 0
+                    let sb2 = 0
+                    let totalBytes = 0
                     let divId = ''
                     let graphDataWidth = document.getElementById('lang__graph').offsetWidth
                     let langPosition = 0
                     let marginAdjust = 0
                     let sizeId = ''
                     let rankCount = 1
-                    console.log(graphDataWidth)
+                    
+                    //console.log(graphDataWidth)
                     la.map(langIndex => {
                         if (langIndex[2] > 0) {
                             sb = shortByte(langIndex[1])
@@ -133,7 +138,7 @@ const showData = () => {
                             langPosition = (graphDataWidth * langIndex[2] / 102)                            
                             
                             //marginAdjust = graphDataWidth - langPosition
-                            console.log(langPosition + ' - ' + marginAdjust)
+                            //console.log(langPosition + ' - ' + marginAdjust)
                             if (langPosition > (graphDataWidth * 80) / 100){
                                 $('.lang__graph').append(
                                     `<div class="graph__item">
@@ -158,7 +163,7 @@ const showData = () => {
                     la2.map(langIndex => {
                         if (langIndex[2] > 0) {
                             sb = shortByte(langIndex[1])
-
+                            totalBytes += langIndex[1]
                             //let acro = langAcronym(langIndex[0])
                             
                             $('.rank__area').append(
@@ -173,6 +178,22 @@ const showData = () => {
                             rankCount++
                         }
                     })
+
+                    sb2 = shortByte(totalBytes)
+
+                    $('.lang__area2').append(
+                        `<div class="area2__number area2">
+                            <h4 class="number__text area2__text">${rankCount-1}</h4><br>
+                            <h3 class="number__title area2__title">Languages</h3>
+                        </div>
+                    
+                        <div class="area2__dash"></div>
+                    
+                        <div class="area2__bytes area2">
+                            <h4 class="bytes__text area2__text">${sb2}</h4><br>
+                            <h3 class="bytes__title area2__title">written in total</h3>
+                        </div>`
+                    )
                     
                 })                
             })
@@ -185,6 +206,8 @@ $('.search__name').keyup( (event) => {
     if (event.key == 'Enter'){
         $('.graph__item').remove()
         $('.area__list').remove()
+        $('.area2__number,.area2__dash,.area2__bytes').remove()
+        
         showData()
     }
 })
@@ -209,13 +232,6 @@ if ($('.content__intro').css('display') != 'none'){
         $('.corner,.pat,.home__scrolltip').hide()
     });
 }
-
-
-/*
-
-
-*/
- 
 
 /*
 https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
