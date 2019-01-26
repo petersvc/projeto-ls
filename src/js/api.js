@@ -11,6 +11,7 @@ const fetchUser = async (user, token) => { // função que extrai os dados do ${
 
 const fetchRepo = async (repos_url, token) => { // ...extrai os dados dos repositórios (repos) do ${user}
     const endpoint = repos_url + token // ...Ex: ...com/users/user/${repos_url}
+    $('bottom__repos .loader').hide(0)
     return await fetch(endpoint).then(repos => repos.json()) 
 }
 
@@ -22,7 +23,7 @@ const fetchLang = async (validsRepos, token) => { // ... extrai as informações
         let json = await fetch(url + token).then(langs => langs.json()) // requista os dados, extrai em um .json e o guarda  
         jsons.push(json) // insere o .json no array de jsons
     }
-    
+
     $('.loader').hide(0)
     return jsons
 }

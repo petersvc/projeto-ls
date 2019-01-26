@@ -5,6 +5,7 @@ import { tk } from '../../token'
 import '../css/main.css'
 import '../css/reset.css'
 import '../css/media_queries.css'
+import { parse } from 'path';
 
 /*drm().then(drm => {
     //console.log(drm['basic-html'])
@@ -112,7 +113,29 @@ const showData = () => {
             const validsRepos = noForkeds.filter(repo => repo.language !== null)
 
             $('.git-nav__repos .item-number').html(`[${repos.length}]`)
+            
+            $('.repos__area').html(`
+                <div class="area__img">
+                    <img src="dist/img/circle1.svg" alt="">
+                </div>
 
+                <div class="area__total">
+                    <h2 class="total__title">${repos.length}</h2>
+                    <h2 class="total__txt">In total</h2>
+                </div>
+
+                <div class="area__numbers">
+                    <div class="nrow">
+                        <span class="numbers__circle nc"></span>
+                        <h2 class="numbers__text nt">Own: ${noForkeds.length}</h2>
+                    </div>
+
+                    <div class="nrow">
+                        <span class="numbers__circle2 nc"></span>
+                        <h2 class="numbers__text2 nt">Forkeds: ${forkeds}</h2>
+                    </div>
+                </div>`
+            )
             
             fetchLang(validsRepos, token).then(langsJsons => { // linguagens
                 langSum(langsJsons).then(langResult => { // retorna o total de bytes escritos em cada linguagem                    
@@ -187,9 +210,16 @@ const showData = () => {
 
                     sb2 = shortByte(totalBytes)
 
+                    let rank = '0'
+
+                    if (rankCount < 10)
+                        rank += (rankCount - 1)
+                    else
+                        rank = rankCount - 1
+
                     $('.lang__area2').append(
                         `<div class="area2__number area2">
-                            <h4 class="number__text area2__text">${rankCount-1}</h4><br>
+                            <h4 class="number__text area2__text">${rank}</h4><br>
                             <h3 class="number__title area2__title">Languages</h3>
                         </div>
                     
@@ -213,6 +243,7 @@ $('.search__name').keyup( (event) => {
         $('.graph__item').remove()
         $('.area__list').remove()
         $('.area2__number,.area2__dash,.area2__bytes').remove()
+        $('.repos__area div').remove()
 
         showData()
     }

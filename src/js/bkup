@@ -80,3 +80,24 @@ else{
     <h2 class="bytes__text area2__text">835kb</h2><br>
     <h2 class="bytes__title area2__title">Bytes</h2>
 </div>
+
+<div class="area__img">
+    <img src="dist/img/circle1.svg" alt="">
+</div>
+
+<div class="area__total">
+    <h2 class="total__title">36</h2>
+    <h2 class="total__txt">In total</h2>
+</div>
+
+<div class="area__numbers">
+    <div class="nrow">
+    <span class="numbers__circle nc"></span>
+    <h2 class="numbers__text nt">Forkeds: 15</h2>
+    </div>
+
+    <div class="nrow">
+    <span class="numbers__circle2 nc"></span>
+    <h2 class="numbers__text2 nt">Own: 21</h2>
+    </div>
+</div>

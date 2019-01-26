@@ -118,7 +118,7 @@ const shortByte = bytes => {
     }
     else {
         shortBytes = Math.round(bytes)
-        shortBytes += 'B'
+        shortBytes += 'b'
     }
 
     return shortBytes
