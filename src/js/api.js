@@ -17,10 +17,12 @@ const fetchRepo = async (repos_url, token) => { // ...extrai os dados dos reposi
 const fetchLang = async (validsRepos, token) => { // ... extrai as informações das urls das linguagens
     let jsons = [] // guarda os jsons extraídos das urls
     let langsUrls = validsRepos.map(repo => repo.languages_url) // guarda as urls que contém os dados
+    
     for (let url of langsUrls) { // percorre as urls
         let json = await fetch(url + token).then(langs => langs.json()) // requista os dados, extrai em um .json e o guarda  
         jsons.push(json) // insere o .json no array de jsons
     }
+    
     $('.loader').hide(0)
     return jsons
 }

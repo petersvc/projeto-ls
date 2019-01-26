@@ -88,17 +88,23 @@ const showData = () => {
     if (typeof tk == 'function')
         token = tk()
 
-    $('.loader').show(0)
-
     fetchUser($('.search__name').val(), token).then(user => { // usuário
-        $('.user__img').html(`
-            <img class="row__avatar" src="${user.avatar_url}" alt="git-img">`
-        )  // imagem do usuário
 
-        if (user.name != null)
+        if (user.login != null){
+            $('.row__avatar').remove()
             $('.row__value').html(user.name)
-        else
-            $('.row__value').html(user.login)
+            $('.loader').show(0)
+            $('.img__alt').hide(0)
+            $('.user__img').append(`
+                <img class="row__avatar" src="${user.avatar_url}" alt="git-img">`
+            ) // imagem do usuário
+            
+        }
+        else{
+            $('.row__value').html('username')
+            $('.row__avatar').remove()
+            $('.img__alt').show(0)
+        }
         
         fetchRepo(user.repos_url, token).then(repos => { // respositórios
             const noForkeds = repos.filter(repo => repo.fork != true)            
@@ -207,7 +213,7 @@ $('.search__name').keyup( (event) => {
         $('.graph__item').remove()
         $('.area__list').remove()
         $('.area2__number,.area2__dash,.area2__bytes').remove()
-        
+
         showData()
     }
 })

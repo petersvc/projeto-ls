@@ -338,19 +338,18 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: space-evenly;
   margin: 0% 0 1.5% 0.8%;
   width: 98.3%;
   height: 90%;
   background: rgba(26,6,6,0);
-  display: ;
 }
 
 .graph__item {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin: 8px 0 8px 0;
+  margin: 0px 0 0px 0;
   width: 100%;
   background: rgb(40,40,40,0);
 }

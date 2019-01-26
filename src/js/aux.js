@@ -67,18 +67,18 @@ const percentCalc = (langByte, total) => {
 
 const langAcronym = langIndex => {
     const acronyms = {
-        JavaScript: 'js',
-        PostScript: 'ps',
-        CoffeeScript: 'cs',
-        TypeScript: 'ts',
-        Python: 'py',
-        Fortran: 'fap',
-        Processing: 'proc',
+        'JavaScript': 'js',
+        'PostScript': 'ps',
+        'CoffeeScript': 'cs',
+        'TypeScript': 'ts',
+        'Python': 'py',
+        'Fortran': 'fap',
+        'Processing': 'proc',
         'Jupyter Notebook': 'jn',
-        Gherkin : 'ghkn',
-        Kotlin: 'ktln',
-        Elixir: 'elxr',
-        Clojure: 'cljr'
+        'Gherkin' : 'ghkn',
+        'Kotlin': 'ktln',
+        'Elixir': 'elxr',
+        'Clojure': 'cljr'
     }
 
     let acronym = langIndex
