@@ -173,7 +173,6 @@ body {
   transform: scaleX(1.2);
 }
 
-
 /*1fr 1fr / 1fr 1fr 1fr*/
 
 .header__user {
@@ -437,6 +436,15 @@ body {
   place-self: center center;
   width: 60px;
   display: none;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  color: rgb(200,200,200);
+}
+
+.loader__gif {
+  width: 50%;
+  margin-bottom: 10px;
 }
 
 .rank__area {

@@ -67,6 +67,7 @@ const percentCalc = (langByte, total) => {
 
 const langAcronym = langIndex => {
     const acronyms = {
+        'ActionScript':'as',
         'ApacheConf':'ac',
         'AutoHotkey': 'ahk',
         'Clojure': 'cljr',
@@ -118,7 +119,7 @@ const shortByte = bytes => {
     let shortBytes = 0
 
     if (bytes > 999999){
-        shortBytes = (bytes / 1048576).toFixed(2)
+        shortBytes = (bytes / 1048576).toFixed(1)
         shortBytes += 'mb'
     }
     else if (bytes > 999){

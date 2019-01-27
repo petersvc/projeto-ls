@@ -101,3 +101,26 @@ else{
     <h2 class="numbers__text2 nt">Own: 21</h2>
     </div>
 </div>
+
+let endpoints = []
+    let endpoint1 = repos_url+'?per_page=100&page=1&'
+    let endpoint2 = repos_url+'?per_page=100&page=2&'
+    let endpoint3 = repos_url+'?per_page=100&page=3&'
+    let repoJson
+    let repoJsons = []
+    console.log(public_repos)
+    if (public_repos > 200)
+        endpoints.push(endpoint1, endpoint2, endpoint3) // ...Ex: ...com/users/user/${repos_url}
+    else if (public_repos > 100) {
+        endpoints.push(endpoint1, endpoint2)
+    }
+    else {
+        endpoints.push(endpoint1)
+    }
+    endpoints.map(endpoint => {
+        repoJson = await fetch(endpoint + token).then(repos => repos.json())
+        repoJsons.push(repoJson)
+    })
+    console.log(endpoints)
+    console.log('oi')
+    $('bottom__repos .loader').hide(0)

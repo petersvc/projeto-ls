@@ -89,7 +89,7 @@ const showData = () => {
     if (typeof tk == 'function')
         token = tk()
     
-    $('.loader').show(0)
+    $('.loader').css('display', 'flex')
     
     fetchUser($('.search__name').val(), token).then(user => { // usuário
 
@@ -113,7 +113,8 @@ const showData = () => {
             $('.loader').hide(0)
         }
         
-        fetchRepo(user.repos_url, token).then(repos => { // respositórios
+        fetchRepo(user.repos_url, user.public_repos, token).then(repos => { // respositórios
+            //paul > 130 repos
             console.log(repos.length)
             const noForkeds = repos.filter(repo => repo.fork != true)            
             const forkeds = repos.length - noForkeds.length      
