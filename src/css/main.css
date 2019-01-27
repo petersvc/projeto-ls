@@ -90,19 +90,20 @@ body {
 }
 
 .header__search {
-  grid-area: 1 / 2 / 2 / 3;
-  place-self: center start;
-  margin-left: 8%;
+  grid-area: 1 / 1 / 2 / 2;
+  place-self: center end;
+  margin-right: 8%;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  width: 45%;
+  width: 20%;
   height: 55%;
   background: rgb(30,30,30);
   border-radius: 30px;
 }
 
 .search__name {
+  margin: 0 8px 0 8px;
   width: 70%;
   font-size: 1.1rem;
   font-weight: 500;
@@ -176,7 +177,7 @@ body {
 
 .header__user {
   grid-area: 1 / 2 / 2 / 3; 
-  margin-right: 3.5%;
+  margin-right: 4%;
   place-self: center end;  
   display: flex;
   align-items: center;
