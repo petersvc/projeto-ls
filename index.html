@@ -34,11 +34,11 @@
       <div class="header__search">
         <input class="search__name" autofocus value="lucachaves" type="text">
 
-        <div class="user__search">
-          <button class="search__btn">
+        <button class="user__search">
+          <div class="search__btn">
             <i class="fas fa-search"></i>
-          </button>
-        </div>
+          </div>
+        </button>
       </div>
       
 
@@ -49,7 +49,14 @@
           
           <h2 class="row__value">username</h2>
           
-          <i class="fas fa-angle-down user__expand"></i>         
+          <i class="fas fa-angle-down user__expand"></i>
+          
+          <div class="user__expanded">
+            <h2 class="expanded__location" title="Location"></h2>
+            <h2 class="expanded__company" title="Company"></h2>
+            <h2 class="expanded__email" title="Email"></h2>
+            <h2 class="expanded__github" title="Github profile"></h2>
+          </div>
       </div>
 
           
@@ -119,11 +126,14 @@
 
           <div class="rank__area">            
             <div class="area__header">
-              <h1 class="list__title lang__ranks">Rankº</h1>
+              <h1 class="list__title lang__ranks">Rank</h1>
               <h1 class="list__title lang__name lt">Language</h1>
               <h1 class="list__title lang__bytes lt2">Bytes</h1>
               <h1 class="list__title lang__percent">Percent</h1>
-            </div>    
+            </div>
+            <div class="area__content">
+              
+            </div>      
 
           </div>
         </section>
@@ -179,7 +189,25 @@
             </div>            
           </div>
 
-          <div class="drm__area"></div>
+          <div class="drm__area">
+            <h2 class="area__title">Description</h2>
+            <p class="area__text">
+                A set of paths that you can take and the
+                technologies that you would want to adopt
+                in order to become a frontend, made by
+                the software engineer Kamran Ahmed.
+            </p>
+
+            <p class="area__text">
+                The purpose of these roadmaps is to give you
+                an idea about the landscape and to guide you
+                if you are confused about what to learn next
+                and not to encourage you to pick what is hip
+                and trendy.
+            </p>
+
+            <button class="drm__btn">Take a look</button>
+          </div>
         </section>
 
       </div> 

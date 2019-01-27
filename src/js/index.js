@@ -88,31 +88,43 @@ const showData = () => {
     let token = '' // necessário para fazer mais de 60 requisições/hora 
     if (typeof tk == 'function')
         token = tk()
-
+    
+    $('.loader').show(0)
+    
     fetchUser($('.search__name').val(), token).then(user => { // usuário
 
         if (user.login != null){
             $('.row__avatar').remove()
             $('.row__value').html(user.name)
-            $('.loader').show(0)
+            $('.expanded__location').html(`${user.location} <i class="fas fa-map-marker-alt"></i>`)
+            $('.expanded__company').html(`${user.company} <i class="fas fa-building"></i>`)
+            $('.expanded__email').html(`${user.email} <i class="fas fa-envelope"></i>`)
+            $('.expanded__github').html(`${user.html_url} <i class="fab fa-github"></i>`)
+            console.log(user)
             $('.img__alt').hide(0)
             $('.user__img').append(`
                 <img class="row__avatar" src="${user.avatar_url}" alt="git-img">`
-            ) // imagem do usuário
-            
+            ) // imagem do usuário            
         }
         else{
             $('.row__value').html('username')
             $('.row__avatar').remove()
             $('.img__alt').show(0)
+            $('.loader').hide(0)
         }
         
         fetchRepo(user.repos_url, token).then(repos => { // respositórios
+            console.log(repos.length)
             const noForkeds = repos.filter(repo => repo.fork != true)            
             const forkeds = repos.length - noForkeds.length      
             const validsRepos = noForkeds.filter(repo => repo.language !== null)
 
-            $('.git-nav__repos .item-number').html(`[${repos.length}]`)
+            let totalRepos = '0'
+
+            if (repos.length < 10)
+                totalRepos += repos.length
+            else
+                totalRepos = repos.length
             
             $('.repos__area').html(`
                 <div class="area__img">
@@ -120,7 +132,7 @@ const showData = () => {
                 </div>
 
                 <div class="area__total">
-                    <h2 class="total__title">${repos.length}</h2>
+                    <h2 class="total__title">${totalRepos}</h2>
                     <h2 class="total__txt">In total</h2>
                 </div>
 
@@ -164,7 +176,7 @@ const showData = () => {
 
                             divId = `lang__size-${langIndex[0]}`
  
-                            langPosition = (graphDataWidth * langIndex[2] / 102)                            
+                            langPosition = (graphDataWidth * langIndex[2] / 104)                            
                             
                             //marginAdjust = graphDataWidth - langPosition
                             //console.log(langPosition + ' - ' + marginAdjust)
@@ -195,7 +207,7 @@ const showData = () => {
                             totalBytes += langIndex[1]
                             //let acro = langAcronym(langIndex[0])
                             
-                            $('.rank__area').append(
+                            $('.area__content').append(
                                 `<div class="area__list">
                                     <h1 class="lang__ranks2 list__item">${rankCount}</h1>
                                     <h2 class="lang__name2 list__item" title="${langIndex[0]}">${langIndex[0]}</h2>
@@ -227,7 +239,7 @@ const showData = () => {
                     
                         <div class="area2__bytes area2">
                             <h4 class="bytes__text area2__text">${sb2}</h4><br>
-                            <h3 class="bytes__title area2__title">written in total</h3>
+                            <h3 class="bytes__title area2__title">Written in total</h3>
                         </div>`
                     )
                     
@@ -247,6 +259,15 @@ $('.search__name').keyup( (event) => {
 
         showData()
     }
+})
+
+$('.user__search').click( () => {
+    $('.graph__item').remove()
+    $('.area__list').remove()
+    $('.area2__number,.area2__dash,.area2__bytes').remove()
+    $('.repos__area div').remove()
+
+    showData()
 })
 
 /*for (let i = 0; i < 0; i++){
