@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web:300,400,500,600,700);
 body {
   background: rgb(15,15,15);
 }
@@ -1062,30 +1062,36 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+/*@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Exo:300,400,500,600,700');*/
+
+
+
+
 html, body{
   overflow: hidden;
 }
 
-p {font: normal 12px/1.5 'source sans pro'}
+p {font: normal 12px/1.5 'titillium web'}
 
 h1, input {
   font-weight: 600;
-  font-family: 'source sans pro';
+  font-family: 'titillium web';
 }
 
 h2, span {
   font-weight: 500;
-  font-family: 'source sans pro';
+  font-family: 'titillium web';
 }
 
 h3 {
   font-weight: 400;
-  font-family: 'source sans pro';
+  font-family: 'titillium web';
 }
 
 h4, h5 {
   font-weight: 300;
-  font-family: 'source sans pro';
+  font-family: 'titillium web';
 }
 
 
