@@ -64,7 +64,7 @@ body {
 }
 
 .logotype__year {
-  background: rgb(107, 40, 165);
+  background: rgb(0, 101, 98);
   color: rgba(5,5,5, 1);
   font: bolder 0.7rem 'aileronsregular';
   letter-spacing: 0.1rem;
@@ -395,8 +395,8 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 100%;
-  background: rgb(107, 40, 165);
-  box-shadow: 0 0 9px rgb(107, 40, 165);
+  background: rgb(0, 101, 98);
+  box-shadow: 0 0 9px rgb(0, 101, 98);
 }
 
 .item__circle2 {
@@ -501,7 +501,7 @@ body {
 }
 
 .list__item2 {
-  color: rgb(132, 73, 184);
+  color: rgb(0, 101, 98);
   width: 24%;
   text-align: center;
   background: rgba(40,40,40,0);
@@ -563,7 +563,7 @@ body {
 }
 
 .number__text {
-  color: rgb(107, 40, 165);
+  color: rgb(0, 101, 98);
 }
 
 .bottom__repos {
@@ -646,8 +646,8 @@ body {
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  background: rgb(107, 40, 165);
-  box-shadow: 0 0 11px rgb(107, 40, 165);
+  background: rgb(0, 101, 98);
+  box-shadow: 0 0 11px rgb(0, 101, 98);
 }
 
 @keyframes spin {
@@ -698,8 +698,8 @@ body {
   width: 22%;
   height: 13%;
   font-size: 1.1rem;
-  color: rgb(180,180,180);
-  background: rgb(63, 21, 100);
+  color: rgb(10,10,10);
+  background: rgb(0, 101, 98);
   box-shadow: 0 0 11px rgb(0,0,0,0.2);
   border: none;
   outline: none;
