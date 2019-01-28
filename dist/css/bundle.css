@@ -65,7 +65,7 @@ body {
 
 .logotype__year {
   background: rgb(0, 101, 98);
-  color: rgba(5,5,5, 1);
+  color: rgba(5,5,5,0);
   font-size: 1.2rem;
   transform: rotate(-90deg);
   width: 32px;
