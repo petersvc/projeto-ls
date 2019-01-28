@@ -1,4 +1,6 @@
-export { langSum, langArray, numberSort, letterSort, shortByte, langAcronym, drm, legendFix }
+export { langSum, langArray, numberSort, letterSort}
+export { shortByte, langAcronym, drm, legendFix }
+export { teamData }
 
 const drm = async () => {
     const drmJasonUrl = 'https://api.myjson.com/bins/1c7p2k'
@@ -97,6 +99,42 @@ const langAcronym = langIndex => {
         acronym = acronyms[acronym]
 
     return acronym
+}
+
+const teamData = () => {
+    const profiles = [
+            {
+                "name": "peter costa",
+                "bio": "lorem ipsum",
+                "img": "dist/img/peter.jpg"
+            },
+            {
+                "name": "renato cesar",
+                "bio": "lorem ipsum",
+                "img": "dist/img/renato.jpg"
+            },
+            {
+                "name": "diego frazão",
+                "bio": "lorem ipsum",
+                "img": "dist/img/diego.jpg"
+            }
+    ]
+
+    for (let profile of profiles) {
+        console.log(profile.name)
+        $('.area__datas').append(`
+            <div class="datas__profile">
+                <img class="profile__img" src="${profile.img}">
+                <h2 class="profile__name">${profile.name}</h2>
+                <h2 class="profile__bio">${profile.bio}</h2>
+                <div class="profile__social">
+                    <i class="fab fa-github"></i>
+                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </div>`
+        )
+    }
 }
 
  const numberSort = (a, b) => {

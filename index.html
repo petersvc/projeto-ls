@@ -12,14 +12,25 @@
 </head>
 
 <body>
+
+  <section class="section__team">
+    <div class="team__area">
+      <i class="fas fa-times close__team"></i>
+      <h1 class="team__area-title">Our team</h1>
+      <h1 class="team__area-title2">Meet us</h1>
+
+      <div class="area__datas"></div>
+    </div>
+  </section>
+
   <div class="container">
     <div class="pattern"></div>
     
     <header class="header">
 
       <div class="header__logotype">        
-        <h1 class="logotype__text">dev</h1>
-        <h1 class="logotype__year">stats</h1>        
+        <h1 class="logotype__text">devstats</h1>
+        <h1 class="logotype__year"><i class="fas fa-chart-bar list__view view__mode"></i></h1>        
       </div>
 
       <div class="header__menu">
@@ -32,7 +43,7 @@
       </div>     
 
       <div class="header__search">
-        <input class="search__name" autofocus value="paul" type="text">
+        <input class="search__name" autofocus value="lucachaves" type="text">
 
         <button class="user__search">
           <div class="search__btn">
@@ -58,12 +69,12 @@
           </div>
       </div>
 
+      
+    </header>
           
 
-    </header>
-
     <main class="content">      
-
+      
       <div class="content__mid row">
         <!--Linguagens-->
         <section class="mid__lang">     
@@ -71,6 +82,8 @@
             <h3 class="header__title">
               Languages <span>charts</span>
             </h3>
+
+            <span class="header__circle"></span>
 
             <div class="header__nav">
               <i class="fas fa-chart-bar list__view view__mode"></i>
@@ -119,11 +132,14 @@
             <h3 class="header__title">
               Languages <span>rank</span>
             </h3>
-            
+
+            <span class="header__circle"></span>
+
             <div class="header__nav">
                 <i class="fas fa-trophy list__view view__mode"></i>
             </div>            
           </div>
+
           <div class="loader">
             <img class="loader__gif" src="dist/img/loader.svg" alt="loading">
             <h2 class="loader__number"></h2>
@@ -151,8 +167,10 @@
         <section class="bottom__lang">     
           <div class="lang__header section__header">
             <h3 class="header__title">
-              Languages <span>numbers</span>
+              Languages <span>extras</span>
             </h3>
+
+            <span class="header__circle"></span>
 
             <div class="header__nav">
               <i class="fas fa-code list__view view__mode"></i>
@@ -175,6 +193,8 @@
               Repositories <span>numbers</span>
             </h3>
 
+            <span class="header__circle"></span>
+
             <div class="header__nav">
               <i class="fas fa-database list__view view__mode"></i>
             </div>            
@@ -195,6 +215,8 @@
             <h3 class="header__title">
               Developer <span>roadmap</span>
             </h3>
+
+            <span class="header__circle"></span>
 
             <div class="header__nav">
               <i class="fas fa-map list__view view__mode"></i>

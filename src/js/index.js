@@ -1,5 +1,5 @@
 import { fetchUser, fetchRepo, fetchLang} from './api'
-import { langSum, langArray, numberSort, letterSort} from './aux'
+import { langSum, langArray, numberSort, letterSort, teamData} from './aux'
 import { shortByte, langAcronym, drm, legendFix } from './aux'
 import { tk } from '../../token'
 import '../css/main.css'
@@ -7,6 +7,7 @@ import '../css/reset.css'
 import '../css/media_queries.css'
 import { parse } from 'path';
 
+teamData()
 /*drm().then(drm => {
     //console.log(drm['basic-html'])
     let count = 0
@@ -269,6 +270,14 @@ $('.user__search').click( () => {
     $('.repos__area div').remove()
 
     showData()
+})
+
+$('.team').click( () => {
+    $('.section__team').css('display', 'flex')
+})
+
+$('.close__team').click( () => {
+    $('.section__team').css('display', 'none')
 })
 
 /*for (let i = 0; i < 0; i++){

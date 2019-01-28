@@ -59,21 +59,21 @@ body {
 
 .logotype__text {
   color: rgb(200,200,200);
-  font: lighter 3rem 'aileronsregular';
-  letter-spacing: 1.5rem;
+  font: normal 2.7rem 'aileronsregular';
+  letter-spacing: 0.1rem;
 }
 
 .logotype__year {
   background: rgb(0, 101, 98);
   color: rgba(5,5,5, 1);
-  font: bolder 0.7rem 'aileronsregular';
-  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
   transform: rotate(-90deg);
   width: 32px;
   height: 22px;
   line-height: 22px;
   vertical-align: middle;
   text-align: center;
+  display: ;
 }
 
 .header__menu {
@@ -88,6 +88,7 @@ body {
 
 .header__menu h1 {
   margin: 0 8% 0 8%;
+  cursor: pointer;
 }
 
 .header__search {
@@ -263,14 +264,100 @@ body {
   z-index: 1;
 }
 
-.content__search {
+.section__team {
+  position: absolute;
   display: flex;
-  align-items: space-evenly;
+  align-items: center;
   justify-content: center;
-  height: 6%;
-  background: rgba(30,30,30,0);
-  display:none;
-  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 1000;
+  display: none;
+}
+
+.team__area {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 80%;
+  background: rgba(8,8,8,1);
+}
+
+.close__team {
+  position: absolute;
+  top: 13%;
+  right: 7.6%;
+  font-size: 2rem;
+  color: rgb(200,200,200);
+  cursor: pointer;
+}
+
+.team__area-title {
+  align-self: flex-start;
+  margin: 0 0 2% 5%;
+  font-size: 2rem;
+  color: rgb(180,180,180);
+}
+
+.team__area-title2 {
+  align-self: flex-start;
+  margin: 0 0 2% 5%;
+  font-size: 1.6rem;
+  color: rgb(0, 101, 98);
+}
+
+.area__datas {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  height: 70%;
+  background: rgba(18,8,8,0);
+}
+
+.datas__profile {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 27%;
+  height: 100%;
+  background: rgba(8,18,8,0);
+  color: rgb(200,200,200);
+}
+
+.profile__img {
+  width: 100%;
+  filter: grayscale(1)
+  opacity(0.5)
+}
+
+.profile__name {
+  margin: 15px 0 15px 0;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.profile__bio {
+  font-size: 1rem;
+  color: rgb(120,120,120)
+}
+
+.profile__social {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin-top: 10%;
+  font-size: 1.6rem;
+  color: rgb(120,120,120);
+}
+
+.profile__social .fa-linkedin {
+  margin: 0 20px 0 20px;
 }
 
 /*
@@ -310,11 +397,21 @@ body {
   margin-left: 2.7%;
   color: rgb(100,100,100);
   font-size: 1.1rem;
+  text-transform: capitalize;
 }
 
 .header__title span {
   color: rgb(180,180,180);
   font-weight: 600;
+}
+
+.header__circle {
+  margin-left: 10px;
+  width: 6px;
+  height: 6px;
+  background: rgb(0, 101, 98);
+  box-shadow: 0 0 9px rgb(0, 101, 98);
+  border-radius: 100%;
 }
 
 .header__nav {
@@ -385,7 +482,6 @@ body {
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
-  margin: 0px 0 0px 0;
   width: 100%;
   background: rgb(40,40,40,0);
 }
@@ -406,9 +502,9 @@ body {
 
 .item__name {
   text-align: center;
-  width: 60px;
-  height: 25px;
-  font-size: 0.8rem;
+  width: 55px;
+  height: 23px;
+  font-size: 0.7rem;
   color: rgba(200,200,200,1);
   background: rgba(25,25,25,1);
   text-transform: uppercase;
@@ -488,11 +584,12 @@ body {
 .list__title {
   width: 24.5%;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1rem;
   margin: 0 15% 2px 0%;
 }
 
 .list__item {
+  font-size: 1rem;
   color: rgb(130,130,130);
   width: 24%;
   text-align: center;
@@ -501,6 +598,7 @@ body {
 }
 
 .list__item2 {
+  font-size: 1rem;
   color: rgb(0, 101, 98);
   width: 24%;
   text-align: center;
@@ -698,6 +796,7 @@ body {
   width: 22%;
   height: 13%;
   font-size: 1.1rem;
+  font-weight: 500;
   color: rgb(10,10,10);
   background: rgb(0, 101, 98);
   box-shadow: 0 0 11px rgb(0,0,0,0.2);
