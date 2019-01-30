@@ -5,7 +5,7 @@ import { tk } from '../../token'
 import '../css/main.css'
 import '../css/reset.css'
 import '../css/media_queries.css'
-import { parse } from 'path';
+//import { parse } from 'path';
 
 teamData()
 /*drm().then(drm => {
@@ -97,17 +97,16 @@ const showData = () => {
         if (user.login != null){
             $('.row__avatar').remove()
             $('.row__value').html(user.name)
-            $('.expanded__location').html(`${user.location} <i class="fas fa-map-marker-alt"></i>`)
-            $('.expanded__company').html(`${user.company} <i class="fas fa-building"></i>`)
-            $('.expanded__email').html(`${user.email} <i class="fas fa-envelope"></i>`)
-            $('.expanded__github').html(`${user.html_url} <i class="fab fa-github"></i>`)
-            console.log(user)
+            $('.expanded__location').html(`${user.location}<i class="fas fa-map-marker-alt"></i>`)
+            $('.expanded__company').html(`${user.company}<i class="fas fa-building"></i>`)
+            $('.expanded__email').html(`${user.email}<i class="fas fa-envelope"></i>`)
+            $('.expanded__github').html(`${user.html_url}<i class="fab fa-github"></i>`)
             $('.img__alt').hide(0)
             $('.user__img').append(`
                 <img class="row__avatar" src="${user.avatar_url}" alt="git-img">`
-            ) // imagem do usuário            
+            )   
         }
-        else{
+        else {
             $('.row__value').html('username')
             $('.row__avatar').remove()
             $('.img__alt').show(0)
@@ -116,7 +115,6 @@ const showData = () => {
         
         fetchRepo(user.repos_url, user.public_repos, token).then(repos => { // respositórios
             //paul > 130 repos
-            console.log(repos.length)
             const noForkeds = repos.filter(repo => repo.fork != true)            
             const forkeds = repos.length - noForkeds.length      
             const validsRepos = noForkeds.filter(repo => repo.language !== null)
@@ -169,14 +167,13 @@ const showData = () => {
                     let sizeId = ''
                     let rankCount = 1
                     
-                    //console.log(graphDataWidth)
                     la.map(langIndex => {
                         if (langIndex[2] > 0) {
                             sb = shortByte(langIndex[1])
 
                             let acro = langAcronym(langIndex[0])
 
-                            divId = `lang__size-${langIndex[0]}`
+                            divId = `graph__item-${langIndex[0]}`
  
                             langPosition = (graphDataWidth * langIndex[2] / 104)                            
                             
@@ -207,7 +204,6 @@ const showData = () => {
                         if (langIndex[2] > 0) {
                             sb = shortByte(langIndex[1])
                             totalBytes += langIndex[1]
-                            //let acro = langAcronym(langIndex[0])
                             
                             $('.area__content').append(
                                 `<div class="area__list">
@@ -280,15 +276,12 @@ $('.close__team').click( () => {
     $('.section__team').css('display', 'none')
 })
 
-/*for (let i = 0; i < 0; i++){
-    $('.lang__area').append(`<div class="graph__separator" id="separator${i}"></div>`)
-}*/
-
 /*
 for (let i = 0; i < 350; i++){
     $('.pattern').append(`<div class="pattern__block" id="block${i}">.</div>`)
 }*/
 
+/*
 if ($('.content__intro').css('display') != 'none'){
     $(document).bind('wheel', () => {
         $('.content__home').hide(0)
@@ -300,6 +293,7 @@ if ($('.content__intro').css('display') != 'none'){
         $('.corner,.pat,.home__scrolltip').hide()
     });
 }
+*/
 
 /*
 https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s

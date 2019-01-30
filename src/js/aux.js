@@ -1,4 +1,4 @@
-export { langSum, langArray, numberSort, letterSort}
+export { langSum, langArray, numberSort, letterSort }
 export { shortByte, langAcronym, drm, legendFix }
 export { teamData }
 
@@ -13,7 +13,6 @@ const legendFix = (legend) => {
     return replacer
 } 
 
-
 const langSum = async langsJsons => { // funçao que soma a quantidade de linhas/palavras escritas em cada linguagem
     let langsNames = []
     let langFilter = []
@@ -25,13 +24,13 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
     langsJsons.map(lang => { // percorre o array de jsons das linguagens
         for (let langName in lang){ // percorre os nomes (propriedade) das linguagens deles           
             if (langsNames.join('').includes(langName) == false){
-                langsNames.push(langName)
-                
+                langsNames.push(langName)                
             } // transforma o array dos nomes das linguagens... -> 
                                         // ...em uma string, checa se o nome não existe nela e o insere       
         }
                 
     })
+
     langsNames.map(langName => { // percorre o array dos nomes das linguagens encontradas
         langFilter = langsJsons.filter(value => value[langName] != undefined) // filtra os jsons que contém a linguagem 
         
@@ -44,6 +43,7 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
     })
 
     langResult.push(langTotal)
+
     return langResult // retorna [linguagem, bytes] e o total de bytes no ultimo indice
 }
 
@@ -103,25 +103,24 @@ const langAcronym = langIndex => {
 
 const teamData = () => {
     const profiles = [
-            {
-                "name": "peter costa",
-                "bio": "lorem ipsum",
-                "img": "dist/img/peter.jpg"
-            },
-            {
-                "name": "renato cesar",
-                "bio": "lorem ipsum",
-                "img": "dist/img/renato.jpg"
-            },
-            {
-                "name": "diego frazão",
-                "bio": "lorem ipsum",
-                "img": "dist/img/diego.jpg"
-            }
+        {
+            "name": "peter costa",
+            "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
+            "img": "dist/img/peter.jpg"
+        },
+        {
+            "name": "renato cesar",
+            "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
+            "img": "dist/img/renato.jpg"
+        },
+        {
+            "name": "diego frazão",
+            "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
+            "img": "dist/img/diego.jpg"
+        }
     ]
 
     for (let profile of profiles) {
-        console.log(profile.name)
         $('.area__datas').append(`
             <div class="datas__profile">
                 <img class="profile__img" src="${profile.img}">
