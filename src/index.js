@@ -1,89 +1,16 @@
-import { fetchUser, fetchRepo, fetchLang} from './api'
-import { langSum, langArray, numberSort, letterSort, teamData} from './aux'
-import { shortByte, langAcronym, drm, legendFix } from './aux'
-import { tk } from '../../token'
-import '../css/main.css'
-import '../css/reset.css'
-import '../css/media_queries.css'
-//import { parse } from 'path';
+import { fetchUser, fetchRepo, fetchLang} from './js/api'
+import { langSum, langArray, numberSort, letterSort, teamData} from './js/aux'
+import { shortByte, langAcronym, drm, legendFix } from './js/aux'
+import './css/main.css'
+import './css/reset.css'
+import './css/media_queries.css'
+import './img/loader.svg'
+import './img/cartesian4.svg'
+import './fonts/stylesheet.css'
+
 
 teamData()
-/*drm().then(drm => {
-    //console.log(drm['basic-html'])
-    let count = 0
-    let fieldsetClass = ''
-    let checkMarkClass = ''
-    let legend = ''
-    let propName = ''
-    
-    for (let group in drm){
-        //console.log(group)
-        legend = legendFix(group)
 
-        console.log(legend + ':')
-
-        if (count < 5) {
-            $('.fieldset__legends1').append(`
-                <div class="legends__row legends__${group}">
-                    <h2 class="row__title">
-                        ${legend}<br>
-                        <span>${drm[group].length} technologies</span><br>
-                        <span class="row__category">${drm[group][0].category}</span>
-                    </h2> 
-                    <div class="row__circle"></div>
-                </div>`)
-        }
-
-        else if(count < 10) {
-            $('.fieldset__legends2').append(`
-                <div class="legends__row legends__${group}">
-                    <h2 class="row__title">
-                        ${legend}<br>
-                        <span>${drm[group].length} technologies</span><br>
-                        <span class="row__category">${drm[group][0].category}</span>
-                    </h2> 
-                    <div class="row__circle"></div>
-                </div>`)
-        }
-
-        else {
-            $('.fieldset__legends3').append(`
-                <div class="legends__row legends__${group}">
-                    <h2 class="row__title">
-                        ${legend}<br>
-                        <span>${drm[group].length} technologies</span><br>
-                        <span class="row__category">${drm[group][0].category}</span>
-                    </h2>                    
-                    <div class="row__circle"></div>
-                </div>`)
-        }
-
-        fieldsetClass = `.fieldset__${group}`    
-    
-        $('.roadmap__form').prepend(`
-            <fieldset class="form__fieldset fieldset__${group}"></fieldset>`)
-        
-        drm[group].map(prop => {
-            propName = legendFix(prop.name)
-            checkMarkClass = `.cm__${prop.name}`
-
-            $(fieldsetClass).append(`
-            <label class="fieldset__label label__${prop.name}">
-                <input class="cb__${prop.name}" type="checkbox" name="${prop.status}">
-                <span class="checkmark cm__${prop.name}"></span>
-                <h2 class="label__title">${propName}</h2>
-            </label>`)
-
-            if (prop.status == 'recommended')
-                $(checkMarkClass).addClass('recommended')
-            else
-                $(checkMarkClass).addClass('available')
-
-        })
-
-        count ++
-    }
-})*/
 
 const showData = () => {
     let token = '' // necessário para fazer mais de 60 requisições/hora 
@@ -128,7 +55,7 @@ const showData = () => {
             
             $('.repos__area').html(`
                 <div class="area__img">
-                    <img src="dist/img/circle1.svg" alt="">
+                    <img src="${require('./img/circle1.svg')}" alt="">
                 </div>
 
                 <div class="area__total">
@@ -275,27 +202,3 @@ $('.team').click( () => {
 $('.close__team').click( () => {
     $('.section__team').css('display', 'none')
 })
-
-/*
-for (let i = 0; i < 350; i++){
-    $('.pattern').append(`<div class="pattern__block" id="block${i}">.</div>`)
-}*/
-
-/*
-if ($('.content__intro').css('display') != 'none'){
-    $(document).bind('wheel', () => {
-        $('.content__home').hide(0)
-        $('.header').css('display', 'grid')
-        //$('.content__repositories').css('display', 'flex')
-        //$('.content__lang,.content__roadmap').css('display', 'grid')
-        //$('.footer').css('display', 'grid')
-        //$('.nav').css('display', 'flex')
-        $('.corner,.pat,.home__scrolltip').hide()
-    });
-}
-*/
-
-/*
-https://www.youtube.com/watch?v=sJspH620ZsU&t=1408s
-Make like a tree and leave
-*/
