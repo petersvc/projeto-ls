@@ -102,17 +102,17 @@ export const teamData = () => {
         {
             "name": "Peter costa",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": require('../img/peter.jpg')
+            "img": 'dist/img/peter.jpg'
         },
         {
             "name": "Renato César",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": require('../img/renato.jpg')
+            "img": 'dist/img/renato.jpg'
         },
         {
             "name": "diego frazão",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": require('../img/diego.jpg')
+            "img": 'dist/img/diego.jpg'
         }
     ]
 
