@@ -1,10 +1,4 @@
-# ignore everything ...
-/*
-# ... but the following
-!dist
-!src
-!index.html
-!webpack.config.js
-!package.json
-!.gitignore
-!node_modules
+dist/
+package-lock.json
+node_modules/
+.DS_Store

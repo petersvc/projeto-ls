@@ -1,19 +1,15 @@
-export { langSum, langArray, numberSort, letterSort }
-export { shortByte, langAcronym, drm, legendFix }
-export { teamData }
-
-const drm = async () => {
+export const drm = async () => {
     const drmJasonUrl = 'https://api.myjson.com/bins/1c7p2k'
     const drmTech = await fetch(drmJasonUrl).then(drm => drm.json())
     return drmTech
 }
 
-const legendFix = (legend) => {
+export const legendFix = (legend) => {
     let replacer = legend.replace('-', ' ')
     return replacer
 } 
 
-const langSum = async langsJsons => { // funçao que soma a quantidade de linhas/palavras escritas em cada linguagem
+export const langSum = async langsJsons => { // funçao que soma a quantidade de linhas/palavras escritas em cada linguagem
     let langsNames = []
     let langFilter = []
     let langMap = []
@@ -47,7 +43,7 @@ const langSum = async langsJsons => { // funçao que soma a quantidade de linhas
     return langResult // retorna [linguagem, bytes] e o total de bytes no ultimo indice
 }
 
-const langArray = langResult => { // Cria o array completo das linguagens -> [lang, byte, percent]
+export const langArray = langResult => { // Cria o array completo das linguagens -> [lang, byte, percent]
     let la = [] // guarda [linguagem, bytes, porcentagem]
     let calcPercent = 0
 
@@ -61,13 +57,13 @@ const langArray = langResult => { // Cria o array completo das linguagens -> [la
     return la
 }
 
-const percentCalc = (langByte, total) => {
+export const percentCalc = (langByte, total) => {
     let calc = 0
     calc = langByte * 100 / total
     return calc
 }
 
-const langAcronym = langIndex => {
+export const langAcronym = langIndex => {
     const acronyms = {
         'ActionScript':'as',
         'ApacheConf':'ac',
@@ -101,69 +97,70 @@ const langAcronym = langIndex => {
     return acronym
 }
 
-const teamData = () => {
+export const teamData = () => {
     const profiles = [
         {
-            "name": "peter costa",
+            "name": "Peter costa",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": "dist/img/peter.jpg"
+            "img": require('../img/peter.jpg')
         },
         {
-            "name": "renato cesar",
+            "name": "Renato César",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": "dist/img/renato.jpg"
+            "img": require('../img/renato.jpg')
         },
         {
             "name": "diego frazão",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": "dist/img/diego.jpg"
+            "img": require('../img/diego.jpg')
         }
     ]
 
-    for (let profile of profiles) {
-        $('.area__datas').append(`
-            <div class="datas__profile">
-                <img class="profile__img" src="${profile.img}">
-                <h2 class="profile__name">${profile.name}</h2>
-                <h2 class="profile__bio">${profile.bio}</h2>
-                <div class="profile__social">
-                    <i class="fab fa-github"></i>
-                    <i class="fab fa-linkedin"></i>
-                    <i class="fab fa-facebook"></i>
-                </div>
-            </div>`
-        )
+    profiles.map( profile => {
+        let profileDiv = document.createElement('div');
+        profileDiv.classList.add("datas__profile");
+        profileDiv.innerHTML = `
+            <img class="profile__img" src="${profile.img}">
+            <h2 class="profile__name">${profile.name}</h2>
+            <h2 class="profile__bio">${profile.bio}</h2>
+            <div class="profile__social">
+                <i class="fab fa-github"></i>
+                <i class="fab fa-linkedin"></i>
+                <i class="fab fa-facebook"></i>
+            </div>
+        `;
+        document.querySelector('.area__datas').insertAdjacentElement("beforeend" , profileDiv);
+    })
+}
+
+export const numberSort = (a, b) => {
+    if (a[1] > b[1]) {
+        return -1;
+    } else if (a[1] < b[1]) {
+        return 1;
     }
-}
-
- const numberSort = (a, b) => {
-    if (a[1] > b[1])
-        return -1;
-    if (a[1] < b[1])
-        return 1;
     return 0;
 }
 
-const letterSort = (a, b) => {
-    if (a[0] < b[0])
+export const letterSort = (a, b) => {
+    if (a[0] < b[0]) {
         return -1;
-    if (a[0] > b[0])
+    } else if (a[0] > b[0]) {
         return 1;
+    }
     return 0;
 }
 
-const shortByte = bytes => {
+export const shortByte = bytes => {
     let shortBytes = 0
 
     if (bytes > 999999){
         shortBytes = (bytes / 1048576).toFixed(1)
         shortBytes += 'mb'
-    }
-    else if (bytes > 999){
+    } else if (bytes > 999){
         shortBytes = Math.round(bytes / 1024)
         shortBytes += 'kb'
-    }
-    else {
+    } else {
         shortBytes = Math.round(bytes)
         shortBytes += 'b'
     }

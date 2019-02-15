@@ -110,7 +110,6 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
   font-style: italic;
-  text-transform: capitalize;
   color: rgba(150,150,150,1);
   text-align: left;
   background: rgb(0,0,0,0);
@@ -118,7 +117,6 @@ body {
   outline: none;
   opacity: 1;
   z-index: 2;
-  display: ;
 }
 
 .search__name::placeholder{
@@ -331,7 +329,7 @@ body {
 }
 
 .profile__img {
-  width: 100%;
+  width: 325px;
   filter: grayscale(1)
   opacity(0.5)
 }
@@ -1114,6 +1112,27 @@ body {
   display: grid;
 }
 
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.apply-shake {
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

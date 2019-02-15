@@ -1,11 +1,13 @@
 const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const webpack = require('webpack')
 
 
 module.exports = {
-  entry: './src/js/index.js',
+  entry: './src/index.js',
+  mode: "development",
   output: {
-    filename: 'js/bundle.js',
+    filename: 'js/index.js',
     path: path.resolve(__dirname, 'dist')
   },
 
@@ -17,14 +19,43 @@ module.exports = {
           { loader: MiniCssExtractPlugin.loader },
           "css-loader",
         ]
-      }
-    ]
+      },
+      {
+        test: /\.(png|jpg|gif|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'img',
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(woff|woff2)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts',
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
     new MiniCssExtractPlugin({
         filename: "css/bundle.css"
-      })
-  ]
+    }),
+    new webpack.ProvidePlugin({
+      "$":"jquery",
+      "jQuery":"jquery",
+      "window.jQuery":"jquery"
+    }),
+  ],
 }
 

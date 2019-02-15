@@ -1,10 +1,7 @@
-export { fetchUser, fetchRepo, fetchLang }
-
 const apiUrl = 'https://api.github.com/users/' // url da api do github
 
-// fetchers: fazem requisiçoes a api e retornam jsons
 
-const fetchUser = async (user, token) => { // função que extrai os dados do ${user}. Ex: user.name
+export const fetchUser = async (user, token) => { // função que extrai os dados do ${user}. Ex: user.name
     const endpoint = apiUrl + user + '?' // guarda a url que contém os dados. Ex: ...github.com/users/${user}          
     const userJson = await fetch(endpoint  + token)
                                 .then(user => user.json()) // requisita os dados e os retorna extraídos em um .json                 
@@ -12,7 +9,7 @@ const fetchUser = async (user, token) => { // função que extrai os dados do ${
     return userJson       
 }
 
-const fetchRepo = async (repos_url, public_repos, token) => { // ...extrai os dados dos repositórios (repos) do ${user}
+export const fetchRepo = async (repos_url, public_repos, token) => { // ...extrai os dados dos repositórios (repos) do ${user}
     let endpoints = []
     let repoJsonsTemp = []
     let repoJsons = []
@@ -49,7 +46,7 @@ const fetchRepo = async (repos_url, public_repos, token) => { // ...extrai os da
     return repoJsons 
 }
 
-const fetchLang = async (validsRepos, token) => { // ... extrai as informações das urls das linguagens
+export const fetchLang = async (validsRepos, token) => { // ... extrai as informações das urls das linguagens
     let langJsons = [] // guarda os jsons extraídos das urls
     let langsUrls = validsRepos.map(repo => repo.languages_url) // guarda as urls que contém os dados
     let count = 0
@@ -69,9 +66,3 @@ const fetchLang = async (validsRepos, token) => { // ... extrai as informações
     
     return langJsons
 }
-
-
-
-
-
-//<br>Quais tecnologias o web developer<br> deve dominar em 2018?
