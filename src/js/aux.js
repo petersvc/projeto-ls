@@ -112,14 +112,14 @@ export const teamData = () => {
         {
             "name": "diego frazão",
             "bio": "Mussum Ipsum, cacilds vidis litro abertis. Aenean aliquam molestie leo, vitae iaculis nisl. Posuere libero varius. Nullam a nisl ut ante blandit hendrerit.",
-            "img": require('../img/diego2.jpg')
+            "img": require('../img/diego.jpg')
         }
     ]
 
     profiles.map( profile => {
         let profileDiv = document.createElement('div');
+        profileDiv.classList.add("datas__profile");
         profileDiv.innerHTML = `
-        <div class="datas__profile">
             <img class="profile__img" src="${profile.img}">
             <h2 class="profile__name">${profile.name}</h2>
             <h2 class="profile__bio">${profile.bio}</h2>
@@ -128,8 +128,8 @@ export const teamData = () => {
                 <i class="fab fa-linkedin"></i>
                 <i class="fab fa-facebook"></i>
             </div>
-        </div>`
-        document.querySelector('.area__datas').insertAdjacentElement("beforeend" , profileDiv)
+        `;
+        document.querySelector('.area__datas').insertAdjacentElement("beforeend" , profileDiv);
     })
 }
 

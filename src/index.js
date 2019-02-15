@@ -6,8 +6,6 @@ import './css/reset.css'
 import './css/media_queries.css'
 import './img/loader.svg'
 import './img/cartesian4.svg'
-import './fonts/stylesheet.css'
-
 
 teamData()
 
@@ -175,16 +173,25 @@ const showData = () => {
     })           
 }   
 
-$('.search__name').keyup( (event) => {
+document.querySelector('.search__name').addEventListener('keyup', event => {
     if (event.key == 'Enter'){
         $('.graph__item').remove()
         $('.area__list').remove()
         $('.area2__number,.area2__dash,.area2__bytes').remove()
         $('.repos__area div').remove()
 
-        showData()
+        const githubRegexUser = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
+        if (githubRegexUser.test(event.target.value)) {
+            showData()
+        } else {
+            event.target.classList.add("apply-shake");
+        }
     }
-})
+});
+
+document.querySelector('.search__name').addEventListener("animationend", (e) => {
+    event.target.classList.remove("apply-shake");
+});
 
 $('.user__search').click( () => {
     $('.graph__item').remove()
