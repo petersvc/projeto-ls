@@ -15,7 +15,19 @@ pass
 
 ## Inspirações
 
-pass
+https://githut.info/
+
+
+http://git-awards.com/
+
+
+https://gitstar-ranking.com
+
+
+https://www.instagram.com/p/BXGXu3WgJ6D/
+
+
+https://www.instagram.com/p/Bax6r-2g9BH/
 
 ## Descrição das funcionalidades
 
