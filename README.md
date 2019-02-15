@@ -31,7 +31,11 @@ https://www.instagram.com/p/Bax6r-2g9BH/
 
 ## Descrição das funcionalidades
 
-Primeiramente é fornecido um profile do [github](https://github.com) que se deseja saber as estatísticas e o site disponibiliza automaticamente tudo na tela.
++ Consulta os dados básicos do perfil do Github.
++ Apresenta gráficos do uso de linguagens do usuário
++ Mostra tabelas de uso de linguagens detalhando os bytes escritos e a porcentagem de uso da mesma em relação às demais.
++ Exibe o total de repositórios próprios e forkeds e também a soma dos mesmos.
++ Roadmap (em desenvolvimento)
 
 ## Contato
 
