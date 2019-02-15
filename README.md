@@ -23,6 +23,6 @@ Primeiramente é fornecido um profile do [github](https://github.com) que se des
 
 ## Contato
 
-+<petersvc@outlook.com>
-+<diiegofrazao10@gmail.com>
-+<rencesarlira@gmail.com>
++ <petersvc@outlook.com>
++ <diiegofrazao10@gmail.com>
++ <rencesarlira@gmail.com>
