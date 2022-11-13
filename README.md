@@ -3,7 +3,7 @@
 ## Descrição do projeto
 
 O *DevStats* é um projeto para apresentação final da disciplina JavaScript do curso de Sistemas para Internet no Instituto Federal da Paraíba - IFPB.
-O projeto tem o propósito de fornecer os dados do seu perfil no [github](https://github.com). O sistema tem funcionamente com base em API's, mostrando o uso das linguagens usadas nos repositórios e projetando uma estatística.
+O projeto tem o propósito de fornecer os dados do seu perfil no [github](https://github.com). O sistema tem funcionamente com base no consumo de dados fornecidos pela API do Github, mostrando o uso das linguagens usadas nos repositórios e projetando estatísticas.
 
 ## Requisitos mínimos
 
